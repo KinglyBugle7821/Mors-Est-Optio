@@ -15,6 +15,6 @@ public class MorsEstOptioClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		LOGGER.info("The world is waiting for you");
 
-		HudElementRegistry.addLast(MorsEstOptio.id("temp_bar"), MEOTempBarGUI.hudLayer());
+		HudElementRegistry.addFirst(MorsEstOptio.id("temp_bar"), MEOTempBarGUI.hudLayer());
 	}
 }

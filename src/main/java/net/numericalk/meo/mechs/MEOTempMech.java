@@ -6,11 +6,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
-import net.minecraft.world.level.biome.Biomes;
-import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
-import net.numericalk.meo.mixin.WaterDrinkingCoolingMixin;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
@@ -21,7 +18,7 @@ public class MEOTempMech {
         Level level = player.level();
         BlockPos playerPos = player.blockPosition();
 
-                        //Environment Temp
+                    //Environment Temp
         //Biome Temp
         float baseTemperature = level.getBiome(playerPos).value().getBaseTemperature();
         float biomeTemperature;
@@ -121,18 +118,5 @@ public class MEOTempMech {
                 MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT,
                 playerTemperature
         );
-
-//        System.out.println("biomeTemperature: " + biomeTemperature);
-//        System.out.println("altitudeAdjustment: " + altitudeAdjustment);
-//        System.out.println("daytimeAdjustment: " + daytimeAdjustment);
-//        System.out.println("weatherAdjustment: " + weatherAdjustment);
-//        System.out.println("localBlockAdjustment: " + localBlockAdjustment);
-//        System.out.println("insulation: " + insulation);
-//        System.out.println("waterDrinkingCoolingTemperature: " + waterDrinkingCoolingTemperature);
-//        System.out.println("waterTemp: " + waterTemp);
-//        System.out.println("heatExchange: " + heatExchange);
-//        System.out.println("heatExchangeRate: " + heatExchangeRate);
-//        System.out.println("environmentTemp: " + environmentTemperature);
-//        System.out.println("playerTemp: " + playerTemperature);
     }
 }
