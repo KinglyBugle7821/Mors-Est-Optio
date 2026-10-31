@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.numericalk.meo.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"MEOClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "mors-est-optio",
+	"version": "${version}",
+	"name": "Mors est Optio",
+	"description": "Minecraft Progression Mod",
+	"authors": [
+		"NumericalEquator"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/mors-est-optio/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.numericalk.meo.MorsEstOptio"
+		],
+		"client": [
+			"net.numericalk.meo.client.MorsEstOptioClient"
+		],
+		"fabric-datagen": [
+			"net.numericalk.meo.datagen.MEODataGen"
+		]
+	},
+	"mixins": [
+		"mors-est-optio.mixins.json",
+		{
+			"config": "mors-est-optio.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
