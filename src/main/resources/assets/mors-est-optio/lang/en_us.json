@@ -1,4 +1,6 @@
 {
   "attribute.numericalk.mors-est-optio.player_temperature_attribute": "Player Temperature Attribute",
-  "effect.mors-est-optio.freezing": "Freezing"
+  "effect.mors-est-optio.freezing": "Freezing",
+  "death.attack.overheating": "%1$s evaporated"
+
 }

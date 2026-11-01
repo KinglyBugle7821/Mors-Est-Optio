@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.numericalk.meo.MorsEstOptio;
+import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.entity.effects.FreezingEffect;
 import net.numericalk.meo.mechs.MEOTempMech;
 import net.numericalk.meo.mechs.MEOWaterCooling;
@@ -19,7 +20,11 @@ public class MEOTickEvent {
             MEOTempMech meoTempMech = new MEOTempMech(player);
             MEOWaterCooling.tick(player);
         }
-        if (player.hasEffect(MorsEstOptio.FREEZING)) applySlowness(player, player.getEffect(MorsEstOptio.FREEZING).getAmplifier());
+        var freezingEffect = player.getEffect(MEOEffects.FREEZING);
+
+        if (freezingEffect != null) {
+            applySlowness(player, freezingEffect.getAmplifier());
+        }
         else removeSlowness(player);
     }
     public static void applySlowness(LivingEntity entity, int amplifier) {

@@ -10,6 +10,7 @@ import net.minecraft.world.level.LightLayer;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.entity.effects.FreezingEffect;
 
 public class MEOTempMech {
@@ -104,7 +105,7 @@ public class MEOTempMech {
 
         float drinkingCooling =
                 MEOWaterCooling.getWaterCooling(player) > 0.0f
-                        ? -0.5f : 0.0f;
+                        ? -0.2f : 0.0f;
 
         float temperatureChange =
                 heatExchange
@@ -132,11 +133,12 @@ public class MEOTempMech {
     }
 
     private void playerHyperthermia(Player player) {
-
+        MobEffectInstance instance = new MobEffectInstance(MEOEffects.OVERHEATING, 3 * 20, 1, false, false, false);
+        player.addEffect(instance);
     }
 
     private void playerHypothermia(Player player) {
-        MobEffectInstance instance = new MobEffectInstance(MorsEstOptio.FREEZING, 5 * 20, 1, false, false, false);
+        MobEffectInstance instance = new MobEffectInstance(MEOEffects.FREEZING, 3 * 20, 1, false, false, false);
         player.addEffect(instance);
     }
 }

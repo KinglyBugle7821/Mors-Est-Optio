@@ -16,7 +16,7 @@ import net.numericalk.meo.MorsEstOptio;
 public class FreezingEffect extends MobEffect {
 
     public FreezingEffect() {
-        super(MobEffectCategory.HARMFUL, 0xd63fff);
+        super(MobEffectCategory.HARMFUL, 0x99ffff);
     }
     @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
@@ -34,5 +34,4 @@ public class FreezingEffect extends MobEffect {
 
         return super.applyEffectTick(level, entity, amplifier);
     }
-
 }
