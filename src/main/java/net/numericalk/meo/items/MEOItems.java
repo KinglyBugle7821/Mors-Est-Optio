@@ -10,6 +10,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.numericalk.meo.MorsEstOptio;
+import net.numericalk.meo.blocks.MEOBlocks;
 
 import java.util.function.Function;
 
@@ -34,13 +35,16 @@ public class MEOItems {
             .title(Component.translatable("creativeTab.meoCreativeTab"))
             .displayItems((params, output) -> {
                 output.accept(MEOItems.FLINT_FLAKE);
-
-
-
-//                ItemStack stack = new ItemStack(Items.SEA_PICKLE);
-//                stack.set(DataComponents.ITEM_NAME, Component.literal("Pickle Rick"));
-//                stack.set(DataComponents.LORE, new ItemLore(List.of(Component.literal("I'm pickle riiick!!"))));
-//                output.accept(stack);
+                output.accept(MEOBlocks.BREAKING_OAK_LOG);
+                output.accept(MEOBlocks.BREAKING_SPRUCE_LOG);
+                output.accept(MEOBlocks.BREAKING_BIRCH_LOG);
+                output.accept(MEOBlocks.BREAKING_JUNGLE_LOG);
+                output.accept(MEOBlocks.BREAKING_DARK_OAK_LOG);
+                output.accept(MEOBlocks.BREAKING_MANGROVE_LOG);
+                output.accept(MEOBlocks.BREAKING_CHERRY_LOG);
+                output.accept(MEOBlocks.BREAKING_PALE_OAK_LOG);
+                output.accept(MEOBlocks.BREAKING_WARPED_STEM);
+                output.accept(MEOBlocks.BREAKING_CRIMSON_STEM);
             })
             .build();
 

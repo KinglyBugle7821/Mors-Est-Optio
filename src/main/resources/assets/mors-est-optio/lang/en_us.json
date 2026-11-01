@@ -1,9 +1,22 @@
 {
+  "item.mors-est-optio.flint_flake": "Flint Flake",
+
+  "block.mors-est-optio.breaking_oak_log": "Breaking Oak Log",
+  "block.mors-est-optio.breaking_spruce_log": "Breaking Spruce Log",
+  "block.mors-est-optio.breaking_birch_log": "Breaking Birch Log",
+  "block.mors-est-optio.breaking_jungle_log": "Breaking Jungle Log",
+  "block.mors-est-optio.breaking_dark_oak_log": "Breaking Dark Oak Log",
+  "block.mors-est-optio.breaking_mangrove_log": "Breaking Mangrove Log",
+  "block.mors-est-optio.breaking_cherry_log": "Breaking Cherry Log",
+  "block.mors-est-optio.breaking_pale_oak_log": "Breaking Pale Oak Log",
+  "block.mors-est-optio.breaking_warped_stem": "Breaking Warped Stem",
+  "block.mors-est-optio.breaking_crimson_stem": "Breaking Crimson Stem",
+
   "attribute.numericalk.mors-est-optio.player_temperature_attribute": "Player Temperature Attribute",
   "effect.mors-est-optio.freezing": "Freezing",
   "death.attack.overheating": "%1$s evaporated",
 
-  "item.mors-est-optio.flint_flake": "Flint Flake",
+
 
   "creativeTab.meoCreativeTab": "MEO Creative Tab"
 

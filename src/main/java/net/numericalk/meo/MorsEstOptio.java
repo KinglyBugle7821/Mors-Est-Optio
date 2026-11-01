@@ -17,6 +17,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
+import net.numericalk.meo.blocks.MEOBlockIds;
+import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.entity.effects.FreezingEffect;
@@ -41,6 +43,7 @@ public class MorsEstOptio implements ModInitializer {
 		MEOAttachments.initialize();
 		MEOEffects.initialize();
 		MEOItems.initialize();
+		MEOBlocks.initialize();
 
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);
 

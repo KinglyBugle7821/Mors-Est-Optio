@@ -9,6 +9,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.numericalk.meo.MorsEstOptio;
+import net.numericalk.meo.blocks.MEOBlockItemIds;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -22,6 +23,28 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        builder(BlockTags.LOGS)
+                .add(MEOBlockItemIds.BREAKING_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_SPRUCE_LOG)
+                .add(MEOBlockItemIds.BREAKING_BIRCH_LOG)
+                .add(MEOBlockItemIds.BREAKING_JUNGLE_LOG)
+                .add(MEOBlockItemIds.BREAKING_ACACIA_LOG)
+                .add(MEOBlockItemIds.BREAKING_DARK_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_CHERRY_LOG)
+                .add(MEOBlockItemIds.BREAKING_PALE_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_WARPED_STEM)
+                .add(MEOBlockItemIds.BREAKING_CRIMSON_STEM);
+        builder(BlockTags.MINEABLE_WITH_AXE)
+                .add(MEOBlockItemIds.BREAKING_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_SPRUCE_LOG)
+                .add(MEOBlockItemIds.BREAKING_BIRCH_LOG)
+                .add(MEOBlockItemIds.BREAKING_JUNGLE_LOG)
+                .add(MEOBlockItemIds.BREAKING_ACACIA_LOG)
+                .add(MEOBlockItemIds.BREAKING_DARK_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_CHERRY_LOG)
+                .add(MEOBlockItemIds.BREAKING_PALE_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_WARPED_STEM)
+                .add(MEOBlockItemIds.BREAKING_CRIMSON_STEM);
 
         builder(WOOD_BLOCKS)
                 //LOGS

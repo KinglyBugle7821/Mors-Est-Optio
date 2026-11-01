@@ -9,6 +9,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.numericalk.meo.MorsEstOptio;
+import net.numericalk.meo.blocks.MEOBlockItemIds;
 import net.numericalk.meo.items.MEOItemIds;
 
 import java.util.concurrent.CompletableFuture;
@@ -28,6 +29,17 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+        builder(ItemTags.LOGS_THAT_BURN)
+                .add(MEOBlockItemIds.BREAKING_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_SPRUCE_LOG)
+                .add(MEOBlockItemIds.BREAKING_BIRCH_LOG)
+                .add(MEOBlockItemIds.BREAKING_JUNGLE_LOG)
+                .add(MEOBlockItemIds.BREAKING_ACACIA_LOG)
+                .add(MEOBlockItemIds.BREAKING_DARK_OAK_LOG)
+                .add(MEOBlockItemIds.BREAKING_CHERRY_LOG)
+                .add(MEOBlockItemIds.BREAKING_PALE_OAK_LOG);
+
         builder(CAP).add(ItemIds.LEATHER_HELMET);
         builder(TUNIC).add(ItemIds.LEATHER_CHESTPLATE);
         builder(PANTS).add(ItemIds.LEATHER_LEGGINGS);
