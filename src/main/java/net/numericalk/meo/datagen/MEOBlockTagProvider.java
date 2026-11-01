@@ -8,14 +8,13 @@ import net.minecraft.references.BlockItemIds;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.numericalk.meo.MorsEstOptio;
 
 import java.util.concurrent.CompletableFuture;
 
 public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
     public static final TagKey<Block> WOOD_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("wood_blocks"));
-    public static final TagKey<Block> STONE_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("wood_blocks"));
+
 
     public MEOBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
@@ -23,6 +22,7 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
         builder(WOOD_BLOCKS)
                 //LOGS
                 .add(BlockItemIds.OAK_LOG)

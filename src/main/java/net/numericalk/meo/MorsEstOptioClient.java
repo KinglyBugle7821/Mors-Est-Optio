@@ -1,10 +1,9 @@
-package net.numericalk.meo.client;
+package net.numericalk.meo;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
-import net.numericalk.meo.MorsEstOptio;
-import net.numericalk.meo.client.screen.MEOEffectGUI;
-import net.numericalk.meo.client.screen.MEOTempBarGUI;
+import net.numericalk.meo.screen.MEOEffectGUI;
+import net.numericalk.meo.screen.MEOTempBarGUI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

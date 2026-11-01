@@ -1,4 +1,4 @@
-package net.numericalk.meo.client.screen;
+package net.numericalk.meo.screen;
 
 import com.mojang.authlib.minecraft.client.MinecraftClient;
 import com.mojang.blaze3d.pipeline.RenderPipeline;

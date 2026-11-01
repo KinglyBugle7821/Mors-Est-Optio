@@ -19,7 +19,7 @@
 			"net.numericalk.meo.MorsEstOptio"
 		],
 		"client": [
-			"net.numericalk.meo.client.MorsEstOptioClient"
+			"net.numericalk.meo.MorsEstOptioClient"
 		],
 		"fabric-datagen": [
 			"net.numericalk.meo.datagen.MEODataGen"

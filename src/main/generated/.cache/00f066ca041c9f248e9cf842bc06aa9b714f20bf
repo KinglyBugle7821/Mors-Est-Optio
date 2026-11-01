@@ -1,5 +1,7 @@
 // 26.2	-999999999-01-01T00:00:00	Mors est Optio/Tags for minecraft:item
+9109e02b29de15c04899dbc6f291984e7a45162c data/minecraft/tags/item/axes.json
 ddcfeb03849cc33c36357875a58eeb08335f7c7f data/mors-est-optio/tags/item/boots.json
 e58f201917ec180b9568e369479a34a3f2677f50 data/mors-est-optio/tags/item/cap.json
 f34fd81a621e13bb0798c1c7abbc03776289b67c data/mors-est-optio/tags/item/pants.json
+4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/mors-est-optio/tags/item/repairs_flint_tool.json
 43bff3384448edd293013a35d17fccbe9fa1c477 data/mors-est-optio/tags/item/tunic.json

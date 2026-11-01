@@ -21,9 +21,14 @@ import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.entity.effects.FreezingEffect;
 import net.numericalk.meo.event.MEOTickEvent;
+import net.numericalk.meo.items.MEOItemIds;
+import net.numericalk.meo.items.MEOItems;
 import org.joml.Matrix3x2fStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static net.numericalk.meo.items.MEOItems.MEO_CREATIVE_TAB;
+import static net.numericalk.meo.items.MEOItems.MEO_CREATIVE_TAB_KEY;
 
 public class MorsEstOptio implements ModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
@@ -35,6 +40,9 @@ public class MorsEstOptio implements ModInitializer {
 
 		MEOAttachments.initialize();
 		MEOEffects.initialize();
+		MEOItems.initialize();
+
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);
 
 		LOGGER.info("Get Ready For A Whole New Experience");
 

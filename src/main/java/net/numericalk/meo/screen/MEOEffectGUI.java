@@ -1,4 +1,4 @@
-package net.numericalk.meo.client.screen;
+package net.numericalk.meo.screen;
 
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;

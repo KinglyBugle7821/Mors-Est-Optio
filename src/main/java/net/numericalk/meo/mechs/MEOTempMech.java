@@ -7,11 +7,9 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
-import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.entity.effects.FreezingEffect;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
