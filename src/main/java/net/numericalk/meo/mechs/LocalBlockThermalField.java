@@ -30,27 +30,34 @@ public final class LocalBlockThermalField {
     private static Map<Block, ThermalSource> createSources() {
         Map<Block, ThermalSource> sources = new HashMap<>();
 
-        register(sources, Blocks.TORCH, 2.0, 4);
-        register(sources, Blocks.WALL_TORCH, 2.0, 4);
+        register(sources, Blocks.TORCH, 4.0, 6);
+        register(sources, Blocks.WALL_TORCH, 4.0, 6);
 
-        register(sources, Blocks.SOUL_TORCH, 1.0, 4);
-        register(sources, Blocks.SOUL_WALL_TORCH, 1.0, 4);
+        register(sources, Blocks.SOUL_TORCH, 4.0, 6);
+        register(sources, Blocks.SOUL_WALL_TORCH, 4.0, 6);
+
+        register(sources, Blocks.LANTERN, 4.5, 4);
+        register(sources, Blocks.SOUL_LANTERN, 4.5, 4);
+
+        register(sources, Blocks.FIRE, 6, 4);
+        register(sources, Blocks.SOUL_FIRE, 6, 4);
 
         registerLit(sources, Blocks.CAMPFIRE, 10.0, 7);
         registerLit(sources, Blocks.SOUL_CAMPFIRE, 8.0, 7);
 
-        registerLit(sources, Blocks.FURNACE, 4.0, 5);
-        registerLit(sources, Blocks.BLAST_FURNACE, 5.0, 5);
-        registerLit(sources, Blocks.SMOKER, 4.0, 5);
+        registerLit(sources, Blocks.FURNACE, 6.0, 5);
+        registerLit(sources, Blocks.BLAST_FURNACE, 6.0, 5);
+        registerLit(sources, Blocks.SMOKER, 6.0, 5);
 
         register(sources, Blocks.LAVA, 15.0, 7);
         register(sources, Blocks.MAGMA_BLOCK, 4.0, 3);
 
-        register(sources, Blocks.SNOW_BLOCK, -2.0, 4);
-        register(sources, Blocks.ICE, -3.0, 4);
-        register(sources, Blocks.PACKED_ICE, -4.0, 5);
-        register(sources, Blocks.BLUE_ICE, -6.0, 6);
-        register(sources, Blocks.POWDER_SNOW, -6.0, 6);
+        register(sources, Blocks.SNOW_BLOCK, -2.0, 2);
+        register(sources, Blocks.SNOW, -1.0, 1);
+        register(sources, Blocks.ICE, -3.0, 3);
+        register(sources, Blocks.PACKED_ICE, -4.0, 4);
+        register(sources, Blocks.BLUE_ICE, -6.0, 5);
+        register(sources, Blocks.POWDER_SNOW, -6.0, 3);
 
         return Map.copyOf(sources);
     }

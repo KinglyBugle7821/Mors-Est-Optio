@@ -2,12 +2,15 @@ package net.numericalk.meo.mechs;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
+import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.entity.effects.FreezingEffect;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
@@ -101,7 +104,7 @@ public class MEOTempMech {
 
         float drinkingCooling =
                 MEOWaterCooling.getWaterCooling(player) > 0.0f
-                        ? -0.02f : 0.0f;
+                        ? -0.5f : 0.0f;
 
         float temperatureChange =
                 heatExchange
@@ -118,5 +121,22 @@ public class MEOTempMech {
                 MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT,
                 playerTemperature
         );
+
+        //HYPOTHERMIA/HYPERTHERMIA
+        if (playerTemperature <= 34){
+            playerHypothermia(player);
+        }
+        if (playerTemperature >= 40){
+            playerHyperthermia(player);
+        }
+    }
+
+    private void playerHyperthermia(Player player) {
+
+    }
+
+    private void playerHypothermia(Player player) {
+        MobEffectInstance instance = new MobEffectInstance(MorsEstOptio.FREEZING, 5 * 20, 1, false, false, false);
+        player.addEffect(instance);
     }
 }

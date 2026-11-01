@@ -19,4 +19,5 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+    public static void initialize(){}
 }

@@ -27,7 +27,7 @@ public abstract class WaterDrinkingCoolingMixin {
         if (level.isClientSide()) return;
 
         if (stack.is(Items.POTION)) {
-            MEOWaterCooling.addWaterCooling(player, 1f);
+            MEOWaterCooling.addWaterCooling(player, 2f);
         }
     }
 }

@@ -1,3 +1,4 @@
 {
-  "attribute.numericalk.mors-est-optio.player_temperature_attribute": "Player Temperature Attribute"
+  "attribute.numericalk.mors-est-optio.player_temperature_attribute": "Player Temperature Attribute",
+  "effect.mors-est-optio.freezing": "Freezing"
 }
