@@ -73,6 +73,35 @@ public class MEOModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(MEOItems.FLINT_FLAKE, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.WOOD_CHIP, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.OAK_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.SPRUCE_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.BIRCH_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.JUNGLE_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.ACACIA_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.DARK_OAK_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.MANGROVE_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.CHERRY_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.PALE_OAK_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.CRIMSON_BARK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.WARPED_BARK, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_INGOT, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_HELMET, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_CHESTPLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_LEGGINGS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_BOOTS, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateSpear(MEOItems.STEEL_SPEAR);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.STEEL_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+
     }
 
     @Override

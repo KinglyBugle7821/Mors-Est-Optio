@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mors-est-optio:steel"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "mors-est-optio:steel"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mors-est-optio:steel"
+      }
+    ]
+  }
+}

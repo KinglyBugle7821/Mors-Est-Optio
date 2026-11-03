@@ -17,6 +17,13 @@ import java.util.concurrent.CompletableFuture;
 public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     public static final TagKey<Item> REPAIRS_FLINT_TOOL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_flint_tool"));
+    public static final TagKey<Item> STEEL_MATERIAL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_steel_tool"));
+
+    public static final TagKey<Item> WOOD_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("wood_level_axe"));
+    public static final TagKey<Item> STONE_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("stone_level_axe"));
+    public static final TagKey<Item> IRON_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("iron_level_axe"));
+    public static final TagKey<Item> DIAMOND_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("diamond_level_axe"));
+    public static final TagKey<Item> NETHERITE_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("netherite_level_axe"));
 
     public static final TagKey<Item> CAP = TagKey.create(Registries.ITEM, MorsEstOptio.id("cap"));
     public static final TagKey<Item> TUNIC = TagKey.create(Registries.ITEM, MorsEstOptio.id("tunic"));
@@ -29,6 +36,43 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        builder(STEEL_MATERIAL)
+                .add(MEOItemIds.STEEL_INGOT);
+
+        builder(ItemTags.HEAD_ARMOR)
+                .add(MEOItemIds.STEEL_HELMET);
+        builder(ItemTags.CHEST_ARMOR)
+                .add(MEOItemIds.STEEL_CHESTPLATE);
+        builder(ItemTags.LEG_ARMOR)
+                .add(MEOItemIds.STEEL_LEGGINGS);
+        builder(ItemTags.FOOT_ARMOR)
+                .add(MEOItemIds.STEEL_BOOTS);
+
+        builder(ItemTags.SWORDS)
+                .add(MEOItemIds.STEEL_SWORD);
+        builder(ItemTags.PICKAXES)
+                .add(MEOItemIds.STEEL_PICKAXE);
+        builder(ItemTags.AXES)
+                .add(MEOItemIds.STEEL_AXE);
+        builder(ItemTags.SPEARS)
+                .add(MEOItemIds.STEEL_SPEAR);
+        builder(ItemTags.HOES)
+                .add(MEOItemIds.STEEL_HOE);
+        builder(ItemTags.SHOVELS)
+                .add(MEOItemIds.STEEL_SHOVEL);
+
+        builder(WOOD_LEVEL_AXE)
+                .add(MEOItemIds.FLINT_FLAKE)
+                .add(ItemIds.WOODEN_AXE)
+                .add(ItemIds.GOLDEN_AXE);
+        builder(STONE_LEVEL_AXE)
+                .add(ItemIds.STONE_AXE);
+        builder(IRON_LEVEL_AXE)
+                .add(ItemIds.IRON_AXE);
+        builder(DIAMOND_LEVEL_AXE)
+                .add(ItemIds.DIAMOND_AXE);
+        builder(NETHERITE_LEVEL_AXE)
+                .add(ItemIds.NETHERITE_AXE);
 
         builder(ItemTags.LOGS_THAT_BURN)
                 .add(MEOBlockItemIds.BREAKING_OAK_LOG)

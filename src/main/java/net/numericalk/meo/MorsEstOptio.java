@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -23,6 +24,7 @@ import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.entity.effects.FreezingEffect;
 import net.numericalk.meo.event.MEOTickEvent;
+import net.numericalk.meo.event.MEOWoodBreakingEvent;
 import net.numericalk.meo.items.MEOItemIds;
 import net.numericalk.meo.items.MEOItems;
 import org.joml.Matrix3x2fStack;
@@ -36,7 +38,9 @@ public class MorsEstOptio implements ModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
+	//TODO: ADD WOODEN CHIP
+	//TODO: ADD LOG BARK
+	//TODO: ADD WOODEN CHIP, STICK, AND LOG BARK TO THE LOG BREAKING
 	@Override
 	public void onInitialize() {
 
@@ -54,6 +58,7 @@ public class MorsEstOptio implements ModInitializer {
 				MEOTickEvent.serverTick(player);
 			}
 		});
+		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
 	}
 
 	public static Identifier id(String path) {
