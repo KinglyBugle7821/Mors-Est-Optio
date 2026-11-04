@@ -33,8 +33,7 @@ public class MEOTempMech {
 
         //Daytime
         int time = (int) (level.getOverworldClockTime() % 24000);
-        double timeTemperatureConstant = Math.cos(2 * Math.PI * (time - 6000) / 24000.0);
-        float daytimeAdjustment = (float) (5 * timeTemperatureConstant);
+        float daytimeAdjustment = (float) (5 * Math.cos(2 * Math.PI * (time - 6000) / 24000.0));
 
         //Shaded
         float skyLightLevel = level.getBrightness(LightLayer.SKY, playerPos);

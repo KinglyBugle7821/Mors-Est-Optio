@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "is_dry=false": {
+      "model": "mors-est-optio:block/grass_sheaf"
+    },
+    "is_dry=true": {
+      "model": "mors-est-optio:block/dried_grass_sheaf"
+    }
+  }
+}

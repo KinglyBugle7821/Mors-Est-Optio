@@ -12,8 +12,6 @@ import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.mechs.MEOTempMech;
 
 public class MEOTempBarGUI {
-    //TODO : ADD HYPOTHERMIA IF PLAYER TEMPERATURE DROPS BELOW 34C
-    //TODO : ADD
 
     private static final Identifier THERMOMETER = Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "textures/gui/sprites/hud/thermometer.png");
     private static final Identifier THERMOMETER_ARROW = Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "textures/gui/sprites/hud/thermometer_arrow.png");
@@ -58,8 +56,8 @@ public class MEOTempBarGUI {
                     8, 8,
                     8, 8
                     );
-            graphics.text(client.font, "Player Temperature: " + playerTemperature, 10, 10, 0xFFFFFFFF, false);
-            graphics.text(client.font, "GUI Temperature Offset: " + temperature, 10, 20, 0xFFFFFFFF, false);
+//            graphics.text(client.font, "Player Temperature: " + playerTemperature, 10, 10, 0xFFFFFFFF, false);
+//            graphics.text(client.font, "GUI Temperature Offset: " + temperature, 10, 20, 0xFFFFFFFF, false);
         };
     }
 }

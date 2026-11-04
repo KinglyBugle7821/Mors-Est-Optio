@@ -19,6 +19,18 @@ public class MEOItems {
             new Item.Properties()
     );
 
+    public static final Item DRIED_GRASS_SHEAF = register(
+            MEOItemIds.DRIED_GRASS_SHEAF,
+            Item::new,
+            new Item.Properties()
+    );
+
+    public static final Item TWINE = register(
+            MEOItemIds.TWINE,
+            Item::new,
+            new Item.Properties()
+    );
+
     public static final Item STEEL_INGOT = register(
             MEOItemIds.STEEL_INGOT,
             Item::new,
@@ -160,6 +172,11 @@ public class MEOItems {
             .icon(() -> new ItemStack(MEOItems.FLINT_FLAKE))
             .title(Component.translatable("creativeTab.meoCreativeTab"))
             .displayItems((params, output) -> {
+                output.accept(MEOBlocks.GRASS_SHEAF);
+                output.accept(MEOItems.DRIED_GRASS_SHEAF);
+
+                output.accept(MEOItems.TWINE);
+
                 output.accept(MEOItems.WOOD_CHIP);
 
                 output.accept(MEOItems.OAK_BARK);

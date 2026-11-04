@@ -12,16 +12,19 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
+import net.numericalk.meo.blocks.custom.GrassSheafBlock;
 
 import java.util.function.Function;
 
 public class MEOBlocks {
-//TODO: ADD LOG STAGES
-
-//logProperties(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD)
-//    public static BlockBehaviour.Properties logProperties(final MapColor topColor, final MapColor sideColor, final SoundType soundType) {
-//        return Properties.of().mapColor(yes).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(soundType).ignitedByLava();
-//    }
+    public static final Block GRASS_SHEAF = registerBlockItem(
+            MEOBlockItemIds.GRASS_SHEAF,
+            GrassSheafBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .instabreak()
+                    .sound(SoundType.GRASS).ignitedByLava()
+    );
     public static final Block BREAKING_OAK_LOG = registerBlockItem(
             MEOBlockItemIds.BREAKING_OAK_LOG,
             BreakingLogBlock::new, BlockBehaviour.Properties.of()

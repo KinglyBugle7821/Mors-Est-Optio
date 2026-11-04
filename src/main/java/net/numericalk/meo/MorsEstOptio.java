@@ -2,32 +2,20 @@ package net.numericalk.meo;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
-import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffect;
-import net.numericalk.meo.blocks.MEOBlockIds;
+import net.minecraft.world.level.block.Block;
+import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.entity.effects.FreezingEffect;
-import net.numericalk.meo.event.MEOTickEvent;
+import net.numericalk.meo.event.MEOTemperatureTickEvent;
 import net.numericalk.meo.event.MEOWoodBreakingEvent;
-import net.numericalk.meo.items.MEOItemIds;
 import net.numericalk.meo.items.MEOItems;
-import org.joml.Matrix3x2fStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,9 +26,14 @@ public class MorsEstOptio implements ModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	//TODO: ADD WOODEN CHIP
-	//TODO: ADD LOG BARK
-	//TODO: ADD WOODEN CHIP, STICK, AND LOG BARK TO THE LOG BREAKING
+	//TODO: ADD FIBERS
+	//TODO: ADD RECIPES
+
+	//TODO: MODIFY SOILS LOOT TABLE
+	//TODO: MODIFY LOGS LOOT TABLE
+	//TODO: MODIFY STONES LOOT TABLE
+
+	//TODO: ADD LOOT TABLES
 	@Override
 	public void onInitialize() {
 
@@ -48,6 +41,7 @@ public class MorsEstOptio implements ModInitializer {
 		MEOEffects.initialize();
 		MEOItems.initialize();
 		MEOBlocks.initialize();
+		MEOBlockEntities.initialize();
 
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);
 
@@ -55,7 +49,7 @@ public class MorsEstOptio implements ModInitializer {
 
 		ServerTickEvents.END_SERVER_TICK.register(minecraftServer -> {
 			for (ServerPlayer player : minecraftServer.getPlayerList().getPlayers()) {
-				MEOTickEvent.serverTick(player);
+				MEOTemperatureTickEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();

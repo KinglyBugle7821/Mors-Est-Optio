@@ -7,11 +7,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.entity.effects.FreezingEffect;
 import net.numericalk.meo.mechs.MEOTempMech;
 import net.numericalk.meo.mechs.MEOWaterCooling;
 
-public class MEOTickEvent {
+public class MEOTemperatureTickEvent {
     private static final Identifier FREEZING_ID =
             Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "freezing");
 

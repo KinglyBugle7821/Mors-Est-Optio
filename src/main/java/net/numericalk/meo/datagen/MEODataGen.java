@@ -12,6 +12,7 @@ public class MEODataGen implements DataGeneratorEntrypoint {
         pack.addProvider(MEOItemTagProvider::new);
         pack.addProvider(MEOBlockLootTableProvider::new);
         pack.addProvider(MEOModelProvider::new);
+        pack.addProvider(MEORecipeProvider::new);
 
     }
 }

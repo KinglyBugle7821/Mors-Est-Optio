@@ -76,6 +76,10 @@ public class MEOModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(MEOItems.WOOD_CHIP, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.DRIED_GRASS_SHEAF, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.TWINE, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(MEOItems.OAK_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.SPRUCE_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.BIRCH_BARK, ModelTemplates.FLAT_ITEM);

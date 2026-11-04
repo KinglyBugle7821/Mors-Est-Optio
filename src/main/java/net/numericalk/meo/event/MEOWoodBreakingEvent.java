@@ -38,17 +38,17 @@ public class MEOWoodBreakingEvent {
                     {Blocks.PALE_OAK_LOG, MEOBlocks.BREAKING_PALE_OAK_LOG, MEOItems.PALE_OAK_BARK},
                     {Blocks.WARPED_STEM, MEOBlocks.BREAKING_WARPED_STEM, MEOItems.WARPED_BARK},
                     {Blocks.CRIMSON_STEM, MEOBlocks.BREAKING_CRIMSON_STEM, MEOItems.CRIMSON_BARK},
-                    {Blocks.STRIPPED_OAK_LOG, MEOBlocks.BREAKING_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_SPRUCE_LOG, MEOBlocks.BREAKING_SPRUCE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_BIRCH_LOG, MEOBlocks.BREAKING_BIRCH_LOG, Items.AIR},
-                    {Blocks.STRIPPED_JUNGLE_LOG, MEOBlocks.BREAKING_JUNGLE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_ACACIA_LOG, MEOBlocks.BREAKING_ACACIA_LOG, Items.AIR},
-                    {Blocks.STRIPPED_DARK_OAK_LOG, MEOBlocks.BREAKING_DARK_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_MANGROVE_LOG, MEOBlocks.BREAKING_MANGROVE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_CHERRY_LOG, MEOBlocks.BREAKING_CHERRY_LOG, Items.AIR},
-                    {Blocks.STRIPPED_PALE_OAK_LOG, MEOBlocks.BREAKING_PALE_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_WARPED_STEM, MEOBlocks.BREAKING_WARPED_STEM, Items.AIR},
-                    {Blocks.STRIPPED_CRIMSON_STEM, MEOBlocks.BREAKING_CRIMSON_STEM, Items.AIR},
+                    {Blocks.STRIPPED_OAK_LOG, MEOBlocks.BREAKING_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_SPRUCE_LOG, MEOBlocks.BREAKING_SPRUCE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_BIRCH_LOG, MEOBlocks.BREAKING_BIRCH_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_JUNGLE_LOG, MEOBlocks.BREAKING_JUNGLE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_ACACIA_LOG, MEOBlocks.BREAKING_ACACIA_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_DARK_OAK_LOG, MEOBlocks.BREAKING_DARK_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_MANGROVE_LOG, MEOBlocks.BREAKING_MANGROVE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_CHERRY_LOG, MEOBlocks.BREAKING_CHERRY_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_PALE_OAK_LOG, MEOBlocks.BREAKING_PALE_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_WARPED_STEM, MEOBlocks.BREAKING_WARPED_STEM, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_CRIMSON_STEM, MEOBlocks.BREAKING_CRIMSON_STEM, MEOItems.WOOD_CHIP},
                     {Blocks.OAK_WOOD, MEOBlocks.BREAKING_OAK_LOG, MEOItems.OAK_BARK},
                     {Blocks.SPRUCE_WOOD, MEOBlocks.BREAKING_SPRUCE_LOG, MEOItems.SPRUCE_BARK},
                     {Blocks.BIRCH_WOOD, MEOBlocks.BREAKING_BIRCH_LOG, MEOItems.BIRCH_BARK},
@@ -60,17 +60,17 @@ public class MEOWoodBreakingEvent {
                     {Blocks.PALE_OAK_WOOD, MEOBlocks.BREAKING_PALE_OAK_LOG, MEOItems.PALE_OAK_BARK},
                     {Blocks.WARPED_HYPHAE, MEOBlocks.BREAKING_WARPED_STEM, MEOItems.WARPED_BARK},
                     {Blocks.CRIMSON_HYPHAE, MEOBlocks.BREAKING_CRIMSON_STEM, MEOItems.CRIMSON_BARK},
-                    {Blocks.STRIPPED_OAK_WOOD, MEOBlocks.BREAKING_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_SPRUCE_WOOD, MEOBlocks.BREAKING_SPRUCE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_BIRCH_WOOD, MEOBlocks.BREAKING_BIRCH_LOG, Items.AIR},
-                    {Blocks.STRIPPED_JUNGLE_WOOD, MEOBlocks.BREAKING_JUNGLE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_ACACIA_WOOD, MEOBlocks.BREAKING_ACACIA_LOG, Items.AIR},
-                    {Blocks.STRIPPED_DARK_OAK_WOOD, MEOBlocks.BREAKING_DARK_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_MANGROVE_WOOD, MEOBlocks.BREAKING_MANGROVE_LOG, Items.AIR},
-                    {Blocks.STRIPPED_CHERRY_WOOD, MEOBlocks.BREAKING_CHERRY_LOG, Items.AIR},
-                    {Blocks.STRIPPED_PALE_OAK_WOOD, MEOBlocks.BREAKING_PALE_OAK_LOG, Items.AIR},
-                    {Blocks.STRIPPED_WARPED_HYPHAE, MEOBlocks.BREAKING_WARPED_STEM, Items.AIR},
-                    {Blocks.STRIPPED_CRIMSON_HYPHAE, MEOBlocks.BREAKING_CRIMSON_STEM, Items.AIR}
+                    {Blocks.STRIPPED_OAK_WOOD, MEOBlocks.BREAKING_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_SPRUCE_WOOD, MEOBlocks.BREAKING_SPRUCE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_BIRCH_WOOD, MEOBlocks.BREAKING_BIRCH_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_JUNGLE_WOOD, MEOBlocks.BREAKING_JUNGLE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_ACACIA_WOOD, MEOBlocks.BREAKING_ACACIA_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_DARK_OAK_WOOD, MEOBlocks.BREAKING_DARK_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_MANGROVE_WOOD, MEOBlocks.BREAKING_MANGROVE_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_CHERRY_WOOD, MEOBlocks.BREAKING_CHERRY_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_PALE_OAK_WOOD, MEOBlocks.BREAKING_PALE_OAK_LOG, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_WARPED_HYPHAE, MEOBlocks.BREAKING_WARPED_STEM, MEOItems.WOOD_CHIP},
+                    {Blocks.STRIPPED_CRIMSON_HYPHAE, MEOBlocks.BREAKING_CRIMSON_STEM, MEOItems.WOOD_CHIP}
             };
             for (Object[] logArray : logDegradationMap) {
                 Block log = (Block) logArray[0];
@@ -148,7 +148,7 @@ public class MEOWoodBreakingEvent {
                     breakingLog.withPropertiesOf(state).setValue(
                             BreakingLogBlock.BREAKING_STAGE,
                             degradation),
-                    512);
+                    Block.UPDATE_ALL);
             player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         }
         return false;

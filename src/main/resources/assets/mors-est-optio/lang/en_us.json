@@ -1,4 +1,9 @@
 {
+  "block.mors-est-optio.grass_sheaf": "Grass Sheaf",
+  "item.mors-est-optio.dried_grass_sheaf": "Dried Grass Sheaf",
+
+  "item.mors-est-optio.twine": "Twine",
+
   "item.mors-est-optio.flint_flake": "Flint Flake",
 
   "item.mors-est-optio.steel_ingot": "Steel Ingot",

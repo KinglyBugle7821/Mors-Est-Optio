@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "mors-est-optio:grass_sheaf",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "is_dry": "true"
+                  }
+                }
+              ],
+              "name": "mors-est-optio:dried_grass_sheaf"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "mors-est-optio:grass_sheaf"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

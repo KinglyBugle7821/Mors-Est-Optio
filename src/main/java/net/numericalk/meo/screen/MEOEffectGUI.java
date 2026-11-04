@@ -27,14 +27,6 @@ public class MEOEffectGUI {
             float opacity = Math.max(Math.min(Math.max(playerTemperature-35, -1), 0), Math.min(playerTemperature, 40)-39);
             float absoluteOpacity = Math.abs(opacity);
 
-            //    public void blit(
-            //    final RenderPipeline renderPipeline,
-            //    final Identifier texture,
-            //    final int x, final int y,
-            //    final float u, final float v,
-            //    final int width, final int height,
-            //    final int textureWidth, final int textureHeight,
-            //    final int color) {
             graphics.blit(
                     RenderPipelines.GUI_TEXTURED,
                     opacity < 0 ? FREEZING_GUI : opacity > 0 ? OVERHEAT_GUI : NORMAL_GUI,

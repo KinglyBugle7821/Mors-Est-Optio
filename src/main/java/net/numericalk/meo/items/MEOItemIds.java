@@ -8,6 +8,10 @@ import net.numericalk.meo.MorsEstOptio;
 public class MEOItemIds {
     public static final ResourceKey<Item> WOOD_CHIP = create("wood_chip");
 
+    public static final ResourceKey<Item> TWINE = create("twine");
+
+    public static final ResourceKey<Item> DRIED_GRASS_SHEAF = create("dried_grass_sheaf");
+
     public static final ResourceKey<Item> OAK_BARK = create("oak_bark");
     public static final ResourceKey<Item> SPRUCE_BARK = create("spruce_bark");
     public static final ResourceKey<Item> BIRCH_BARK = create("birch_bark");

@@ -39,7 +39,6 @@ public class MEOBlockStateModelGenerator {
                 .put(TextureSlot.SIDE, new Material(ModelLocationUtils.getModelLocation(block)));
     }
 
-
     private static BlockModelDefinitionGenerator createBreakingLogBlockStates(Block breakingLogBlock, Identifier breakingLogStage1Id, Identifier breakingLogStage2Id, Identifier breakingLogStage3Id) {
         MultiVariant breakingLogStage1Model = BlockModelGenerators.plainVariant(breakingLogStage1Id);
         MultiVariant breakingLogStage2Model = BlockModelGenerators.plainVariant(breakingLogStage2Id);

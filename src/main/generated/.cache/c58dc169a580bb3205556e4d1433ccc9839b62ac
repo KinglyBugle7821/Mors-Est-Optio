@@ -24,6 +24,7 @@ a0f1c0d0e00a82e1174cc1c0c3a05146b3568a69 assets/mors-est-optio/items/breaking_wa
 61289d01f7bedb3579ff9db8a93cd1d84a66e532 assets/mors-est-optio/items/cherry_bark.json
 d9cf20e14119e0b43a2188923c982999d2d41e3a assets/mors-est-optio/items/crimson_bark.json
 f7637e491dd9c883e38bf155c01e38685f2d1470 assets/mors-est-optio/items/dark_oak_bark.json
+3f6857995ecf26e89108cd76bc7faea352e8c600 assets/mors-est-optio/items/dried_grass_sheaf.json
 43b588d85555e25de982e98e31a92202aa727868 assets/mors-est-optio/items/flint_flake.json
 a224e831156caed04d83b64ee45e48ed062a3b83 assets/mors-est-optio/items/jungle_bark.json
 f31b9728e6617f9ca57d4b938081f6a7774664ab assets/mors-est-optio/items/mangrove_bark.json
@@ -78,6 +79,7 @@ b893fec37dff776bdb42ac636c5d77a70fd3479d assets/mors-est-optio/models/block/brea
 39aea99321b66c898d91687523aee292ece2048c assets/mors-est-optio/models/item/cherry_bark.json
 e0c6d1fd0651cd5015647a952efd70ee8ee3f36b assets/mors-est-optio/models/item/crimson_bark.json
 56d507d4d7adb088872c85b11db75d8e2e6f7264 assets/mors-est-optio/models/item/dark_oak_bark.json
+7f854d91a0b71c9c6acc3953cd58b28448c4bdec assets/mors-est-optio/models/item/dried_grass_sheaf.json
 e276bfd74cae556170c02f15113653d6bbc77b33 assets/mors-est-optio/models/item/flint_flake.json
 da0480374cb008b8c12fb00c240d1ed6f6c44789 assets/mors-est-optio/models/item/jungle_bark.json
 54a44041406feefc27345b6a59fdf2f8e55ac274 assets/mors-est-optio/models/item/mangrove_bark.json
