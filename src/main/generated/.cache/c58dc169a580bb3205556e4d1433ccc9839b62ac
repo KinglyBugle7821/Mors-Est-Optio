@@ -9,6 +9,7 @@ e89c0e6d1740b2a01624855804f3250461004f88 assets/mors-est-optio/blockstates/break
 cf9cf1786f98d7db05c0bc365a715877607bd5f2 assets/mors-est-optio/blockstates/breaking_pale_oak_log.json
 db57327436e0c6492e9fa8bb8426d2c1a13dd005 assets/mors-est-optio/blockstates/breaking_spruce_log.json
 343f75841d9a51bb7358464dc45409141c7a4349 assets/mors-est-optio/blockstates/breaking_warped_stem.json
+aa8e4d8949e93708e3bd9ec0c88cedb330c3bb3b assets/mors-est-optio/blockstates/loose_dirt.json
 2dcd0f8f83012aaeee222a2a3850077ad8b29120 assets/mors-est-optio/items/acacia_bark.json
 5bab442c833f927812774a5439b6f1b9d1004393 assets/mors-est-optio/items/birch_bark.json
 8ad33d2dc9baa614271ff8b475e6af2b9aac4f89 assets/mors-est-optio/items/breaking_birch_log.json
@@ -30,6 +31,7 @@ ee3bcd65c1081e902d9dc5469faac87e50ecde09 assets/mors-est-optio/items/dirt_clump.
 43b588d85555e25de982e98e31a92202aa727868 assets/mors-est-optio/items/flint_flake.json
 860733f315d59c4b68f8056e583098e002f64986 assets/mors-est-optio/items/gravel_clump.json
 a224e831156caed04d83b64ee45e48ed062a3b83 assets/mors-est-optio/items/jungle_bark.json
+117afb2aab2ce681535a1a33d8e2cebe03dcd6f2 assets/mors-est-optio/items/loose_dirt.json
 f31b9728e6617f9ca57d4b938081f6a7774664ab assets/mors-est-optio/items/mangrove_bark.json
 b29bfe441a71c495ad439832400a111db5218902 assets/mors-est-optio/items/mud_clump.json
 e4dba7bddeef0638afb27a8c49abced2844867df assets/mors-est-optio/items/oak_bark.json
@@ -82,6 +84,7 @@ b17019c16dbca42fdac6d4b5a5d38326456d0f91 assets/mors-est-optio/models/block/brea
 9371c64a239add3dc23e31c8c45ec6e031aa6267 assets/mors-est-optio/models/block/breaking_warped_stem_stage_1.json
 e9c3414898b044d755b3db86a72fb6077e653004 assets/mors-est-optio/models/block/breaking_warped_stem_stage_2.json
 b893fec37dff776bdb42ac636c5d77a70fd3479d assets/mors-est-optio/models/block/breaking_warped_stem_stage_3.json
+24f9699c0c70f2478794dbeddc2d3551f94c9902 assets/mors-est-optio/models/block/loose_dirt.json
 3f2656101af383b9f44dc061aa707ffb9487a86e assets/mors-est-optio/models/item/acacia_bark.json
 130b72a46082cf1ad36c668196cea9185fd06f48 assets/mors-est-optio/models/item/birch_bark.json
 39aea99321b66c898d91687523aee292ece2048c assets/mors-est-optio/models/item/cherry_bark.json

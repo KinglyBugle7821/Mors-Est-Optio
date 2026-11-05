@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mors-est-optio:gravel_clump",
+    "mors-est-optio:gravel_clump",
+    "mors-est-optio:gravel_clump",
+    "mors-est-optio:gravel_clump"
+  ],
+  "result": {
+    "id": "minecraft:gravel"
+  }
+}

@@ -18,6 +18,8 @@ public class MEOModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
+        blockModelGenerators.createTrivialCube(MEOBlocks.LOOSE_DIRT);
+
         MEOBlockStateModelGenerator.registerBreakingLog(
                 blockModelGenerators,
                 MEOBlocks.BREAKING_OAK_LOG,

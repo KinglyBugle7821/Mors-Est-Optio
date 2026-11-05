@@ -2,6 +2,7 @@ package net.numericalk.meo.event;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
+import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.items.MEOItems;
 
 public class MEOWoodBreakingEvent {
@@ -93,8 +95,7 @@ public class MEOWoodBreakingEvent {
                             WOOD_DEGRADATION_AMOUNT,
                             state, log, breakingLog, level, pos, player, logBark
                     );
-                }
-                if (player.isHolding(Items.COPPER_AXE)) {
+                } else if (player.isHolding(Items.COPPER_AXE)) {
                     if (state.is(log)) {
                         spawnItem(logBark, 1, level, pos);
                         spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
@@ -112,8 +113,7 @@ public class MEOWoodBreakingEvent {
                             COPPER_DEGRADATION_AMOUNT,
                             state, log, breakingLog, level, pos, player, logBark
                     );
-                }
-                if (player.isHolding(Items.IRON_AXE)) {
+                } else if (player.isHolding(Items.IRON_AXE)) {
                     if (state.is(log)) {
                         spawnItem(logBark, 1, level, pos);
                         spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
@@ -132,8 +132,12 @@ public class MEOWoodBreakingEvent {
                             IRON_DEGRADATION_AMOUNT,
                             state, log, breakingLog, level, pos, player, logBark
                     );
+                } else {
+                    return degradeLog(
+                            WOOD_DEGRADATION_AMOUNT,
+                            state, log, breakingLog, level, pos, player, logBark
+                    );
                 }
-                return true;
             }
             return true;
         });
@@ -149,7 +153,7 @@ public class MEOWoodBreakingEvent {
                             BreakingLogBlock.BREAKING_STAGE,
                             degradation),
                     Block.UPDATE_ALL);
-            player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+            if (!player.getMainHandItem().isEmpty()) player.getMainHandItem().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         }
         return false;
     }

@@ -10,6 +10,9 @@ public class MEOItemIds {
 
     public static final ResourceKey<Item> TWINE = create("twine");
 
+    public static final ResourceKey<Item> PEBBLE = create("pebble");
+    public static final ResourceKey<Item> ROCK = create("rock");
+
     public static final ResourceKey<Item> CLAY_CLUMP = create("clay_clump");
     public static final ResourceKey<Item> DIRT_CLUMP = create("dirt_clump");
     public static final ResourceKey<Item> GRAVEL_CLUMP = create("gravel_clump");

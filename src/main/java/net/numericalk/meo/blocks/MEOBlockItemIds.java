@@ -7,6 +7,8 @@ import net.minecraft.world.level.block.Block;
 import net.numericalk.meo.MorsEstOptio;
 
 public class MEOBlockItemIds {
+    public static final BlockItemId LOOSE_DIRT = create("loose_dirt");
+
     public static final BlockItemId GRASS_SHEAF = create("grass_sheaf");
 
     public static final BlockItemId BREAKING_OAK_LOG = create("breaking_oak_log");

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mors-est-optio:mud_clump",
+    "mors-est-optio:mud_clump",
+    "mors-est-optio:mud_clump",
+    "mors-est-optio:mud_clump"
+  ],
+  "result": {
+    "id": "minecraft:mud"
+  }
+}

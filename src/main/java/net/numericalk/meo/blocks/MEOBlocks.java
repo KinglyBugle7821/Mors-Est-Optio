@@ -13,18 +13,29 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
 import net.numericalk.meo.blocks.custom.GrassSheafBlock;
+import net.numericalk.meo.blocks.custom.MEOLooseBlock;
 
 import java.util.function.Function;
 
 public class MEOBlocks {
+    public static final Block LOOSE_DIRT = registerBlockItem(
+            MEOBlockItemIds.LOOSE_DIRT,
+            MEOLooseBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DIRT)
+                    .strength(1.5f, 0.5f)
+                    .sound(SoundType.GRAVEL)
+    );
+
     public static final Block GRASS_SHEAF = registerBlockItem(
             MEOBlockItemIds.GRASS_SHEAF,
             GrassSheafBlock::new,
             BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BROWN)
+                    .mapColor(MapColor.COLOR_GREEN)
                     .instabreak()
                     .sound(SoundType.GRASS).ignitedByLava()
     );
+
     public static final Block BREAKING_OAK_LOG = registerBlockItem(
             MEOBlockItemIds.BREAKING_OAK_LOG,
             BreakingLogBlock::new, BlockBehaviour.Properties.of()

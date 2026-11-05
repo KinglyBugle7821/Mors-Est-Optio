@@ -9,6 +9,8 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.items.MEOItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -36,6 +38,31 @@ public class MEORecipeProvider extends FabricRecipeProvider {
                 shapeless(RecipeCategory.MISC, Items.FLINT)
                         .requires(MEOItems.GRAVEL_CLUMP, 2)
                         .unlockedBy(getHasName(MEOItems.GRAVEL_CLUMP), has(MEOItems.GRAVEL_CLUMP))
+                        .save(output);
+
+                shapeless(RecipeCategory.MISC, Items.CLAY_BALL, 2)
+                        .requires(MEOItems.CLAY_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.CLAY_CLUMP), has(MEOItems.CLAY_CLUMP))
+                        .save(output);
+                shapeless(RecipeCategory.MISC, MEOBlocks.LOOSE_DIRT)
+                        .requires(MEOItems.DIRT_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.DIRT_CLUMP), has(MEOItems.DIRT_CLUMP))
+                        .save(output);
+                shapeless(RecipeCategory.MISC, Blocks.GRAVEL)
+                        .requires(MEOItems.GRAVEL_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.GRAVEL_CLUMP), has(MEOItems.GRAVEL_CLUMP))
+                        .save(output);
+                shapeless(RecipeCategory.MISC, Blocks.MUD)
+                        .requires(MEOItems.MUD_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.MUD_CLUMP), has(MEOItems.MUD_CLUMP))
+                        .save(output);
+                shapeless(RecipeCategory.MISC, Blocks.SAND)
+                        .requires(MEOItems.SAND_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.SAND_CLUMP), has(MEOItems.SAND_CLUMP))
+                        .save(output);
+                shapeless(RecipeCategory.MISC, Blocks.RED_SAND)
+                        .requires(MEOItems.RED_SAND_CLUMP, 4)
+                        .unlockedBy(getHasName(MEOItems.RED_SAND_CLUMP), has(MEOItems.RED_SAND_CLUMP))
                         .save(output);
             }
         };

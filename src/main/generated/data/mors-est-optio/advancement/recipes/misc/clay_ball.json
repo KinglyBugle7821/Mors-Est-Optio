@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clay_clump": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mors-est-optio:clay_clump"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mors-est-optio:clay_ball"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_clay_clump"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mors-est-optio:clay_ball"
+    ]
+  }
+}

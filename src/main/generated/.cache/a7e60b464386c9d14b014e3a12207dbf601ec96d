@@ -1,7 +1,19 @@
 // 26.2	-999999999-01-01T00:00:00	Mors est Optio/MEORecipeProvider
+1cecfeeb20bd6d5aa998bed7997f0f7d0a3ad639 data/mors-est-optio/advancement/recipes/misc/clay_ball.json
 1ab737260b95afbf7b3b0c292137951426b2eed9 data/mors-est-optio/advancement/recipes/misc/flint.json
 5b9110e37e82215a5d136801a344d18b13a0641a data/mors-est-optio/advancement/recipes/misc/flint_flake.json
+52b6bb06a9fa9014ccd4289f80df877033b21153 data/mors-est-optio/advancement/recipes/misc/gravel.json
+c67770b6abb1fe7ad845c26ba70ae61af7afe20c data/mors-est-optio/advancement/recipes/misc/loose_dirt.json
+a65ab727c6bc902ff84e0c9c38396bb263acb56a data/mors-est-optio/advancement/recipes/misc/mud.json
+58aae553bf15c9c401384d1ad3af63ad16746d4e data/mors-est-optio/advancement/recipes/misc/red_sand.json
+677140a721bbba631acf0c35a0f7acdb358eeac3 data/mors-est-optio/advancement/recipes/misc/sand.json
 4dc1731074a624736c071c861b2e33e2b193a540 data/mors-est-optio/advancement/recipes/misc/twine.json
+15605dfee4729d8560538162bc44ea8960a2a261 data/mors-est-optio/recipe/clay_ball.json
 2a6a32426187e323c4f7ea610951c4e6eb1fd8f3 data/mors-est-optio/recipe/flint.json
 4a4a2f9cdd4b2dee06c679e7391c11509a638708 data/mors-est-optio/recipe/flint_flake.json
+d6624390b42d3d5de32ac03f16f9d53aeb6ceb70 data/mors-est-optio/recipe/gravel.json
+8ce0678982327549a0b01499efa6efa8f57c70ef data/mors-est-optio/recipe/loose_dirt.json
+22a5e1b09ca0ce237303b3269b64c847d85dba8a data/mors-est-optio/recipe/mud.json
+80ee61783c963c61af1c995773ab59bdad52e9dc data/mors-est-optio/recipe/red_sand.json
+6638100d97048ce1912467fc482f0c91801e108f data/mors-est-optio/recipe/sand.json
 d06fa5fcf87f614d6aa65e2b47bac167537cccff data/mors-est-optio/recipe/twine.json

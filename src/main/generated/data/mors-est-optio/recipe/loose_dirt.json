@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mors-est-optio:dirt_clump",
+    "mors-est-optio:dirt_clump",
+    "mors-est-optio:dirt_clump",
+    "mors-est-optio:dirt_clump"
+  ],
+  "result": {
+    "id": "mors-est-optio:loose_dirt"
+  }
+}

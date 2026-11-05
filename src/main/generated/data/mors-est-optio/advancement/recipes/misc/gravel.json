@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gravel_clump": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mors-est-optio:gravel_clump"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mors-est-optio:gravel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gravel_clump"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mors-est-optio:gravel"
+    ]
+  }
+}
