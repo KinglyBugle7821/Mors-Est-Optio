@@ -1,3 +1,16 @@
 // 26.2	-999999999-01-01T00:00:00	Mors est Optio/Block Loot Tables
+0c2ef57713c97aaf045d69fb0556338c8f8e4e76 data/minecraft/loot_table/blocks/coarse_dirt.json
+abe3f7b1d7ebc6650b3e559fd28c4661e70d95d5 data/minecraft/loot_table/blocks/dirt.json
+53468a475556ad20098a26d8319fb4241b952b1b data/minecraft/loot_table/blocks/dirt_path.json
+ac68b57e27d5e9ae6f97fa4810a1fc76d7839eef data/minecraft/loot_table/blocks/grass_block.json
+40ec6e5761ee960a80a85f027accd97e8f0a9d54 data/minecraft/loot_table/blocks/gravel.json
+cf112af5ffd090d8061d2ea687eb94891c5a8302 data/minecraft/loot_table/blocks/mud.json
+290cc5d25d752a91a00b222c107533674bf8e8cd data/minecraft/loot_table/blocks/mycelium.json
+d24198c88e554669d6528252fd6fadeccd4f2c3d data/minecraft/loot_table/blocks/podzol.json
+e081b54a3dbe6e0599fc15afe1ee8428f82ba879 data/minecraft/loot_table/blocks/red_sand.json
+5462dc8c397487928588d80d1d1a19e3fc88cebd data/minecraft/loot_table/blocks/rooted_dirt.json
+304b7b4832899b47363728d95b16ae77a06db197 data/minecraft/loot_table/blocks/sand.json
 59f9e2d6c0ff6e5a9faf326a5edd48ddfeef83fd data/minecraft/loot_table/blocks/short_grass.json
+10c36938631896e3329aa37b31d266d254f7f460 data/minecraft/loot_table/blocks/soul_sand.json
+08a2e74ebd140d189b24471dea49f3a307ef583d data/minecraft/loot_table/blocks/soul_soil.json
 7be487eb619383807af72778fee9c1637d7d1cb7 data/mors-est-optio/loot_table/blocks/grass_sheaf.json

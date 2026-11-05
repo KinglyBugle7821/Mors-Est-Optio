@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dried_grass_sheaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mors-est-optio:dried_grass_sheaf"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mors-est-optio:twine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dried_grass_sheaf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mors-est-optio:twine"
+    ]
+  }
+}

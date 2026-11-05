@@ -73,7 +73,7 @@ public class SlowBlockBreakingMixin {
 			}
 		}
 		if (isSoil) {
-			properties.strength(SOIL_HARDNESS, SOIL_RESISTANCE).requiresCorrectToolForDrops();
+			properties.strength(SOIL_HARDNESS, SOIL_RESISTANCE);
 		}
 	}
 }

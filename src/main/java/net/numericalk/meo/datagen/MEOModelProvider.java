@@ -80,6 +80,14 @@ public class MEOModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(MEOItems.TWINE, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.CLAY_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.DIRT_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.GRAVEL_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.MUD_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.SAND_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.RED_SAND_CLUMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.SOUL_CLUMP, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(MEOItems.OAK_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.SPRUCE_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.BIRCH_BARK, ModelTemplates.FLAT_ITEM);

@@ -101,6 +101,42 @@ public class MEOItems {
             new Item.Properties()
     );
 
+    public static final Item CLAY_CLUMP = register(
+            MEOItemIds.CLAY_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item DIRT_CLUMP = register(
+            MEOItemIds.DIRT_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item GRAVEL_CLUMP = register(
+            MEOItemIds.GRAVEL_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item MUD_CLUMP = register(
+            MEOItemIds.MUD_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item SAND_CLUMP = register(
+            MEOItemIds.SAND_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item RED_SAND_CLUMP = register(
+            MEOItemIds.RED_SAND_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item SOUL_CLUMP = register(
+            MEOItemIds.SOUL_CLUMP,
+            Item::new,
+            new Item.Properties()
+    );
+
     public static final Item OAK_BARK = register(
             MEOItemIds.OAK_BARK,
             Item::new,
@@ -176,6 +212,14 @@ public class MEOItems {
                 output.accept(MEOItems.DRIED_GRASS_SHEAF);
 
                 output.accept(MEOItems.TWINE);
+
+                output.accept(MEOItems.CLAY_CLUMP);
+                output.accept(MEOItems.DIRT_CLUMP);
+                output.accept(MEOItems.GRAVEL_CLUMP);
+                output.accept(MEOItems.MUD_CLUMP);
+                output.accept(MEOItems.SAND_CLUMP);
+                output.accept(MEOItems.RED_SAND_CLUMP);
+                output.accept(MEOItems.SOUL_CLUMP);
 
                 output.accept(MEOItems.WOOD_CHIP);
 

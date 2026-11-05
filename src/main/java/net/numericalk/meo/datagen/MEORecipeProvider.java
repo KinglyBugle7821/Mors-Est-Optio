@@ -33,11 +33,13 @@ public class MEORecipeProvider extends FabricRecipeProvider {
                         .requires(MEOItems.DRIED_GRASS_SHEAF, 2)
                         .unlockedBy(getHasName(MEOItems.DRIED_GRASS_SHEAF), has(MEOItems.DRIED_GRASS_SHEAF))
                         .save(output);
-
+                shapeless(RecipeCategory.MISC, Items.FLINT)
+                        .requires(MEOItems.GRAVEL_CLUMP, 2)
+                        .unlockedBy(getHasName(MEOItems.GRAVEL_CLUMP), has(MEOItems.GRAVEL_CLUMP))
+                        .save(output);
             }
         };
     }
-
     @Override
     public String getName() {
         return "MEORecipeProvider";

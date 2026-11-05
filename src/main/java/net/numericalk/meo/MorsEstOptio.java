@@ -26,10 +26,6 @@ public class MorsEstOptio implements ModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	//TODO: ADD FIBERS
-	//TODO: ADD RECIPES
-
-	//TODO: MODIFY SOILS LOOT TABLE
 	//TODO: MODIFY LOGS LOOT TABLE
 	//TODO: MODIFY STONES LOOT TABLE
 

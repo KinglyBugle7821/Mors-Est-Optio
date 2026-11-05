@@ -10,6 +10,14 @@ public class MEOItemIds {
 
     public static final ResourceKey<Item> TWINE = create("twine");
 
+    public static final ResourceKey<Item> CLAY_CLUMP = create("clay_clump");
+    public static final ResourceKey<Item> DIRT_CLUMP = create("dirt_clump");
+    public static final ResourceKey<Item> GRAVEL_CLUMP = create("gravel_clump");
+    public static final ResourceKey<Item> MUD_CLUMP = create("mud_clump");
+    public static final ResourceKey<Item> SAND_CLUMP = create("sand_clump");
+    public static final ResourceKey<Item> RED_SAND_CLUMP = create("red_sand_clump");
+    public static final ResourceKey<Item> SOUL_CLUMP = create("soul_clump");
+
     public static final ResourceKey<Item> DRIED_GRASS_SHEAF = create("dried_grass_sheaf");
 
     public static final ResourceKey<Item> OAK_BARK = create("oak_bark");

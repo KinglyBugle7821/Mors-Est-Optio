@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mors-est-optio:dried_grass_sheaf",
+    "mors-est-optio:dried_grass_sheaf"
+  ],
+  "result": {
+    "id": "mors-est-optio:twine"
+  }
+}
