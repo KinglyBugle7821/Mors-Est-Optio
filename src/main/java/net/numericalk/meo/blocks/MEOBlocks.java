@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
+import net.numericalk.meo.blocks.custom.BreakingStoneBlock;
 import net.numericalk.meo.blocks.custom.GrassSheafBlock;
 import net.numericalk.meo.blocks.custom.MEOLooseBlock;
 
@@ -34,6 +35,23 @@ public class MEOBlocks {
                     .mapColor(MapColor.COLOR_GREEN)
                     .instabreak()
                     .sound(SoundType.GRASS).ignitedByLava()
+    );
+
+    public static final Block BREAKING_STONE = registerBlockItem(
+            MEOBlockItemIds.BREAKING_STONE,
+            BreakingStoneBlock::new, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(7.0F, 6.0F)
+    );
+    public static final Block BREAKING_DEEPSLATE = registerBlockItem(
+            MEOBlockItemIds.BREAKING_DEEPSLATE,
+            BreakingStoneBlock::new, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(9.0F, 6.0F)
     );
 
     public static final Block BREAKING_OAK_LOG = registerBlockItem(

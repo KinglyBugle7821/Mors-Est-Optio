@@ -93,7 +93,7 @@ public class MEOWoodBreakingEvent {
 
                     return degradeLog(
                             WOOD_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player, logBark
+                            state, log, breakingLog, level, pos, player
                     );
                 } else if (player.isHolding(Items.COPPER_AXE)) {
                     if (state.is(log)) {
@@ -111,7 +111,7 @@ public class MEOWoodBreakingEvent {
 
                     return degradeLog(
                             COPPER_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player, logBark
+                            state, log, breakingLog, level, pos, player
                     );
                 } else if (player.isHolding(Items.IRON_AXE)) {
                     if (state.is(log)) {
@@ -130,19 +130,19 @@ public class MEOWoodBreakingEvent {
 
                     return degradeLog(
                             IRON_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player, logBark
+                            state, log, breakingLog, level, pos, player
                     );
                 } else {
                     return degradeLog(
                             WOOD_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player, logBark
+                            state, log, breakingLog, level, pos, player
                     );
                 }
             }
             return true;
         });
     }
-    public boolean degradeLog(int degradationAmount, BlockState state, Block log, Block breakingLog, Level level, BlockPos pos, Player player, Item logBark){
+    public boolean degradeLog(int degradationAmount, BlockState state, Block log, Block breakingLog, Level level, BlockPos pos, Player player){
         int degradation = state.is(log) ? degradationAmount :
                 state.is(breakingLog) ? state.getValue(BreakingLogBlock.BREAKING_STAGE) + degradationAmount : 0;
         if (degradation >= 4) return true;

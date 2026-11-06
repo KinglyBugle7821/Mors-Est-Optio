@@ -15,12 +15,23 @@ import java.util.function.Function;
 public class MEOItems {
     public static final Item FLINT_FLAKE = register(
             MEOItemIds.FLINT_FLAKE,
-            settings -> new AxeItem(MEOToolMaterials.FLINT_TOOL_MATERIAL, 0.0F, -3.0F, settings),
-            new Item.Properties()
+            Item::new,
+            new Item.Properties().axe(MEOToolMaterials.FLINT_TOOL_MATERIAL, 0.0F, -3F)
     );
 
     public static final Item DRIED_GRASS_SHEAF = register(
             MEOItemIds.DRIED_GRASS_SHEAF,
+            Item::new,
+            new Item.Properties()
+    );
+
+    public static final Item PEBBLE = register(
+            MEOItemIds.PEBBLE,
+            Item::new,
+            new Item.Properties()
+    );
+    public static final Item ROCK = register(
+            MEOItemIds.ROCK,
             Item::new,
             new Item.Properties()
     );
@@ -35,6 +46,17 @@ public class MEOItems {
             MEOItemIds.STEEL_INGOT,
             Item::new,
             new Item.Properties()
+    );
+
+    public static final Item FLINT_HATCHET = register(
+            MEOItemIds.FLINT_HATCHET,
+            Item::new,
+            new Item.Properties().axe(MEOToolMaterials.REINFORCED_FLINT_TOOL_MATERIAL, 1.0f, -3f)
+    );
+    public static final Item FLINT_PICK = register(
+            MEOItemIds.FLINT_PICK,
+            Item::new,
+            new Item.Properties().pickaxe(MEOToolMaterials.REINFORCED_FLINT_TOOL_MATERIAL, 1.0f, -3f)
     );
 
     public static final Item STEEL_SWORD = register(
@@ -211,6 +233,8 @@ public class MEOItems {
                 output.accept(MEOBlocks.GRASS_SHEAF);
                 output.accept(MEOItems.DRIED_GRASS_SHEAF);
 
+                output.accept(MEOBlocks.LOOSE_DIRT);
+
                 output.accept(MEOItems.TWINE);
 
                 output.accept(MEOItems.CLAY_CLUMP);
@@ -235,7 +259,14 @@ public class MEOItems {
                 output.accept(MEOItems.CRIMSON_BARK);
                 output.accept(MEOItems.WARPED_BARK);
 
+                output.accept(MEOItems.FLINT_HATCHET);
+                output.accept(MEOItems.FLINT_PICK);
+
                 output.accept(MEOItems.FLINT_FLAKE);
+
+                output.accept(MEOBlocks.BREAKING_STONE);
+                output.accept(MEOBlocks.BREAKING_DEEPSLATE);
+
                 output.accept(MEOBlocks.BREAKING_OAK_LOG);
                 output.accept(MEOBlocks.BREAKING_SPRUCE_LOG);
                 output.accept(MEOBlocks.BREAKING_BIRCH_LOG);

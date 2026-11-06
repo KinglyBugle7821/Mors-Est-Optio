@@ -13,6 +13,7 @@ import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
+import net.numericalk.meo.event.MEOStoneBreakingEvent;
 import net.numericalk.meo.event.MEOTemperatureTickEvent;
 import net.numericalk.meo.event.MEOWoodBreakingEvent;
 import net.numericalk.meo.items.MEOItems;
@@ -27,7 +28,9 @@ public class MorsEstOptio implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	//TODO: MODIFY STONES LOOT TABLE
-	//TODO: ADD STONE STAGES
+
+	//TODO: ADD NUTRITION MECHANIC
+	//TODO: ADD INJURY MECHANIC
 
 	//TODO: ADD LOOT TABLES
 	@Override
@@ -49,6 +52,7 @@ public class MorsEstOptio implements ModInitializer {
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
+		MEOStoneBreakingEvent stoneBreakingEvent = new MEOStoneBreakingEvent();
 	}
 
 	public static Identifier id(String path) {

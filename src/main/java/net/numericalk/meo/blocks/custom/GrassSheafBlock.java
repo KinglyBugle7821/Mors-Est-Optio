@@ -4,9 +4,12 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -48,6 +51,30 @@ public class GrassSheafBlock extends BaseEntityBlock {
         }
     }
 
+    protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
+        return state.is(BlockTags.SUPPORTS_VEGETATION);
+    }
+    @Override
+    protected BlockState updateShape(
+            final BlockState state,
+            final LevelReader level,
+            final ScheduledTickAccess ticks,
+            final BlockPos pos,
+            final Direction directionToNeighbour,
+            final BlockPos neighbourPos,
+            final BlockState neighbourState,
+            final RandomSource random
+    ) {
+        return !state.canSurvive(level, pos)
+                ? Blocks.AIR.defaultBlockState()
+                : super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
+    }
+
+    @Override
+    protected boolean canSurvive(final BlockState state, final LevelReader level, final BlockPos pos) {
+        BlockPos below = pos.below();
+        return this.mayPlaceOn(level.getBlockState(below), level, below);
+    }
     @Override
     protected VoxelShape getBlockSupportShape(BlockState state, BlockGetter level, BlockPos pos) {
         return VOXEL_SHAPE;

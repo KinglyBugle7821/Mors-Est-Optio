@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mors-est-optio:block/breaking_deepslate_stage_2"
+  }
+}

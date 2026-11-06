@@ -8,6 +8,7 @@ import net.minecraft.references.BlockItemIds;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlockItemIds;
 
@@ -15,6 +16,9 @@ import java.util.concurrent.CompletableFuture;
 
 public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
     public static final TagKey<Block> WOOD_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("wood_blocks"));
+    public static final TagKey<Block> STONE_ORES = TagKey.create(Registries.BLOCK, MorsEstOptio.id("stone_ores"));
+    public static final TagKey<Block> DEEPSLATE_ORES = TagKey.create(Registries.BLOCK, MorsEstOptio.id("deepslate_ores"));
+    public static final TagKey<Block> NETHER_ORES = TagKey.create(Registries.BLOCK, MorsEstOptio.id("nether_ores"));
 
 
     public MEOBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
@@ -23,6 +27,28 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        builder(STONE_ORES)
+                .add(BlockItemIds.COAL_ORE)
+                .add(BlockItemIds.COPPER_ORE)
+                .add(BlockItemIds.DIAMOND_ORE)
+                .add(BlockItemIds.EMERALD_ORE)
+                .add(BlockItemIds.GOLD_ORE)
+                .add(BlockItemIds.IRON_ORE)
+                .add(BlockItemIds.LAPIS_ORE)
+                .add(BlockItemIds.REDSTONE_ORE);
+        builder(DEEPSLATE_ORES)
+                .add(BlockItemIds.DEEPSLATE_COAL_ORE)
+                .add(BlockItemIds.DEEPSLATE_COPPER_ORE)
+                .add(BlockItemIds.DEEPSLATE_DIAMOND_ORE)
+                .add(BlockItemIds.DEEPSLATE_EMERALD_ORE)
+                .add(BlockItemIds.DEEPSLATE_GOLD_ORE)
+                .add(BlockItemIds.DEEPSLATE_IRON_ORE)
+                .add(BlockItemIds.DEEPSLATE_LAPIS_ORE)
+                .add(BlockItemIds.DEEPSLATE_REDSTONE_ORE);
+        builder(NETHER_ORES)
+                .add(BlockItemIds.NETHER_GOLD_ORE)
+                .add(BlockItemIds.NETHER_QUARTZ_ORE);
+
         builder(BlockTags.LOGS)
                 .add(MEOBlockItemIds.BREAKING_OAK_LOG)
                 .add(MEOBlockItemIds.BREAKING_SPRUCE_LOG)
@@ -47,6 +73,10 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(MEOBlockItemIds.BREAKING_PALE_OAK_LOG)
                 .add(MEOBlockItemIds.BREAKING_WARPED_STEM)
                 .add(MEOBlockItemIds.BREAKING_CRIMSON_STEM);
+
+        builder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(MEOBlockItemIds.BREAKING_STONE)
+                .add(MEOBlockItemIds.BREAKING_DEEPSLATE);
 
         builder(WOOD_BLOCKS)
                 //LOGS

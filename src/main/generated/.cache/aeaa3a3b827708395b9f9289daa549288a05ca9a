@@ -1,4 +1,8 @@
 // 26.2	-999999999-01-01T00:00:00	Mors est Optio/Tags for minecraft:block
 7f4f6a32bb8c0724c1ebdea5a83b3c6683531eeb data/minecraft/tags/block/logs.json
 7f4f6a32bb8c0724c1ebdea5a83b3c6683531eeb data/minecraft/tags/block/mineable/axe.json
+0dfe1ab44f046cd4f5184886ba9ceac2415d698c data/minecraft/tags/block/mineable/pickaxe.json
+92b2074169483a5ee1abc697c8a0eaaaca1febba data/mors-est-optio/tags/block/deepslate_ores.json
+871ddb41b40d0edc8709a44b7f9bec46afb153cb data/mors-est-optio/tags/block/nether_ores.json
+7ed726c863753db711f42813dee6cbebf19bd819 data/mors-est-optio/tags/block/stone_ores.json
 dc966cb25ea082cb6834279ea4d42fd4525da401 data/mors-est-optio/tags/block/wood_blocks.json

@@ -1,5 +1,7 @@
 {
   "values": [
-    "minecraft:diamond_axe"
+    "minecraft:diamond_axe",
+    "mors-est-optio:steel_axe",
+    "minecraft:netherite_axe"
   ]
 }

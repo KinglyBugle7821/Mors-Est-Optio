@@ -46,75 +46,81 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
     @Override
     public void generate() {
 
-        add(Blocks.DIRT, createClumpDrop(Blocks.DIRT, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.COARSE_DIRT, createClumpDrop(Blocks.COARSE_DIRT, Blocks.COARSE_DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.DIRT_PATH, createClumpDrop(Blocks.DIRT_PATH, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.GRASS_BLOCK, createClumpDrop(Blocks.GRASS_BLOCK, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.MYCELIUM, createClumpDrop(Blocks.MYCELIUM, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.PODZOL, createClumpDrop(Blocks.PODZOL, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.ROOTED_DIRT, createClumpDrop(Blocks.ROOTED_DIRT, Blocks.ROOTED_DIRT.asItem(), MEOItems.DIRT_CLUMP, ItemTags.SHOVELS));
+        add(Blocks.DIRT, createClumpDrop(Blocks.DIRT, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.COARSE_DIRT, createClumpDrop(Blocks.COARSE_DIRT, Blocks.COARSE_DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.DIRT_PATH, createClumpDrop(Blocks.DIRT_PATH, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.GRASS_BLOCK, createClumpDrop(Blocks.GRASS_BLOCK, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.MYCELIUM, createClumpDrop(Blocks.MYCELIUM, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.PODZOL, createClumpDrop(Blocks.PODZOL, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.ROOTED_DIRT, createClumpDrop(Blocks.ROOTED_DIRT, Blocks.ROOTED_DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
 
-        add(Blocks.GRAVEL, createClumpDrop(Blocks.GRAVEL, Blocks.GRAVEL.asItem(), MEOItems.GRAVEL_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.MUD, createClumpDrop(Blocks.MUD, Blocks.MUD.asItem(), MEOItems.MUD_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.SAND, createClumpDrop(Blocks.SAND, Blocks.SAND.asItem(), MEOItems.SAND_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.RED_SAND, createClumpDrop(Blocks.RED_SAND, Blocks.RED_SAND.asItem(), MEOItems.RED_SAND_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.SOUL_SAND, createClumpDrop(Blocks.SOUL_SAND, Blocks.SOUL_SAND.asItem(), MEOItems.SOUL_CLUMP, ItemTags.SHOVELS));
-        add(Blocks.SOUL_SOIL, createClumpDrop(Blocks.SOUL_SOIL, Blocks.SOUL_SOIL.asItem(), MEOItems.SOUL_CLUMP, ItemTags.SHOVELS));
+        add(Blocks.STONE, createClumpDrop(Blocks.STONE, Blocks.COBBLESTONE.asItem(), MEOItems.ROCK, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
+        add(Blocks.COBBLESTONE, createClumpDrop(Blocks.COBBLESTONE, Blocks.COBBLESTONE.asItem(), MEOItems.PEBBLE, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
 
-        add(Blocks.OAK_LOG, createClumpDrop(Blocks.OAK_LOG, Blocks.OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_OAK_LOG, createClumpDrop(Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.OAK_WOOD, createClumpDrop(Blocks.OAK_WOOD, Blocks.OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_OAK_WOOD, Blocks.STRIPPED_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.DEEPSLATE, createClumpDrop(Blocks.DEEPSLATE, Blocks.COBBLED_DEEPSLATE.asItem(), MEOItems.ROCK, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
+        add(Blocks.COBBLED_DEEPSLATE, createClumpDrop(Blocks.COBBLED_DEEPSLATE, Blocks.COBBLED_DEEPSLATE.asItem(), MEOItems.ROCK, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
 
-        add(Blocks.SPRUCE_LOG, createClumpDrop(Blocks.SPRUCE_LOG, Blocks.SPRUCE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_SPRUCE_LOG, createClumpDrop(Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.SPRUCE_WOOD, createClumpDrop(Blocks.SPRUCE_WOOD, Blocks.SPRUCE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_SPRUCE_WOOD, createClumpDrop(Blocks.STRIPPED_SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.GRAVEL, createClumpDrop(Blocks.GRAVEL, Blocks.GRAVEL.asItem(), MEOItems.GRAVEL_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.MUD, createClumpDrop(Blocks.MUD, Blocks.MUD.asItem(), MEOItems.MUD_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.SAND, createClumpDrop(Blocks.SAND, Blocks.SAND.asItem(), MEOItems.SAND_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.RED_SAND, createClumpDrop(Blocks.RED_SAND, Blocks.RED_SAND.asItem(), MEOItems.RED_SAND_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.SOUL_SAND, createClumpDrop(Blocks.SOUL_SAND, Blocks.SOUL_SAND.asItem(), MEOItems.SOUL_CLUMP, 1f, 4f, ItemTags.SHOVELS));
+        add(Blocks.SOUL_SOIL, createClumpDrop(Blocks.SOUL_SOIL, Blocks.SOUL_SOIL.asItem(), MEOItems.SOUL_CLUMP, 1f, 4f, ItemTags.SHOVELS));
 
-        add(Blocks.BIRCH_LOG, createClumpDrop(Blocks.BIRCH_LOG, Blocks.BIRCH_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_BIRCH_LOG, createClumpDrop(Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.BIRCH_WOOD, createClumpDrop(Blocks.BIRCH_WOOD, Blocks.BIRCH_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_BIRCH_WOOD, createClumpDrop(Blocks.STRIPPED_BIRCH_WOOD, Blocks.STRIPPED_BIRCH_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.OAK_LOG, createClumpDrop(Blocks.OAK_LOG, Blocks.OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_OAK_LOG, createClumpDrop(Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.OAK_WOOD, createClumpDrop(Blocks.OAK_WOOD, Blocks.OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_OAK_WOOD, Blocks.STRIPPED_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.JUNGLE_LOG, createClumpDrop(Blocks.JUNGLE_LOG, Blocks.JUNGLE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_JUNGLE_LOG, createClumpDrop(Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.JUNGLE_WOOD, createClumpDrop(Blocks.JUNGLE_WOOD, Blocks.JUNGLE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_JUNGLE_WOOD, createClumpDrop(Blocks.STRIPPED_JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.SPRUCE_LOG, createClumpDrop(Blocks.SPRUCE_LOG, Blocks.SPRUCE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_SPRUCE_LOG, createClumpDrop(Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.SPRUCE_WOOD, createClumpDrop(Blocks.SPRUCE_WOOD, Blocks.SPRUCE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_SPRUCE_WOOD, createClumpDrop(Blocks.STRIPPED_SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.ACACIA_LOG, createClumpDrop(Blocks.ACACIA_LOG, Blocks.ACACIA_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_ACACIA_LOG, createClumpDrop(Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.ACACIA_WOOD, createClumpDrop(Blocks.ACACIA_WOOD, Blocks.ACACIA_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_ACACIA_WOOD, createClumpDrop(Blocks.STRIPPED_ACACIA_WOOD, Blocks.STRIPPED_ACACIA_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.BIRCH_LOG, createClumpDrop(Blocks.BIRCH_LOG, Blocks.BIRCH_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_BIRCH_LOG, createClumpDrop(Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.BIRCH_WOOD, createClumpDrop(Blocks.BIRCH_WOOD, Blocks.BIRCH_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_BIRCH_WOOD, createClumpDrop(Blocks.STRIPPED_BIRCH_WOOD, Blocks.STRIPPED_BIRCH_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.DARK_OAK_LOG, createClumpDrop(Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_DARK_OAK_LOG, createClumpDrop(Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.DARK_OAK_WOOD, createClumpDrop(Blocks.DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_DARK_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.JUNGLE_LOG, createClumpDrop(Blocks.JUNGLE_LOG, Blocks.JUNGLE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_JUNGLE_LOG, createClumpDrop(Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.JUNGLE_WOOD, createClumpDrop(Blocks.JUNGLE_WOOD, Blocks.JUNGLE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_JUNGLE_WOOD, createClumpDrop(Blocks.STRIPPED_JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.MANGROVE_LOG, createClumpDrop(Blocks.MANGROVE_LOG, Blocks.MANGROVE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_MANGROVE_LOG, createClumpDrop(Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.MANGROVE_WOOD, createClumpDrop(Blocks.MANGROVE_WOOD, Blocks.MANGROVE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_MANGROVE_WOOD, createClumpDrop(Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.ACACIA_LOG, createClumpDrop(Blocks.ACACIA_LOG, Blocks.ACACIA_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_ACACIA_LOG, createClumpDrop(Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.ACACIA_WOOD, createClumpDrop(Blocks.ACACIA_WOOD, Blocks.ACACIA_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_ACACIA_WOOD, createClumpDrop(Blocks.STRIPPED_ACACIA_WOOD, Blocks.STRIPPED_ACACIA_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.CHERRY_LOG, createClumpDrop(Blocks.CHERRY_LOG, Blocks.CHERRY_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_CHERRY_LOG, createClumpDrop(Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_CHERRY_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.CHERRY_WOOD, createClumpDrop(Blocks.CHERRY_WOOD, Blocks.CHERRY_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_CHERRY_WOOD, createClumpDrop(Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_CHERRY_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.DARK_OAK_LOG, createClumpDrop(Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_DARK_OAK_LOG, createClumpDrop(Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.DARK_OAK_WOOD, createClumpDrop(Blocks.DARK_OAK_WOOD, Blocks.DARK_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_DARK_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.PALE_OAK_LOG, createClumpDrop(Blocks.PALE_OAK_LOG, Blocks.PALE_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_PALE_OAK_LOG, createClumpDrop(Blocks.STRIPPED_PALE_OAK_LOG, Blocks.STRIPPED_PALE_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.PALE_OAK_WOOD, createClumpDrop(Blocks.PALE_OAK_WOOD, Blocks.PALE_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_PALE_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_PALE_OAK_WOOD, Blocks.STRIPPED_PALE_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.MANGROVE_LOG, createClumpDrop(Blocks.MANGROVE_LOG, Blocks.MANGROVE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_MANGROVE_LOG, createClumpDrop(Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.MANGROVE_WOOD, createClumpDrop(Blocks.MANGROVE_WOOD, Blocks.MANGROVE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_MANGROVE_WOOD, createClumpDrop(Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.CRIMSON_STEM, createClumpDrop(Blocks.CRIMSON_STEM, Blocks.CRIMSON_STEM.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_CRIMSON_STEM, createClumpDrop(Blocks.STRIPPED_CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.CRIMSON_HYPHAE, createClumpDrop(Blocks.CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_CRIMSON_HYPHAE, createClumpDrop(Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.CHERRY_LOG, createClumpDrop(Blocks.CHERRY_LOG, Blocks.CHERRY_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_CHERRY_LOG, createClumpDrop(Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_CHERRY_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.CHERRY_WOOD, createClumpDrop(Blocks.CHERRY_WOOD, Blocks.CHERRY_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_CHERRY_WOOD, createClumpDrop(Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_CHERRY_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
-        add(Blocks.WARPED_STEM, createClumpDrop(Blocks.WARPED_STEM, Blocks.WARPED_STEM.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_WARPED_STEM, createClumpDrop(Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_WARPED_STEM.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.WARPED_HYPHAE, createClumpDrop(Blocks.WARPED_HYPHAE, Blocks.WARPED_HYPHAE.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
-        add(Blocks.STRIPPED_WARPED_HYPHAE, createClumpDrop(Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE.asItem(), MEOItems.WOOD_CHIP, ItemTags.AXES));
+        add(Blocks.PALE_OAK_LOG, createClumpDrop(Blocks.PALE_OAK_LOG, Blocks.PALE_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_PALE_OAK_LOG, createClumpDrop(Blocks.STRIPPED_PALE_OAK_LOG, Blocks.STRIPPED_PALE_OAK_LOG.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.PALE_OAK_WOOD, createClumpDrop(Blocks.PALE_OAK_WOOD, Blocks.PALE_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_PALE_OAK_WOOD, createClumpDrop(Blocks.STRIPPED_PALE_OAK_WOOD, Blocks.STRIPPED_PALE_OAK_WOOD.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+
+        add(Blocks.CRIMSON_STEM, createClumpDrop(Blocks.CRIMSON_STEM, Blocks.CRIMSON_STEM.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_CRIMSON_STEM, createClumpDrop(Blocks.STRIPPED_CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.CRIMSON_HYPHAE, createClumpDrop(Blocks.CRIMSON_HYPHAE, Blocks.CRIMSON_HYPHAE.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_CRIMSON_HYPHAE, createClumpDrop(Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+
+        add(Blocks.WARPED_STEM, createClumpDrop(Blocks.WARPED_STEM, Blocks.WARPED_STEM.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_WARPED_STEM, createClumpDrop(Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_WARPED_STEM.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.WARPED_HYPHAE, createClumpDrop(Blocks.WARPED_HYPHAE, Blocks.WARPED_HYPHAE.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
+        add(Blocks.STRIPPED_WARPED_HYPHAE, createClumpDrop(Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE.asItem(), MEOItems.WOOD_CHIP, 1f, 4f, ItemTags.AXES));
 
         add(Blocks.SHORT_GRASS, block -> this.createGrassDrops(block)
                 .withPool(LootPool.lootPool()
@@ -148,7 +154,7 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
                         )
         );
     }
-    private LootTable.Builder createClumpDrop(Block silkTouchBlock, Item toolBlock, Item dropItem, TagKey<Item> toolTag) {
+    private LootTable.Builder createClumpDrop(Block silkTouchBlock, Item toolBlock, Item dropItem, float min, float max, TagKey<Item> toolTag) {
         HolderGetter<Enchantment> enchantmentLookup =
                 registries.lookupOrThrow(Registries.ENCHANTMENT);
 
@@ -185,7 +191,7 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
 
                                 LootItem.lootTableItem(dropItem)
                                         .apply(SetItemCountFunction.setCount(
-                                                UniformGenerator.between(1.0F, 4.0F)
+                                                UniformGenerator.between(min, max)
                                         ))
                                         .apply(ApplyExplosionDecay.explosionDecay())
                         ))

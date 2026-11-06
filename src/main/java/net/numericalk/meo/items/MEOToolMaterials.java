@@ -13,6 +13,14 @@ public class MEOToolMaterials {
             15,
             MEOItemTagProvider.REPAIRS_FLINT_TOOL
     );
+    public static final ToolMaterial REINFORCED_FLINT_TOOL_MATERIAL = new ToolMaterial(
+            BlockTags.INCORRECT_FOR_WOODEN_TOOL,
+            64,
+            2.0F,
+            0.0F,
+            15,
+            MEOItemTagProvider.REPAIRS_FLINT_TOOL
+    );
 
     public static final ToolMaterial STEEL_TOOL_MATERIAL = new ToolMaterial(
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,

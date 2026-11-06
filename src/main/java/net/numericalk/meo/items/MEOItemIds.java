@@ -10,6 +10,13 @@ public class MEOItemIds {
 
     public static final ResourceKey<Item> TWINE = create("twine");
 
+    public static final ResourceKey<Item> GRANITE_CHUNK = create("granite_chunk");
+    public static final ResourceKey<Item> ANDESITE_CHUNK = create("andesite_chunk");
+    public static final ResourceKey<Item> DIORITE_CHUNK = create("diorite_chunk");
+    public static final ResourceKey<Item> DRIPSTONE_CHUNK = create("dripstone_chunk");
+    public static final ResourceKey<Item> SULFUR_CHUNK = create("sulfur_chunk");
+    public static final ResourceKey<Item> OBSIDIAN_SHARD = create("obsidian_shard");
+
     public static final ResourceKey<Item> PEBBLE = create("pebble");
     public static final ResourceKey<Item> ROCK = create("rock");
 
@@ -38,6 +45,9 @@ public class MEOItemIds {
     public static final ResourceKey<Item> STEEL_INGOT = create("steel_ingot");
 
     public static final ResourceKey<Item> FLINT_FLAKE = create("flint_flake");
+
+    public static final ResourceKey<Item> FLINT_HATCHET = create("flint_hatchet");
+    public static final ResourceKey<Item> FLINT_PICK = create("flint_pick");
 
     public static final ResourceKey<Item> STEEL_SWORD = create("steel_sword");
     public static final ResourceKey<Item> STEEL_SPEAR = create("steel_spear");

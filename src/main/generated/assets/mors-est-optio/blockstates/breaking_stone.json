@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "breaking_stage=1": {
+      "model": "mors-est-optio:block/breaking_stone_stage_1"
+    },
+    "breaking_stage=2": {
+      "model": "mors-est-optio:block/breaking_stone_stage_2"
+    }
+  }
+}

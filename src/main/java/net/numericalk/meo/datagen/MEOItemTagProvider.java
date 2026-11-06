@@ -23,7 +23,8 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
     public static final TagKey<Item> STONE_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("stone_level_axe"));
     public static final TagKey<Item> IRON_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("iron_level_axe"));
     public static final TagKey<Item> DIAMOND_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("diamond_level_axe"));
-    public static final TagKey<Item> NETHERITE_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("netherite_level_axe"));
+
+    public static final TagKey<Item> DIAMOND_LEVEL_PICKAXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("diamond_level_pickaxe"));
 
     public static final TagKey<Item> CAP = TagKey.create(Registries.ITEM, MorsEstOptio.id("cap"));
     public static final TagKey<Item> TUNIC = TagKey.create(Registries.ITEM, MorsEstOptio.id("tunic"));
@@ -51,8 +52,10 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         builder(ItemTags.SWORDS)
                 .add(MEOItemIds.STEEL_SWORD);
         builder(ItemTags.PICKAXES)
+                .add(MEOItemIds.FLINT_PICK)
                 .add(MEOItemIds.STEEL_PICKAXE);
         builder(ItemTags.AXES)
+                .add(MEOItemIds.FLINT_HATCHET)
                 .add(MEOItemIds.STEEL_AXE);
         builder(ItemTags.SPEARS)
                 .add(MEOItemIds.STEEL_SPEAR);
@@ -63,6 +66,7 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
         builder(WOOD_LEVEL_AXE)
                 .add(MEOItemIds.FLINT_FLAKE)
+                .add(MEOItemIds.FLINT_HATCHET)
                 .add(ItemIds.WOODEN_AXE)
                 .add(ItemIds.GOLDEN_AXE);
         builder(STONE_LEVEL_AXE)
@@ -70,9 +74,14 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         builder(IRON_LEVEL_AXE)
                 .add(ItemIds.IRON_AXE);
         builder(DIAMOND_LEVEL_AXE)
-                .add(ItemIds.DIAMOND_AXE);
-        builder(NETHERITE_LEVEL_AXE)
+                .add(ItemIds.DIAMOND_AXE)
+                .add(MEOItemIds.STEEL_AXE)
                 .add(ItemIds.NETHERITE_AXE);
+
+        builder(DIAMOND_LEVEL_PICKAXE)
+                .add(ItemIds.DIAMOND_PICKAXE)
+                .add(MEOItemIds.STEEL_AXE)
+                .add(ItemIds.NETHERITE_PICKAXE);
 
         builder(ItemTags.LOGS_THAT_BURN)
                 .add(MEOBlockItemIds.BREAKING_OAK_LOG)

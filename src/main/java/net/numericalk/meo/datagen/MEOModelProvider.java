@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.items.MEOItems;
@@ -19,6 +18,16 @@ public class MEOModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(MEOBlocks.LOOSE_DIRT);
+
+        MEOBlockStateModelGenerator.registerBreakingStone(
+                blockModelGenerators,
+                MEOBlocks.BREAKING_STONE
+        );
+
+        MEOBlockStateModelGenerator.registerBreakingStone(
+                blockModelGenerators,
+                MEOBlocks.BREAKING_DEEPSLATE
+        );
 
         MEOBlockStateModelGenerator.registerBreakingLog(
                 blockModelGenerators,
@@ -75,6 +84,12 @@ public class MEOModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(MEOItems.FLINT_FLAKE, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.PEBBLE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.ROCK, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateFlatItem(MEOItems.FLINT_HATCHET, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.FLINT_PICK, ModelTemplates.FLAT_HANDHELD_ITEM);
 
         itemModelGenerators.generateFlatItem(MEOItems.WOOD_CHIP, ModelTemplates.FLAT_ITEM);
 

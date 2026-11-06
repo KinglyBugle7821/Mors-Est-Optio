@@ -1,4 +1,10 @@
 {
+  "item.mors-est-optio.flint_hatchet": "Flint Hatchet",
+  "item.mors-est-optio.flint_pick": "Flint Pick",
+
+  "item.mors-est-optio.pebble": "Pebble",
+  "item.mors-est-optio.rock": "Rock",
+
   "block.mors-est-optio.loose_dirt": "Loose Dirt",
 
   "block.mors-est-optio.grass_sheaf": "Grass Sheaf",
@@ -42,6 +48,9 @@
   "item.mors-est-optio.pale_oak_bark": "Pale Oak Bark",
   "item.mors-est-optio.warped_bark": "Warped Bark",
   "item.mors-est-optio.crimson_bark": "Crimson Bark",
+
+  "block.mors-est-optio.breaking_stone": "Breaking Stone",
+  "block.mors-est-optio.breaking_deepslate": "Breaking Deepslate",
 
   "block.mors-est-optio.breaking_oak_log": "Breaking Oak Log",
   "block.mors-est-optio.breaking_spruce_log": "Breaking Spruce Log",
