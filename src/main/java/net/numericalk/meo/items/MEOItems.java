@@ -19,6 +19,22 @@ public class MEOItems {
             new Item.Properties().axe(MEOToolMaterials.FLINT_TOOL_MATERIAL, 0.0F, -3F)
     );
 
+    public static final Item GRANITE_CHUNK = register(MEOItemIds.GRANITE_CHUNK, Item::new, new Item.Properties());
+    public static final Item ANDESITE_CHUNK = register(MEOItemIds.ANDESITE_CHUNK, Item::new, new Item.Properties());
+    public static final Item DIORITE_CHUNK = register(MEOItemIds.DIORITE_CHUNK, Item::new, new Item.Properties());
+    public static final Item DRIPSTONE_CHUNK = register(MEOItemIds.DRIPSTONE_CHUNK, Item::new, new Item.Properties());
+    public static final Item SULFUR_CHUNK = register(MEOItemIds.SULFUR_CHUNK, Item::new, new Item.Properties());
+    public static final Item CINNABAR_CHUNK = register(MEOItemIds.CINNABAR_CHUNK, Item::new, new Item.Properties());
+    public static final Item OBSIDIAN_SHARD = register(MEOItemIds.OBSIDIAN_SHARD, Item::new, new Item.Properties());
+    public static final Item TUFF_CHUNK = register(MEOItemIds.TUFF_CHUNK, Item::new, new Item.Properties());
+    public static final Item CALCITE_CHUNK = register(MEOItemIds.CALCITE_CHUNK, Item::new, new Item.Properties());
+    public static final Item SANDSTONE_CHUNK = register(MEOItemIds.SANDSTONE_CHUNK, Item::new, new Item.Properties());
+    public static final Item RED_SANDSTONE_CHUNK = register(MEOItemIds.RED_SANDSTONE_CHUNK, Item::new, new Item.Properties());
+    public static final Item NETHERRACK_CHUNK = register(MEOItemIds.NETHERRACK_CHUNK, Item::new, new Item.Properties());
+    public static final Item BLACKSTONE_CHUNK = register(MEOItemIds.BLACKSTONE_CHUNK, Item::new, new Item.Properties());
+    public static final Item BASALT_CHUNK = register(MEOItemIds.BASALT_CHUNK, Item::new, new Item.Properties());
+    public static final Item END_STONE_CHUNK = register(MEOItemIds.END_STONE_CHUNK, Item::new, new Item.Properties());
+
     public static final Item DRIED_GRASS_SHEAF = register(
             MEOItemIds.DRIED_GRASS_SHEAF,
             Item::new,
@@ -258,6 +274,22 @@ public class MEOItems {
                 output.accept(MEOItems.PALE_OAK_BARK);
                 output.accept(MEOItems.CRIMSON_BARK);
                 output.accept(MEOItems.WARPED_BARK);
+
+                output.accept(MEOItems.GRANITE_CHUNK);
+                output.accept(MEOItems.ANDESITE_CHUNK);
+                output.accept(MEOItems.DIORITE_CHUNK);
+                output.accept(MEOItems.DRIPSTONE_CHUNK);
+                output.accept(MEOItems.SULFUR_CHUNK);
+                output.accept(MEOItems.CINNABAR_CHUNK);
+                output.accept(MEOItems.OBSIDIAN_SHARD);
+                output.accept(MEOItems.TUFF_CHUNK);
+                output.accept(MEOItems.CALCITE_CHUNK);
+                output.accept(MEOItems.SANDSTONE_CHUNK);
+                output.accept(MEOItems.RED_SANDSTONE_CHUNK);
+                output.accept(MEOItems.NETHERRACK_CHUNK);
+                output.accept(MEOItems.BLACKSTONE_CHUNK);
+                output.accept(MEOItems.BASALT_CHUNK);
+                output.accept(MEOItems.END_STONE_CHUNK);
 
                 output.accept(MEOItems.FLINT_HATCHET);
                 output.accept(MEOItems.FLINT_PICK);

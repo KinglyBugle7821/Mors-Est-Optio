@@ -60,6 +60,25 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
         add(Blocks.DEEPSLATE, createClumpDrop(Blocks.DEEPSLATE, Blocks.COBBLED_DEEPSLATE.asItem(), MEOItems.ROCK, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
         add(Blocks.COBBLED_DEEPSLATE, createClumpDrop(Blocks.COBBLED_DEEPSLATE, Blocks.COBBLED_DEEPSLATE.asItem(), MEOItems.ROCK, 1f, 1f, MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE));
 
+        add(Blocks.GRANITE, createClumpDrop(Blocks.GRANITE, MEOItems.GRANITE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.ANDESITE, createClumpDrop(Blocks.ANDESITE, MEOItems.ANDESITE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.DIORITE, createClumpDrop(Blocks.DIORITE, MEOItems.DIORITE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.DRIPSTONE_BLOCK, createClumpDrop(Blocks.DRIPSTONE_BLOCK, MEOItems.DRIPSTONE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.POINTED_DRIPSTONE, createClumpDrop(Blocks.POINTED_DRIPSTONE, MEOItems.DRIPSTONE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.SULFUR, createClumpDrop(Blocks.SULFUR, MEOItems.SULFUR_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.POTENT_SULFUR, createClumpDrop(Blocks.POTENT_SULFUR, MEOItems.SULFUR_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.CINNABAR, createClumpDrop(Blocks.CINNABAR, MEOItems.CINNABAR_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.OBSIDIAN, createClumpDrop(Blocks.OBSIDIAN, MEOItems.OBSIDIAN_SHARD, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.CRYING_OBSIDIAN, createClumpDrop(Blocks.CRYING_OBSIDIAN, MEOItems.OBSIDIAN_SHARD, 1f, 2f, ItemTags.PICKAXES));
+        add(Blocks.TUFF, createClumpDrop(Blocks.TUFF, MEOItems.TUFF_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.CALCITE, createClumpDrop(Blocks.CALCITE, MEOItems.CALCITE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.SANDSTONE, createClumpDrop(Blocks.SANDSTONE, MEOItems.SANDSTONE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.RED_SANDSTONE, createClumpDrop(Blocks.RED_SANDSTONE, MEOItems.RED_SANDSTONE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.NETHERRACK, createClumpDrop(Blocks.NETHERRACK, MEOItems.NETHERRACK_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.BLACKSTONE, createClumpDrop(Blocks.BLACKSTONE, MEOItems.BLACKSTONE_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.BASALT, createClumpDrop(Blocks.BASALT, MEOItems.BASALT_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+        add(Blocks.SMOOTH_BASALT, createClumpDrop(Blocks.SMOOTH_BASALT, MEOItems.BASALT_CHUNK, 1f, 4f, ItemTags.PICKAXES));
+
         add(Blocks.GRAVEL, createClumpDrop(Blocks.GRAVEL, Blocks.GRAVEL.asItem(), MEOItems.GRAVEL_CLUMP, 1f, 4f, ItemTags.SHOVELS));
         add(Blocks.MUD, createClumpDrop(Blocks.MUD, Blocks.MUD.asItem(), MEOItems.MUD_CLUMP, 1f, 4f, ItemTags.SHOVELS));
         add(Blocks.SAND, createClumpDrop(Blocks.SAND, Blocks.SAND.asItem(), MEOItems.SAND_CLUMP, 1f, 4f, ItemTags.SHOVELS));
@@ -190,6 +209,48 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
                                         )),
 
                                 LootItem.lootTableItem(dropItem)
+                                        .apply(SetItemCountFunction.setCount(
+                                                UniformGenerator.between(min, max)
+                                        ))
+                                        .apply(ApplyExplosionDecay.explosionDecay())
+                        ))
+                );
+    }
+
+    private LootTable.Builder createClumpDrop(Block silkTouchBlock, Item dropItem, float min, float max, TagKey<Item> toolTag) {
+        HolderGetter<Enchantment> enchantmentLookup =
+                registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        DataComponentMatchers silkTouchMatcher = DataComponentMatchers.Builder.components()
+                .partial(
+                        DataComponentPredicates.ENCHANTMENTS,
+                        EnchantmentsPredicate.enchantments(
+                                List.of(
+                                        new EnchantmentPredicate(
+                                                enchantmentLookup.getOrThrow(Enchantments.SILK_TOUCH),
+                                                MinMaxBounds.Ints.atLeast(1)
+                                        )
+                                )
+                        )
+                )
+                .build();
+
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .add(AlternativesEntry.alternatives(
+
+                                LootItem.lootTableItem(silkTouchBlock)
+                                        .when(MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item()
+                                                        .withComponents(silkTouchMatcher)
+                                        )),
+
+                                LootItem.lootTableItem(dropItem)
+                                        .when(MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item()
+                                                        .of(itemLookup, toolTag)
+                                        ))
                                         .apply(SetItemCountFunction.setCount(
                                                 UniformGenerator.between(min, max)
                                         ))

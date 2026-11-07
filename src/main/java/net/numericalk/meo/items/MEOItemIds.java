@@ -15,7 +15,16 @@ public class MEOItemIds {
     public static final ResourceKey<Item> DIORITE_CHUNK = create("diorite_chunk");
     public static final ResourceKey<Item> DRIPSTONE_CHUNK = create("dripstone_chunk");
     public static final ResourceKey<Item> SULFUR_CHUNK = create("sulfur_chunk");
+    public static final ResourceKey<Item> CINNABAR_CHUNK = create("cinnabar_chunk");
     public static final ResourceKey<Item> OBSIDIAN_SHARD = create("obsidian_shard");
+    public static final ResourceKey<Item> TUFF_CHUNK = create("tuff_chunk");
+    public static final ResourceKey<Item> CALCITE_CHUNK = create("calcite_chunk");
+    public static final ResourceKey<Item> SANDSTONE_CHUNK = create("sandstone_chunk");
+    public static final ResourceKey<Item> RED_SANDSTONE_CHUNK = create("red_sandstone_chunk");
+    public static final ResourceKey<Item> NETHERRACK_CHUNK = create("netherrack_chunk");
+    public static final ResourceKey<Item> BLACKSTONE_CHUNK = create("blackstone_chunk");
+    public static final ResourceKey<Item> BASALT_CHUNK = create("basalt_chunk");
+    public static final ResourceKey<Item> END_STONE_CHUNK = create("end_stone_chunk");
 
     public static final ResourceKey<Item> PEBBLE = create("pebble");
     public static final ResourceKey<Item> ROCK = create("rock");

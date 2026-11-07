@@ -2,6 +2,8 @@ package net.numericalk.meo.event;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -9,11 +11,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
@@ -25,8 +28,19 @@ public class MEOWoodBreakingEvent {
     private static final int IRON_DEGRADATION_AMOUNT = 3;
     public MEOWoodBreakingEvent(){
         PlayerBlockBreakEvents.BEFORE.register((level, player, pos, state, be) -> {
+            ItemStack tool = player.getMainHandItem();
 
-            if (player.isCreative()) return true;
+            ItemEnchantments enchantments = tool.getOrDefault(
+                    DataComponents.ENCHANTMENTS,
+                    ItemEnchantments.EMPTY
+            );
+
+            boolean hasSilkTouch = enchantments.getLevel(
+                    level.registryAccess()
+                            .lookupOrThrow(Registries.ENCHANTMENT)
+                            .getOrThrow(Enchantments.SILK_TOUCH)
+            ) > 0;
+            if (player.isCreative() || hasSilkTouch) return true;
 
             Object[][] logDegradationMap = {
                     {Blocks.OAK_LOG, MEOBlocks.BREAKING_OAK_LOG, MEOItems.OAK_BARK},
@@ -82,56 +96,55 @@ public class MEOWoodBreakingEvent {
                 if (!state.is(log) && !state.is(breakingLog)) {
                     continue;
                 }
-                if (player.isHolding(MEOItems.FLINT_FLAKE)
-                        || player.isHolding(Items.WOODEN_AXE)
-                        || player.isHolding(Items.STONE_AXE)
-                        || player.isHolding(Items.GOLDEN_AXE)) {
-                    if (state.is(log)) spawnItem(logBark, 1, level, pos);
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
+                if (tool.is(ItemTags.AXES)){
+                    if (tool.is(MEOItemTagProvider.WOOD_LEVEL_AXE)){
+                        if (state.is(log)) spawnItem(logBark, 1, level, pos);
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
 
-                    return degradeLog(
-                            WOOD_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player
-                    );
-                } else if (player.isHolding(Items.COPPER_AXE)) {
-                    if (state.is(log)) {
-                        spawnItem(logBark, 1, level, pos);
-                        spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) {
-                        spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) {
-                        spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
-                        spawnItem(Items.STICK, 1, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
+                        return degradeLog(
+                                WOOD_DEGRADATION_AMOUNT,
+                                state, log, breakingLog, level, pos, player
+                        );
+                    } else if (tool.is(MEOItemTagProvider.COPPER_LEVEL_AXE)){
+                        if (state.is(log)) {
+                            spawnItem(logBark, 1, level, pos);
+                            spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
+                        }
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) {
+                            spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
+                            spawnItem(Items.STICK, 1, level, pos);
+                        }
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
 
-                    return degradeLog(
-                            COPPER_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player
-                    );
-                } else if (player.isHolding(Items.IRON_AXE)) {
-                    if (state.is(log)) {
-                        spawnItem(logBark, 1, level, pos);
-                        spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) {
-                        spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
-                        spawnItem(Items.STICK, 1, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) {
-                        spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
-                        spawnItem(Items.STICK, 1, level, pos);
-                    }
-                    else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
+                        return degradeLog(
+                                COPPER_DEGRADATION_AMOUNT,
+                                state, log, breakingLog, level, pos, player
+                        );
+                    } else if (tool.is(MEOItemTagProvider.IRON_LEVEL_AXE)){
+                        if (state.is(log)) {
+                            spawnItem(logBark, 1, level, pos);
+                            spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
+                        }
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 1) {
+                            spawnItem(MEOItems.WOOD_CHIP, 2, level, pos);
+                            spawnItem(Items.STICK, 1, level, pos);
+                        }
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 2) {
+                            spawnItem(MEOItems.WOOD_CHIP, 1, level, pos);
+                            spawnItem(Items.STICK, 1, level, pos);
+                        }
+                        else if (state.is(breakingLog) && state.getValue(BreakingLogBlock.BREAKING_STAGE) == 3) spawnItem(Items.STICK, 1, level, pos);
 
-                    return degradeLog(
-                            IRON_DEGRADATION_AMOUNT,
-                            state, log, breakingLog, level, pos, player
-                    );
+                        return degradeLog(
+                                IRON_DEGRADATION_AMOUNT,
+                                state, log, breakingLog, level, pos, player
+                        );
+                    } else if (tool.is(MEOItemTagProvider.DIAMOND_LEVEL_AXE)){
+                        return true;
+                    }
                 } else {
                     return degradeLog(
                             WOOD_DEGRADATION_AMOUNT,

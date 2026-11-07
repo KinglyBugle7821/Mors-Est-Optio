@@ -12,12 +12,15 @@ e177335b68aa6fac9270482ec0dd2146192c1453 data/minecraft/tags/item/shovels.json
 4abca63ae9c75f659855689dc73868314a465ad6 data/minecraft/tags/item/swords.json
 ddcfeb03849cc33c36357875a58eeb08335f7c7f data/mors-est-optio/tags/item/boots.json
 e58f201917ec180b9568e369479a34a3f2677f50 data/mors-est-optio/tags/item/cap.json
+91c9a2c4d5fa7b0aceb11f1f412308f687c9ca5c data/mors-est-optio/tags/item/copper_level_pickaxe.json
 ab6095507e570f815d309151c34210fb404fe4aa data/mors-est-optio/tags/item/diamond_level_axe.json
 11fb3ec501b5c8360f47065569c0494e2ef8c8f4 data/mors-est-optio/tags/item/diamond_level_pickaxe.json
 ab2da1a92f65e3431c440aba7b1caee3eb04646d data/mors-est-optio/tags/item/iron_level_axe.json
+261f9d864664fad7411fbff760626143f458750e data/mors-est-optio/tags/item/iron_level_pickaxe.json
 f34fd81a621e13bb0798c1c7abbc03776289b67c data/mors-est-optio/tags/item/pants.json
 4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/mors-est-optio/tags/item/repairs_flint_tool.json
 75c7d545d66e1cf1e2469ad2dc557ef6a639951a data/mors-est-optio/tags/item/repairs_steel_tool.json
-1ff6d1b74c6c7164a77c9c7e8e94d3f90ef6a238 data/mors-est-optio/tags/item/stone_level_axe.json
+9fe7b703446f912f0581ea29a8eee6666ddbea46 data/mors-est-optio/tags/item/stone_level_axe.json
 43bff3384448edd293013a35d17fccbe9fa1c477 data/mors-est-optio/tags/item/tunic.json
 201defe3837c7d49e50f9b1209fc9a6e383d39ce data/mors-est-optio/tags/item/wood_level_axe.json
+b68a30837b261223fece1f3d05be4db1d93ec87c data/mors-est-optio/tags/item/wood_level_pickaxe.json

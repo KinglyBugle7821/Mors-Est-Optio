@@ -38,6 +38,22 @@
 
   "item.mors-est-optio.wood_chip": "Wood Chip",
 
+  "item.mors-est-optio.granite_chunk": "Granite Chunk",
+  "item.mors-est-optio.andesite_chunk": "Andesite Chunk",
+  "item.mors-est-optio.diorite_chunk": "Diorite Chunk",
+  "item.mors-est-optio.dripstone_chunk": "Dripstone Chunk",
+  "item.mors-est-optio.sulfur_chunk": "Sulfur Chunk",
+  "item.mors-est-optio.cinnabar_chunk": "Cinnabar Chunk",
+  "item.mors-est-optio.obsidian_shard": "Obsidian Shard",
+  "item.mors-est-optio.tuff_chunk": "Tuff Chunk",
+  "item.mors-est-optio.calcite_chunk": "Calcite Chunk",
+  "item.mors-est-optio.sandstone_chunk": "Sandstone Chunk",
+  "item.mors-est-optio.red_sandstone_chunk": "Red Sandstone Chunk",
+  "item.mors-est-optio.netherrack_chunk": "Netherrack Chunk",
+  "item.mors-est-optio.blackstone_chunk": "Blackstone Chunk",
+  "item.mors-est-optio.basalt_chunk": "Basalt Chunk",
+  "item.mors-est-optio.end_stone_chunk": "End Stone Chunk",
+
   "item.mors-est-optio.oak_bark": "Oak Bark",
   "item.mors-est-optio.spruce_bark": "Spruce Bark",
   "item.mors-est-optio.birch_bark": "Birch Bark",

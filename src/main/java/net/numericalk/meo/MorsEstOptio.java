@@ -27,12 +27,9 @@ public class MorsEstOptio implements ModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	//TODO: MODIFY STONES LOOT TABLE
-
 	//TODO: ADD NUTRITION MECHANIC
 	//TODO: ADD INJURY MECHANIC
 
-	//TODO: ADD LOOT TABLES
 	@Override
 	public void onInitialize() {
 

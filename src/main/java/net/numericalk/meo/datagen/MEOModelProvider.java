@@ -105,6 +105,22 @@ public class MEOModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(MEOItems.RED_SAND_CLUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.SOUL_CLUMP, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.GRANITE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.ANDESITE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.DIORITE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.DRIPSTONE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.SULFUR_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.CINNABAR_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.OBSIDIAN_SHARD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.TUFF_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.CALCITE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.SANDSTONE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.RED_SANDSTONE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.NETHERRACK_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.BLACKSTONE_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.BASALT_CHUNK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.END_STONE_CHUNK, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(MEOItems.OAK_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.SPRUCE_BARK, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.BIRCH_BARK, ModelTemplates.FLAT_ITEM);

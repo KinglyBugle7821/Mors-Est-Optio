@@ -1,14 +1,24 @@
 package net.numericalk.meo.event;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.minecraft.advancements.predicates.EnchantmentPredicate;
+import net.minecraft.advancements.predicates.ItemPredicate;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.component.predicates.EnchantmentsPredicate;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -16,7 +26,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.blocks.custom.BreakingStoneBlock;
 import net.numericalk.meo.datagen.MEOBlockTagProvider;
+import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.items.MEOItems;
+import net.numericalk.meo.items.MEOToolMaterials;
+
+import java.util.List;
 
 public class MEOStoneBreakingEvent {
     private static final int WOOD_DEGRADATION_AMOUNT = 1;
@@ -24,7 +38,19 @@ public class MEOStoneBreakingEvent {
     private static final int IRON_DEGRADATION_AMOUNT = 3;
     public MEOStoneBreakingEvent(){
         PlayerBlockBreakEvents.BEFORE.register((level, player, pos, state, be) -> {
-            if (player.isCreative()) return true;
+            ItemStack tool = player.getMainHandItem();
+
+            ItemEnchantments enchantments = tool.getOrDefault(
+                    DataComponents.ENCHANTMENTS,
+                    ItemEnchantments.EMPTY
+            );
+
+            boolean hasSilkTouch = enchantments.getLevel(
+                    level.registryAccess()
+                            .lookupOrThrow(Registries.ENCHANTMENT)
+                            .getOrThrow(Enchantments.SILK_TOUCH)
+            ) > 0;
+            if (player.isCreative() || hasSilkTouch) return true;
 
             Block[][] stoneDegradationMap = {
                 {Blocks.STONE, MEOBlocks.BREAKING_STONE, Blocks.COBBLESTONE},
@@ -40,29 +66,40 @@ public class MEOStoneBreakingEvent {
                         !state.is(cobblestone)){
                     continue;
                 }
-                if (player.isHolding(MEOItems.FLINT_PICK) || player.isHolding(Items.WOODEN_PICKAXE) || player.isHolding(Items.GOLDEN_PICKAXE) || player.isHolding(Items.STONE_PICKAXE))
-                    return degradeStone(WOOD_DEGRADATION_AMOUNT,
-                            state, stone, cobblestone, breakingStone, level, pos, player);
-                else if (player.isHolding(Items.COPPER_PICKAXE))
-                    return degradeStone(COPPER_DEGRADATION_AMOUNT,
-                            state, stone, cobblestone, breakingStone, level, pos, player);
-                else if (player.isHolding(Items.IRON_PICKAXE))
-                    return degradeStone(IRON_DEGRADATION_AMOUNT,
-                            state, stone, cobblestone, breakingStone, level, pos, player);
-                else return degradeStone(WOOD_DEGRADATION_AMOUNT,
-                            state, stone, cobblestone, breakingStone, level, pos, player);
+                if (tool.is(MEOItemTagProvider.WOOD_LEVEL_PICKAXE))
+                    return degradeStone(WOOD_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
+                else if (tool.is(MEOItemTagProvider.COPPER_LEVEL_PICKAXE))
+                    return degradeStone(COPPER_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
+                else if (tool.is(MEOItemTagProvider.IRON_LEVEL_AXE))
+                    return degradeStone(IRON_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
+                else
+                    return degradeStone(WOOD_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
             }
             return true;
         });
         PlayerBlockBreakEvents.AFTER.register((level, player, pos, state, be) -> {
-            if (state.is(MEOBlockTagProvider.STONE_ORES)) {
-                level.setBlock(pos, Blocks.STONE.defaultBlockState(), Block.UPDATE_ALL);
-            }
-            if (state.is(MEOBlockTagProvider.DEEPSLATE_ORES)) {
-                level.setBlock(pos, Blocks.DEEPSLATE.defaultBlockState(), Block.UPDATE_ALL);
-            }
-            if (state.is(MEOBlockTagProvider.NETHER_ORES)) {
-                level.setBlock(pos, Blocks.NETHERRACK.defaultBlockState(), Block.UPDATE_ALL);
+            ItemStack tool = player.getMainHandItem();
+
+            ItemEnchantments enchantments = tool.getOrDefault(
+                    DataComponents.ENCHANTMENTS,
+                    ItemEnchantments.EMPTY
+            );
+
+            boolean hasSilkTouch = enchantments.getLevel(
+                    level.registryAccess()
+                            .lookupOrThrow(Registries.ENCHANTMENT)
+                            .getOrThrow(Enchantments.SILK_TOUCH)
+            ) > 0;
+            if (!hasSilkTouch){
+                if (state.is(MEOBlockTagProvider.STONE_ORES)) {
+                    level.setBlock(pos, Blocks.STONE.defaultBlockState(), Block.UPDATE_ALL);
+                }
+                if (state.is(MEOBlockTagProvider.DEEPSLATE_ORES)) {
+                    level.setBlock(pos, Blocks.DEEPSLATE.defaultBlockState(), Block.UPDATE_ALL);
+                }
+                if (state.is(MEOBlockTagProvider.NETHER_ORES)) {
+                    level.setBlock(pos, Blocks.NETHERRACK.defaultBlockState(), Block.UPDATE_ALL);
+                }
             }
         });
     }

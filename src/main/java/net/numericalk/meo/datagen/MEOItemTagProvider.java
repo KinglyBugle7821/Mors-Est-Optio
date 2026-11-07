@@ -20,10 +20,13 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
     public static final TagKey<Item> STEEL_MATERIAL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_steel_tool"));
 
     public static final TagKey<Item> WOOD_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("wood_level_axe"));
-    public static final TagKey<Item> STONE_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("stone_level_axe"));
+    public static final TagKey<Item> COPPER_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("stone_level_axe"));
     public static final TagKey<Item> IRON_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("iron_level_axe"));
     public static final TagKey<Item> DIAMOND_LEVEL_AXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("diamond_level_axe"));
 
+    public static final TagKey<Item> WOOD_LEVEL_PICKAXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("wood_level_pickaxe"));
+    public static final TagKey<Item> COPPER_LEVEL_PICKAXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("copper_level_pickaxe"));
+    public static final TagKey<Item> IRON_LEVEL_PICKAXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("iron_level_pickaxe"));
     public static final TagKey<Item> DIAMOND_LEVEL_PICKAXE = TagKey.create(Registries.ITEM, MorsEstOptio.id("diamond_level_pickaxe"));
 
     public static final TagKey<Item> CAP = TagKey.create(Registries.ITEM, MorsEstOptio.id("cap"));
@@ -69,7 +72,8 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(MEOItemIds.FLINT_HATCHET)
                 .add(ItemIds.WOODEN_AXE)
                 .add(ItemIds.GOLDEN_AXE);
-        builder(STONE_LEVEL_AXE)
+        builder(COPPER_LEVEL_AXE)
+                .add(ItemIds.COPPER_AXE)
                 .add(ItemIds.STONE_AXE);
         builder(IRON_LEVEL_AXE)
                 .add(ItemIds.IRON_AXE);
@@ -78,6 +82,15 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(MEOItemIds.STEEL_AXE)
                 .add(ItemIds.NETHERITE_AXE);
 
+        builder(WOOD_LEVEL_PICKAXE)
+                .add(MEOItemIds.FLINT_PICK)
+                .add(ItemIds.WOODEN_PICKAXE)
+                .add(ItemIds.GOLDEN_PICKAXE);
+        builder(COPPER_LEVEL_PICKAXE)
+                .add(ItemIds.COPPER_PICKAXE)
+                .add(ItemIds.STONE_PICKAXE);
+        builder(IRON_LEVEL_PICKAXE)
+                .add(ItemIds.IRON_PICKAXE);
         builder(DIAMOND_LEVEL_PICKAXE)
                 .add(ItemIds.DIAMOND_PICKAXE)
                 .add(MEOItemIds.STEEL_AXE)
