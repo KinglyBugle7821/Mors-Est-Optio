@@ -2,7 +2,9 @@ package net.numericalk.meo;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.numericalk.meo.screen.MEOEffectGUI;
+import net.numericalk.meo.screen.MEONutritionGUI;
 import net.numericalk.meo.screen.MEOTempBarGUI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,5 +19,7 @@ public class MorsEstOptioClient implements ClientModInitializer {
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("temp_bar"), MEOTempBarGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("effect_overlay"), MEOEffectGUI.hudLayer());
+		HudElementRegistry.addFirst(MorsEstOptio.id("nutrition"), MEONutritionGUI.hudLayer());
+
 	}
 }

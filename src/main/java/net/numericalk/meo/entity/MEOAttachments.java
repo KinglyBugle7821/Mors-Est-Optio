@@ -19,5 +19,40 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+
+    //NUTRITION
+    public static final AttachmentType<Float> PLAYER_CARBOHYDRATE_ATTACHMENT =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_carbohydrate_attachment"),
+                    builder -> builder
+                            .initializer(() -> 0.5F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Float> PLAYER_PROTEIN_ATTACHMENT =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_protein_attachment"),
+                    builder -> builder
+                            .initializer(() -> 0.5F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Float> PLAYER_FAT_ATTACHMENT =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_fat_attachment"),
+                    builder -> builder
+                            .initializer(() -> 0.5F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
     public static void initialize(){}
 }

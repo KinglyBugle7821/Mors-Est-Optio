@@ -15,6 +15,10 @@ import net.numericalk.meo.items.MEOItemIds;
 import java.util.concurrent.CompletableFuture;
 
 public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
+    public static final TagKey<Item> CARBOHYDRATE_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("carbohydrate_rich_food"));
+    public static final TagKey<Item> PROTEIN_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("protein_rich_food"));
+    public static final TagKey<Item> VM_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("vm_rich_food"));
+    public static final TagKey<Item> FAT_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("fat_rich_food"));
 
     public static final TagKey<Item> REPAIRS_FLINT_TOOL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_flint_tool"));
     public static final TagKey<Item> STEEL_MATERIAL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_steel_tool"));

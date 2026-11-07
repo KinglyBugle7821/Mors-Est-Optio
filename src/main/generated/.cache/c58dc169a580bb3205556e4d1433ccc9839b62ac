@@ -1,4 +1,5 @@
 // 26.2	-999999999-01-01T00:00:00	Mors est Optio/MEOModelProvider
+2fad5f683aaa4f35cf5593ce5efa71ff6daf710f assets/mors-est-optio/blockstates/breaking_acacia_log.json
 9a6322f943ac653eb9c4a8801e48436009b3152d assets/mors-est-optio/blockstates/breaking_birch_log.json
 22b0c7a05adecf4a32cb992480f883f85db44956 assets/mors-est-optio/blockstates/breaking_cherry_log.json
 ae5f342aec706083b2217c02e2ebe0a253bd903a assets/mors-est-optio/blockstates/breaking_crimson_stem.json
@@ -17,6 +18,7 @@ faf4474a6d5085e514187caaa89f1349ed6c5a74 assets/mors-est-optio/items/andesite_ch
 eb98f01352482df2b8c4a6fe19c6ecd830e43a8d assets/mors-est-optio/items/basalt_chunk.json
 5bab442c833f927812774a5439b6f1b9d1004393 assets/mors-est-optio/items/birch_bark.json
 749698d017eaac57de1f9130cdea32ca42513fc0 assets/mors-est-optio/items/blackstone_chunk.json
+584d6008a4b596cb4a06a2616e1dadb21f7da966 assets/mors-est-optio/items/breaking_acacia_log.json
 8ad33d2dc9baa614271ff8b475e6af2b9aac4f89 assets/mors-est-optio/items/breaking_birch_log.json
 b51c6ad5dedda100777ce70c3a5c818865c265c1 assets/mors-est-optio/items/breaking_cherry_log.json
 b9d71db7fe52e4ff2ab20d3bd5bfb5836d2ee172 assets/mors-est-optio/items/breaking_crimson_stem.json
@@ -77,6 +79,9 @@ ae6a57a3f81e149cc321736d716e955b9c0be607 assets/mors-est-optio/items/steel_sword
 7e2a97d2e1096892c732b373c986c2ee6d07b3b8 assets/mors-est-optio/items/twine.json
 a7cf5651e96bb1a0a95128b383c88c2b24e94538 assets/mors-est-optio/items/warped_bark.json
 51c4e67f933aed602ee16b0d70d91c6eedbc4f94 assets/mors-est-optio/items/wood_chip.json
+0357fff0c1971c67f1e05c4b356411ffbc9acce0 assets/mors-est-optio/models/block/breaking_acacia_log_stage_1.json
+e646b505974012beefedcd88ac275fd6abc0b4c4 assets/mors-est-optio/models/block/breaking_acacia_log_stage_2.json
+389a524e8460508e47715db11cf38d528b7dd8fa assets/mors-est-optio/models/block/breaking_acacia_log_stage_3.json
 fe79964bc179bef5d0366533cd088ef6c414d4d8 assets/mors-est-optio/models/block/breaking_birch_log_stage_1.json
 666de12dc5e781617a42451f0678220c68f36dff assets/mors-est-optio/models/block/breaking_birch_log_stage_2.json
 7d5f2991ce917c0396ae4788f2d4886ed3f63e71 assets/mors-est-optio/models/block/breaking_birch_log_stage_3.json

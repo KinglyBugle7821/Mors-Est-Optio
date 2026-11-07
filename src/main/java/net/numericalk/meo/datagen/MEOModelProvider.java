@@ -51,6 +51,11 @@ public class MEOModelProvider extends FabricModelProvider {
         );
         MEOBlockStateModelGenerator.registerBreakingLog(
                 blockModelGenerators,
+                MEOBlocks.BREAKING_ACACIA_LOG,
+                MEOBlockStateModelGenerator.blockAndTopForEnds(Blocks.STRIPPED_ACACIA_LOG)
+        );
+        MEOBlockStateModelGenerator.registerBreakingLog(
+                blockModelGenerators,
                 MEOBlocks.BREAKING_DARK_OAK_LOG,
                 MEOBlockStateModelGenerator.blockAndTopForEnds(Blocks.STRIPPED_DARK_OAK_LOG)
         );

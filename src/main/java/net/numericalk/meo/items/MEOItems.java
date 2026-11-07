@@ -303,6 +303,7 @@ public class MEOItems {
                 output.accept(MEOBlocks.BREAKING_SPRUCE_LOG);
                 output.accept(MEOBlocks.BREAKING_BIRCH_LOG);
                 output.accept(MEOBlocks.BREAKING_JUNGLE_LOG);
+                output.accept(MEOBlocks.BREAKING_ACACIA_LOG);
                 output.accept(MEOBlocks.BREAKING_DARK_OAK_LOG);
                 output.accept(MEOBlocks.BREAKING_MANGROVE_LOG);
                 output.accept(MEOBlocks.BREAKING_CHERRY_LOG);

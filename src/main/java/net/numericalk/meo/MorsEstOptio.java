@@ -13,6 +13,7 @@ import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
+import net.numericalk.meo.event.MEONutritionTickEvent;
 import net.numericalk.meo.event.MEOStoneBreakingEvent;
 import net.numericalk.meo.event.MEOTemperatureTickEvent;
 import net.numericalk.meo.event.MEOWoodBreakingEvent;
@@ -46,6 +47,7 @@ public class MorsEstOptio implements ModInitializer {
 		ServerTickEvents.END_SERVER_TICK.register(minecraftServer -> {
 			for (ServerPlayer player : minecraftServer.getPlayerList().getPlayers()) {
 				MEOTemperatureTickEvent.serverTick(player);
+				MEONutritionTickEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
