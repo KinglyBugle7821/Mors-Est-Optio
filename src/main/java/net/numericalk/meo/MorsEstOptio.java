@@ -9,7 +9,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.level.block.Block;
 import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;

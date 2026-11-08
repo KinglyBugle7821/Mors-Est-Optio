@@ -62,37 +62,16 @@ public final class LocalBlockThermalField {
         return Map.copyOf(sources);
     }
 
-    private static void register(
-            Map<Block, ThermalSource> sources,
-            Block block,
-            double strength,
-            int radius
-    ) {
-        sources.put(
-                block,
-                new ThermalSource(strength, radius, state -> true)
+    private static void register(Map<Block, ThermalSource> sources, Block block, double strength, int radius) {
+        sources.put(block, new ThermalSource(strength, radius, state -> true));
+    }
+    private static void registerLit(Map<Block, ThermalSource> sources, Block block, double strength, int radius) {
+        sources.put(block, new ThermalSource(strength, radius,
+                state -> state.hasProperty(BlockStateProperties.LIT)
+                        && state.getValue(BlockStateProperties.LIT))
         );
     }
-
-    private static void registerLit(
-            Map<Block, ThermalSource> sources,
-            Block block,
-            double strength,
-            int radius
-    ) {
-        sources.put(
-                block,
-                new ThermalSource(
-                        strength,
-                        radius,
-                        state -> state.hasProperty(BlockStateProperties.LIT)
-                                && state.getValue(BlockStateProperties.LIT)
-                )
-        );
-    }
-
     public static double getTemperatureOffset(Level level, Player player) {
-
         double playerX = player.getX();
         double playerY = player.getY() + player.getBbHeight() * 0.5;
         double playerZ = player.getZ();
@@ -111,14 +90,11 @@ public final class LocalBlockThermalField {
 
         for (int x = centerX - MAX_SCAN_RADIUS;
              x <= centerX + MAX_SCAN_RADIUS; x++) {
-
             for (int z = centerZ - MAX_SCAN_RADIUS;
                  z <= centerZ + MAX_SCAN_RADIUS; z++) {
-
                 if (!level.hasChunk(x >> 4, z >> 4)) {
                     continue;
                 }
-
                 for (int y = centerY - MAX_SCAN_RADIUS;
                      y <= centerY + MAX_SCAN_RADIUS; y++) {
 
@@ -132,27 +108,21 @@ public final class LocalBlockThermalField {
                     if (distanceSquared > maxDistanceSquared) {
                         continue;
                     }
-
                     mutablePos.set(x, y, z);
-
                     BlockState state = level.getBlockState(mutablePos);
 
                     ThermalSource source = SOURCES.get(state.getBlock());
-
                     if (source == null || !source.activeWhen().test(state)) {
                         continue;
                     }
 
                     double radius = source.radius();
-
                     if (distanceSquared >= radius * radius) {
                         continue;
                     }
 
                     double distance = Math.sqrt(distanceSquared);
-
                     double falloff = 1.0 - (distance / radius);
-
                     double contribution = source.strength() * falloff;
 
                     totalTemperature += contribution;

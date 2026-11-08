@@ -1,7 +1,5 @@
 package net.numericalk.meo.screen;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
-import com.mojang.blaze3d.pipeline.RenderPipeline;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -9,7 +7,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOAttachments;
-import net.numericalk.meo.mechs.MEOTempMech;
 
 public class MEOTempBarGUI {
 
@@ -56,8 +53,6 @@ public class MEOTempBarGUI {
                     8, 8,
                     8, 8
                     );
-//            graphics.text(client.font, "Player Temperature: " + playerTemperature, 10, 10, 0xFFFFFFFF, false);
-//            graphics.text(client.font, "GUI Temperature Offset: " + temperature, 10, 20, 0xFFFFFFFF, false);
         };
     }
 }

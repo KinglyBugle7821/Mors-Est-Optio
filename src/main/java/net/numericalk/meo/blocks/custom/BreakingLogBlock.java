@@ -1,7 +1,5 @@
 package net.numericalk.meo.blocks.custom;
 
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -12,9 +10,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.numericalk.meo.MorsEstOptio;
-
-import java.util.Optional;
 
 public class BreakingLogBlock extends RotatedPillarBlock {
 

@@ -1,11 +1,9 @@
 package net.numericalk.meo.event;
 
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.numericalk.meo.entity.MEOAttachments;
-import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.mechs.MEONutritionMech;
 
 public class MEONutritionTickEvent {

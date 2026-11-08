@@ -1,13 +1,8 @@
 package net.numericalk.meo.screen;
 
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
-import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
-import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.TitleScreen;
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.world.entity.player.Player;
-import net.numericalk.meo.MorsEstOptioClient;
 import net.numericalk.meo.entity.MEOAttachments;
 
 public class MEOInjuryGUI {

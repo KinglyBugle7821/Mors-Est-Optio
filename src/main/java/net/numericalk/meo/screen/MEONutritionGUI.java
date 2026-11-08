@@ -5,7 +5,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOAttachments;
 

@@ -1,8 +1,6 @@
 package net.numericalk.meo.mechs;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
 import net.numericalk.meo.entity.MEOAttachments;
 
 public class MEONutritionMech {
@@ -12,9 +10,6 @@ public class MEONutritionMech {
         float playerCarbohydrates = player.getAttachedOrCreate(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT);
         float playerProteins = player.getAttachedOrCreate(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT);
         float playerFat = player.getAttachedOrCreate(MEOAttachments.PLAYER_FAT_ATTACHMENT);
-
-        Level level = player.level();
-        BlockPos pos = player.blockPosition();
 
         player.setAttached(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, Math.max(playerCarbohydrates - (0.05f/3), 0));
         player.setAttached(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, Math.max(playerProteins - (0.05f/3), 0));
