@@ -54,5 +54,51 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+
+    //INJURY
+    public static final AttachmentType<Float> PLAYER_HEAD_INJURY =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_head_injury"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Float> PLAYER_BODY_INJURY =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_body_injury"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Float> PLAYER_ARMS_INJURY =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_arms_injury"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Float> PLAYER_LEGS_INJURY =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("player_legs_injury"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
     public static void initialize(){}
 }

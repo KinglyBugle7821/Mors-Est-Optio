@@ -83,7 +83,13 @@
   "attribute.numericalk.mors-est-optio.player_temperature_attribute": "Player Temperature Attribute",
   "effect.mors-est-optio.freezing": "Freezing",
   "effect.mors-est-optio.overheating": "Overheating",
+  "effect.mors-est-optio.bleeding": "Bleeding",
+
+  "key.category.mors-est-optio.meo_category": "MEO Category",
+  "key.mors-est-optio.open_injury": "Open Injury",
+
   "death.attack.overheating": "%1$s evaporated",
+  "death.attack.bleeding": "%1$s bleed to death",
 
 
 

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mors-est-optio:overheating"
+    "mors-est-optio:overheating",
+    "mors-est-optio:bleeding"
   ]
 }

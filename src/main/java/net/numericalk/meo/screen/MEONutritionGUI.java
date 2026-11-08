@@ -27,10 +27,6 @@ public class MEONutritionGUI {
             float playerProteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 0.5F);
             float playerFats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 0.5F);
 
-            graphics.text(client.font, "Carbohydrates: " + playerCarbohydrates, 10, 10, 0xFFFFFFFF, false);
-            graphics.text(client.font, "Proteins: " + playerProteins, 10, 20, 0xFFFFFFFF, false);
-            graphics.text(client.font, "Fats: " + playerFats, 10, 30, 0xFFFFFFFF, false);
-
             int width = client.getWindow().getGuiScaledWidth();
             int height = client.getWindow().getGuiScaledHeight();
 

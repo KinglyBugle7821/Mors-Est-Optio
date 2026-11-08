@@ -29,7 +29,7 @@ public class FreezingEffect extends MobEffect {
                         .lookupOrThrow(Registries.DAMAGE_TYPE)
                         .get(DamageTypes.FREEZE.identifier()).orElseThrow());
         if (entity.tickCount % 20 == 0) {
-            entity.hurtServer(level, damageSource, 1.0f * amplifier);
+            entity.hurtServer(level, damageSource, 1.0f);
         }
 
         return super.applyEffectTick(level, entity, amplifier);

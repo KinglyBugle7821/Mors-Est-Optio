@@ -26,7 +26,7 @@ public class OverheatingEffect extends MobEffect {
                         .lookupOrThrow(Registries.DAMAGE_TYPE)
                         .get(MEODamageTypes.OVERHEATING_DAMAGE.identifier()).orElseThrow());
         if (entity.tickCount % 20 == 0) {
-            entity.hurtServer(level, damageSource, 1.0f * amplifier);
+            entity.hurtServer(level, damageSource, 1.0f);
         }
 
         return super.applyEffectTick(level, entity, amplifier);
