@@ -32,8 +32,10 @@ public class MEOStaminaEvent {
                 Math.clamp(stamina, 0F, 1F)
         );
 
-        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 5 * 20, 2, false, false, false);
+        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 5 * 20, 3, false, false, false);
 
-        if (stamina <= 0) player.addEffect(slowness);
+        if (stamina <= 0) {
+            player.addEffect(slowness);
+        }
     }
 }
