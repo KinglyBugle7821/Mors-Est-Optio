@@ -66,6 +66,17 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+    public static final AttachmentType<Float> STAMINA =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("stamina"),
+                    builder -> builder
+                            .initializer(() -> 1F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
 
     //INJURY
     public static final AttachmentType<Float> PLAYER_HEAD_INJURY =

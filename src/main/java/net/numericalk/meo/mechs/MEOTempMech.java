@@ -103,7 +103,7 @@ public class MEOTempMech {
         float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
         float drinkingCooling = (float) (
                 Math.clamp(
-                        1 - Math.log(6 * hydration + 2) / Math.log(2),
+                        (Math.log(-6 * hydration + 8) / Math.log(2)) - 3,
                         -2, 0
                 ) *
                         Math.clamp((playerTemperature - 37) / 3f, 0f, 1f)
