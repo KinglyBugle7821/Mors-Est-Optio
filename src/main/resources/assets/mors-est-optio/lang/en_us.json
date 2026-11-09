@@ -87,6 +87,7 @@
 
   "key.category.mors-est-optio.meo_category": "MEO Category",
   "key.mors-est-optio.open_injury": "Open Injury",
+  "key.mors-est-optio.switch_hud": "HUD Switcher",
 
   "death.attack.overheating": "%1$s evaporated",
   "death.attack.bleeding": "%1$s bleed to death",

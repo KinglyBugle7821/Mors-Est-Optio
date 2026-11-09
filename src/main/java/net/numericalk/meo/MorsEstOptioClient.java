@@ -23,6 +23,7 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("nutrition"), MEONutritionGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("hydration"), MEOHydrationGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("stamina"), MEOStaminaGUI.hudLayer());
+		HudElementRegistry.addFirst(MorsEstOptio.id("fatigue"), MEOFatigueGUI.hudLayer());
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("injury"), MEOInjuryGUI.hudLayer());
 
@@ -31,16 +32,29 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		);
 		KeyMapping openInjuryKey = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
-						"key.mors-est-optio.open_injury", // The translation key for the key mapping.
-						InputConstants.Type.KEYSYM, // The type of the keybinding; KEYSYM for keyboard, MOUSE for mouse.
-						InputConstants.KEY_I, // The keycode of the key.
-						MEO_CATEGORY // The category of the mapping.
+						"key.mors-est-optio.open_injury",
+						InputConstants.Type.KEYSYM,
+						InputConstants.KEY_I,
+						MEO_CATEGORY
+				));
+		KeyMapping switchHUDKey = KeyMappingHelper.registerKeyMapping(
+				new KeyMapping(
+						"key.mors-est-optio.switch_hud",
+						InputConstants.Type.KEYSYM,
+						InputConstants.KEY_J,
+						MEO_CATEGORY
 				));
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openInjuryKey.consumeClick()) {
 				if (client.player == null) return;
 
 				MEOInjuryGUI.visible = !MEOInjuryGUI.visible;
+			}
+			while (switchHUDKey.consumeClick()){
+				if (client.player == null) return;
+
+				MEOFatigueGUI.visible = !MEOFatigueGUI.visible;
+				MEOStaminaGUI.visible = !MEOStaminaGUI.visible;
 			}
 		});
 	}

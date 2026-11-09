@@ -9,6 +9,8 @@ import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOAttachments;
 
 public class MEOStaminaGUI {
+    public static boolean visible = true;
+
     private static final Identifier ENERGY_BAR = Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "textures/gui/sprites/hud/energy_bar.png");
     private static final Identifier ENERGY_BAR_EMPTY = Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "textures/gui/sprites/hud/energy_bar_empty.png");
 
@@ -18,6 +20,7 @@ public class MEOStaminaGUI {
 
             Player player = client.player;
             assert player != null;
+            if (!visible) return;
 
             float stamina = player.getAttachedOrElse(MEOAttachments.STAMINA, 1F);
 

@@ -45,6 +45,7 @@ public class MorsEstOptio implements ModInitializer {
 				MEOInjuryEvent.serverTick(player);
 				MEOHydrationEvent.serverTick(player);
 				MEOStaminaEvent.serverTick(player);
+				MEOFatigueEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();

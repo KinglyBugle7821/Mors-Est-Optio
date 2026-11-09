@@ -13,26 +13,17 @@ public class MEOStaminaEvent {
                 MEOAttachments.STAMINA, 1F
         );
 
-        if (player.isJumping()) {
-            stamina -= 0.04F;
-        }
+        if (player.isJumping()) stamina -= 0.04F;
 
-        if (player.isSprinting()) {
-            stamina -= 0.025F;
-        }
+        if (player.isSprinting()) stamina -= 0.025F;
 
         stamina = Math.max(stamina, 0F);
 
-        if (!player.isJumping() && !player.isSprinting()) {
-            stamina += (1F - stamina) * 0.1F;
-        }
+        if (!player.isJumping() && !player.isSprinting()) stamina += (1F - stamina) * 0.1F;
 
-        player.setAttached(
-                MEOAttachments.STAMINA,
-                Math.clamp(stamina, 0F, 1F)
-        );
+        player.setAttached(MEOAttachments.STAMINA, Math.clamp(stamina, 0F, 1F));
 
-        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 5 * 20, 3, false, false, false);
+        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 5 * 20, 0, false, false, false);
 
         if (stamina <= 0) {
             player.addEffect(slowness);

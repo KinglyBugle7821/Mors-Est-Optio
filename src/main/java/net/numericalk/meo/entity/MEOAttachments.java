@@ -123,5 +123,17 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+
+    public static final AttachmentType<Float> FATIGUE =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("fatigue"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
     public static void initialize(){}
 }
