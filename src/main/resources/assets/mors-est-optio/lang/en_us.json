@@ -90,6 +90,8 @@
 
   "death.attack.overheating": "%1$s evaporated",
   "death.attack.bleeding": "%1$s bleed to death",
+  "death.attack.malnutrition": "%1$s lacked nutrition",
+  "death.attack.dehydration": "%1$s lacked water",
 
 
 
