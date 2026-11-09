@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.mechs.MEONutritionMech;
 
-public class MEONutritionTickEvent {
+public class MEONutritionEvent {
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 1200 == 0) {
             MEONutritionMech meoNutritionMech = new MEONutritionMech(player);

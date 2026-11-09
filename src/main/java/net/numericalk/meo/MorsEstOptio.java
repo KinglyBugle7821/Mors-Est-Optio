@@ -40,9 +40,10 @@ public class MorsEstOptio implements ModInitializer {
 
 		ServerTickEvents.END_SERVER_TICK.register(minecraftServer -> {
 			for (ServerPlayer player : minecraftServer.getPlayerList().getPlayers()) {
-				MEOTemperatureTickEvent.serverTick(player);
-				MEONutritionTickEvent.serverTick(player);
+				MEOTemperatureEvent.serverTick(player);
+				MEONutritionEvent.serverTick(player);
 				MEOInjuryEvent.serverTick(player);
+				MEOHydrationEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();

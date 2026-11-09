@@ -8,16 +8,14 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.mechs.MEOTempMech;
-import net.numericalk.meo.mechs.MEOWaterCooling;
 
-public class MEOTemperatureTickEvent {
+public class MEOTemperatureEvent {
     private static final Identifier FREEZING_ID =
             Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "freezing");
 
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 10 == 0) {
             MEOTempMech meoTempMech = new MEOTempMech(player);
-            MEOWaterCooling.tick(player);
         }
         var freezingEffect = player.getEffect(MEOEffects.FREEZING);
 

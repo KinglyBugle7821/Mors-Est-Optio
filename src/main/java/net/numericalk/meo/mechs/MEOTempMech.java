@@ -100,9 +100,14 @@ public class MEOTempMech {
                 0.0f, 1.0f
         );
 
-        float drinkingCooling =
-                MEOWaterCooling.getWaterCooling(player) > 0.0f
-                        ? -0.2f : 0.0f;
+        float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
+        float drinkingCooling = (float) (
+                Math.clamp(
+                        1 - Math.log(6 * hydration + 2) / Math.log(2),
+                        -2, 0
+                ) *
+                        Math.clamp((playerTemperature - 37) / 3f, 0f, 1f)
+        );
 
         float temperatureChange =
                 heatExchange

@@ -73,6 +73,12 @@ public class MEOInjuryEvent {
         if (armsInjury < 0) player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, 0F);
         if (legsInjury < 0) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, 0F);
 
+        if (headInjury > 1) player.setAttached(MEOAttachments.PLAYER_HEAD_INJURY, 1F);
+        if (bodyInjury > 1) player.setAttached(MEOAttachments.PLAYER_BODY_INJURY, 1F);
+        if (armsInjury > 1) player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, 1F);
+        if (legsInjury > 1) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, 1F);
+
+
         if (headInjury > 0.8F){
             player.addEffect(blindness);
             player.addEffect(bleeding);
