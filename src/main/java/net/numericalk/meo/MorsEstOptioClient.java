@@ -14,8 +14,6 @@ public class MorsEstOptioClient implements ClientModInitializer {
 	public static final String MOD_ID = "mors-est-optio";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	private static boolean injuryGuiOpen = false;
-
 	@Override
 	public void onInitializeClient() {
 		LOGGER.info("The world is waiting for you");
@@ -24,6 +22,7 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("effect_overlay"), MEOEffectGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("nutrition"), MEONutritionGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("hydration"), MEOHydrationGUI.hudLayer());
+		HudElementRegistry.addFirst(MorsEstOptio.id("stamina"), MEOStaminaGUI.hudLayer());
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("injury"), MEOInjuryGUI.hudLayer());
 
