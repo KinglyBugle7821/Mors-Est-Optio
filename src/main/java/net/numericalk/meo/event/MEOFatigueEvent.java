@@ -8,11 +8,7 @@ import net.numericalk.meo.entity.MEOAttachments;
 public class MEOFatigueEvent {
     public static void serverTick(ServerPlayer player) {
         float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0f);
-        float stamina = player.getAttachedOrElse(MEOAttachments.STAMINA, 1f);
 
-        if (player.tickCount % 20 == 0 && stamina <= 0.1f){
-            player.setAttached(MEOAttachments.FATIGUE, Math.min(fatigue + (1/900f), 1));
-        }
         if (player.isSleepingLongEnough()){
             player.setAttached(MEOAttachments.FATIGUE, 0f);
         }

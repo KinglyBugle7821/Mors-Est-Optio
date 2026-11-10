@@ -26,7 +26,7 @@ public abstract class WaterDrinkingMixin {
         if (level.isClientSide()) return;
 
         if (stack.is(Items.POTION)) {
-            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5f);
+            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1.0F);
             player.setAttached(MEOAttachments.HYDRATION,  Math.min(hydration + 0.2F, 1F));
         }
     }

@@ -97,7 +97,7 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ItemIds.IRON_PICKAXE);
         builder(DIAMOND_LEVEL_PICKAXE)
                 .add(ItemIds.DIAMOND_PICKAXE)
-                .add(MEOItemIds.STEEL_AXE)
+                .add(MEOItemIds.STEEL_PICKAXE)
                 .add(ItemIds.NETHERITE_PICKAXE);
 
         builder(ItemTags.LOGS_THAT_BURN)

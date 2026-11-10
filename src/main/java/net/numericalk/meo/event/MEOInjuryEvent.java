@@ -79,18 +79,18 @@ public class MEOInjuryEvent {
         if (legsInjury > 1) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, 1F);
 
 
-        if (headInjury > 0.8F){
+        if (headInjury > 0.9F){
             player.addEffect(blindness);
             player.addEffect(bleeding);
         }
-        if (bodyInjury > 0.8F) {
+        if (bodyInjury > 0.9F) {
             player.addEffect(bleeding);
         }
-        if (armsInjury > 0.8F) {
+        if (armsInjury > 0.9F) {
             player.addEffect(miningFatigue);
             player.addEffect(bleeding);
         }
-        if (legsInjury > 0.8F) {
+        if (legsInjury > 0.9F) {
             player.addEffect(slowness);
             player.addEffect(bleeding);
         }
@@ -107,19 +107,19 @@ public class MEOInjuryEvent {
 
         player.setAttached(MEOAttachments.PLAYER_HEAD_INJURY,
                 player.getAttachedOrElse(MEOAttachments.PLAYER_HEAD_INJURY, 0F)
-                        + injuryMultiplier * headModifier / 10F
+                        + injuryMultiplier * headModifier / 5F
         );
         player.setAttached(MEOAttachments.PLAYER_BODY_INJURY,
                 player.getAttachedOrElse(MEOAttachments.PLAYER_BODY_INJURY, 0F)
-                        + injuryMultiplier * bodyModifier / 10F
+                        + injuryMultiplier * bodyModifier / 5F
         );
         player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY,
                 player.getAttachedOrElse(MEOAttachments.PLAYER_ARMS_INJURY, 0F)
-                        + injuryMultiplier * armsModifier / 10F
+                        + injuryMultiplier * armsModifier / 5F
         );
         player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY,
                 player.getAttachedOrElse(MEOAttachments.PLAYER_LEGS_INJURY, 0F)
-                        + injuryMultiplier * legsModifier / 10F
+                        + injuryMultiplier * legsModifier / 5F
         );
     }
 }

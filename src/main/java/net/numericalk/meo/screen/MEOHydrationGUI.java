@@ -21,7 +21,7 @@ public class MEOHydrationGUI {
             Player player = client.player;
             assert player != null;
 
-            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
+            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1.0F);
 
             int barWidth = 81;
             int barHeight = 9;
@@ -41,7 +41,7 @@ public class MEOHydrationGUI {
             );
             graphics.fill(
                     barX + 1, barY + 1,
-                    barX + hydrationWidth - 1, barY + barHeight - 1,
+                    Math.max(barX + hydrationWidth - 1, barX + 1), barY + barHeight - 1,
                     0xFF0E87CC
             );
         };

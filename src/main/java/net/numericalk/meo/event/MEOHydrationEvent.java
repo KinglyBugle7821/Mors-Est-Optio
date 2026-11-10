@@ -11,8 +11,13 @@ import net.numericalk.meo.entity.MEODamageTypes;
 public class MEOHydrationEvent {
     public static void serverTick(ServerPlayer player) {
         float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
-        if (player.tickCount % 1200 == 0){
-            player.setAttached(MEOAttachments.HYDRATION, Math.max(hydration - 0.1f, 0));
+
+        if (player.tickCount % 20 == 0){
+
+            float hydrationDecreaser = MEOCorrelations.THCorrelation(player);
+            hydration -= hydrationDecreaser;
+
+            player.setAttached(MEOAttachments.HYDRATION, Math.clamp(hydration, 0f, 1f));
         }
         if (player.tickCount % 20 == 0 && hydration == 0){
             DamageSource damageSource = new DamageSource(

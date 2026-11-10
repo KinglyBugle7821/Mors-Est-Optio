@@ -5,7 +5,8 @@
   "mixins": [
     "SlowBlockBreakingMixin",
     "WaterDrinkingMixin",
-    "EatingMixin"
+    "EatingMixin",
+    "SleepingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

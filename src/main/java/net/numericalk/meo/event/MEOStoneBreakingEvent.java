@@ -58,8 +58,9 @@ public class MEOStoneBreakingEvent {
                     return degradeStone(WOOD_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
                 else if (tool.is(MEOItemTagProvider.COPPER_LEVEL_PICKAXE))
                     return degradeStone(COPPER_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
-                else if (tool.is(MEOItemTagProvider.IRON_LEVEL_AXE))
+                else if (tool.is(MEOItemTagProvider.IRON_LEVEL_PICKAXE))
                     return degradeStone(IRON_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
+                else if (tool.is(MEOItemTagProvider.DIAMOND_LEVEL_PICKAXE)) return true;
                 else
                     return degradeStone(WOOD_DEGRADATION_AMOUNT, state, stone, cobblestone, breakingStone, level, pos, player);
             }

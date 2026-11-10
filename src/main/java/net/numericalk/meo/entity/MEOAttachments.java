@@ -59,7 +59,7 @@ public class MEOAttachments {
             AttachmentRegistry.create(
                     MorsEstOptio.id("hydration"),
                     builder -> builder
-                            .initializer(() -> 0.5F)
+                            .initializer(() -> 1.0F)
                             .persistent(Codec.FLOAT)
                             .syncWith(
                                     ByteBufCodecs.FLOAT,

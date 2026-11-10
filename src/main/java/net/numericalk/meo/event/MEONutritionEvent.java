@@ -20,7 +20,7 @@ public class MEONutritionEvent {
 
         ServerLevel level = player.level();
 
-        if (player.tickCount % 1200 == 0) {
+        if (player.tickCount % 20 == 0) {
             MEONutritionMech meoNutritionMech = new MEONutritionMech(player);
         }
         if (player.tickCount % 20 == 0 && (carbs == 0 || proteins == 0 || fats == 0)) {

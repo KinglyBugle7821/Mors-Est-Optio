@@ -9,17 +9,17 @@ public class MEOStaminaEvent {
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 10 != 0) return;
 
-        float stamina = player.getAttachedOrElse(
-                MEOAttachments.STAMINA, 1F
-        );
+        float stamina = player.getAttachedOrElse(MEOAttachments.STAMINA, 1F);
 
-        if (player.isJumping()) stamina -= 0.04F;
-
-        if (player.isSprinting()) stamina -= 0.025F;
+        if (player.isSprinting()) {
+            float staminaDecrease = MEOCorrelations.NSCorrelation(player) + MEOCorrelations.HSCorrelation(player);
+            stamina -= staminaDecrease;
+            float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0f);
+            player.setAttached(MEOAttachments.FATIGUE, Math.min(fatigue + 0.002f, 1));
+        }
+        else stamina += 0.05f;
 
         stamina = Math.max(stamina, 0F);
-
-        if (!player.isJumping() && !player.isSprinting()) stamina += (1F - stamina) * 0.1F;
 
         player.setAttached(MEOAttachments.STAMINA, Math.clamp(stamina, 0F, 1F));
 

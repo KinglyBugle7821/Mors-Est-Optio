@@ -10,6 +10,7 @@ import net.minecraft.world.level.LightLayer;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
+import net.numericalk.meo.event.MEOCorrelations;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
@@ -81,7 +82,7 @@ public class MEOTempMech {
 
         float heatHomeostasis = 0.05f * (37.0f - playerTemperature);
 
-        float heatMetabolism = 0.14f;
+        float heatMetabolism = MEOCorrelations.NTCorrelation(player);
 
         float activityFactor =
                 player.isSprinting() && player.isJumping() ? 1.0f :
@@ -100,14 +101,7 @@ public class MEOTempMech {
                 0.0f, 1.0f
         );
 
-        float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
-        float drinkingCooling = (float) (
-                Math.clamp(
-                        (Math.log(-6 * hydration + 8) / Math.log(2)) - 3,
-                        -2, 0
-                ) *
-                        Math.clamp((playerTemperature - 37) / 3f, 0f, 1f)
-        );
+        float drinkingCooling = MEOCorrelations.HTCorrelation(player);
 
         float temperatureChange =
                 heatExchange
