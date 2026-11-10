@@ -60,9 +60,9 @@ public class EatingMixin {
     }
     @Unique
     private void setNutrition(Item food, float carbs, float proteins, float fats, Player player, ItemStack stack){
-        float playerCarbohydrates = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 0.5F);
-        float playerProteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 0.5F);
-        float playerFats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 0.5F);
+        float playerCarbohydrates = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F);
+        float playerProteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F);
+        float playerFats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
 
         if (stack.is(food)){
             player.setAttached(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, Math.min(playerCarbohydrates + (carbs * 0.75f), 1));

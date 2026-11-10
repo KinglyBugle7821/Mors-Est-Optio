@@ -58,8 +58,6 @@ public class MEOStaminaGUI {
                         barWidth, barHeight
                 );
             }
-
-            graphics.text(client.font, "Stamina: " + stamina, 10, 10, 0xFFFFFFFF);
         };
     }
 }

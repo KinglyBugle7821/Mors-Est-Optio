@@ -6,9 +6,9 @@ import net.numericalk.meo.event.MEOCorrelations;
 
 public class MEONutritionMech {
     public MEONutritionMech(Player player){
-        float playerCarbohydrates = player.getAttachedOrCreate(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT);
-        float playerProteins = player.getAttachedOrCreate(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT);
-        float playerFat = player.getAttachedOrCreate(MEOAttachments.PLAYER_FAT_ATTACHMENT);
+        float playerCarbohydrates = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F);
+        float playerProteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F);
+        float playerFat = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
 
         playerCarbohydrates -= MEOCorrelations.TNCorrelation(player) + MEOCorrelations.HuNCorrelation(player);
         playerProteins -= MEOCorrelations.TNCorrelation(player) + MEOCorrelations.HuNCorrelation(player);

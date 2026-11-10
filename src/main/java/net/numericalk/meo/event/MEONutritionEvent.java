@@ -14,9 +14,9 @@ import net.numericalk.meo.mechs.MEONutritionMech;
 
 public class MEONutritionEvent {
     public static void serverTick(ServerPlayer player) {
-        float carbs = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 0.5F);
-        float proteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 0.5F);
-        float fats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 0.5F);
+        float carbs = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F);
+        float proteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F);
+        float fats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
 
         ServerLevel level = player.level();
 

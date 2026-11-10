@@ -22,10 +22,13 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("effect_overlay"), MEOEffectGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("nutrition"), MEONutritionGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("hydration"), MEOHydrationGUI.hudLayer());
+
 		HudElementRegistry.addFirst(MorsEstOptio.id("stamina"), MEOStaminaGUI.hudLayer());
 		HudElementRegistry.addFirst(MorsEstOptio.id("fatigue"), MEOFatigueGUI.hudLayer());
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("injury"), MEOInjuryGUI.hudLayer());
+
+		HudElementRegistry.addFirst(MorsEstOptio.id("open_attributes"), MEOAttributesGUI.hudLayer());
 
 		KeyMapping.Category MEO_CATEGORY = KeyMapping.Category.register(
 				MorsEstOptio.id("meo_category")
@@ -44,6 +47,13 @@ public class MorsEstOptioClient implements ClientModInitializer {
 						InputConstants.KEY_J,
 						MEO_CATEGORY
 				));
+		KeyMapping openMEOAttributesKey = KeyMappingHelper.registerKeyMapping(
+				new KeyMapping(
+						"key.mors-est-optio.open_meo_attributes_key",
+						InputConstants.Type.KEYSYM,
+						InputConstants.KEY_K,
+						MEO_CATEGORY
+				));
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (openInjuryKey.consumeClick()) {
 				if (client.player == null) return;
@@ -55,6 +65,11 @@ public class MorsEstOptioClient implements ClientModInitializer {
 
 				MEOFatigueGUI.visible = !MEOFatigueGUI.visible;
 				MEOStaminaGUI.visible = !MEOStaminaGUI.visible;
+			}
+			while (openMEOAttributesKey.consumeClick()) {
+				if (client.player == null) return;
+
+				MEOAttributesGUI.visible = !MEOAttributesGUI.visible;
 			}
 		});
 	}

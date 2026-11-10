@@ -5,15 +5,15 @@ import net.numericalk.meo.entity.MEOAttachments;
 
 public class MEOCorrelations {
     public static float NSCorrelation(Player player){ // Nutrition - Stamina
-        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 0.5F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 0.5F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 0.5F);
+        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
         return -0.005f * nutritionSum + 0.025f;
     }
 
     public static float NTCorrelation(Player player){ // Nutrition - Temperature
-        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 0.5F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 0.5F);
+        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
         return 0.07f * nutritionSum;
     }
 

@@ -59,9 +59,6 @@ public class MEOFatigueGUI {
                         barWidth, barHeight
                 );
             }
-            graphics.text(client.font, "Fatigue: " + fatigue, 10, 20, 0xFFFFFFFF);
-
         };
-
     }
 }
