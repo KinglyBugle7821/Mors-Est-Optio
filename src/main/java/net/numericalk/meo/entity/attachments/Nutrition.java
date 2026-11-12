@@ -1,22 +1,20 @@
-package net.numericalk.meo.event;
+package net.numericalk.meo.entity.attachments;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.level.Level;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEODamageTypes;
 import net.numericalk.meo.mechs.MEONutritionMech;
 
-public class MEONutritionEvent {
+public class Nutrition {
     public static void serverTick(ServerPlayer player) {
-        float carbs = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F);
-        float proteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F);
-        float fats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
+        float carbs = player.getAttachedOrElse(MEOAttachments.CARBOHYDRATE, 1.0F);
+        float proteins = player.getAttachedOrElse(MEOAttachments.PROTEIN, 1.0F);
+        float fats = player.getAttachedOrElse(MEOAttachments.FAT, 1.0F);
 
         ServerLevel level = player.level();
 

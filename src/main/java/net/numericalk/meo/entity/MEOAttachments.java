@@ -8,9 +8,9 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.numericalk.meo.MorsEstOptio;
 
 public class MEOAttachments {
-    public static final AttachmentType<Float> PLAYER_TEMPERATURE_ATTACHMENT =
+    public static final AttachmentType<Float> TEMPERATURE =
             AttachmentRegistry.create(
-                    MorsEstOptio.id("player_temperature_attachment"),
+                    MorsEstOptio.id("temperature"),
                     builder -> builder
                             .initializer(() -> 37F)
                             .persistent(Codec.FLOAT)
@@ -21,9 +21,9 @@ public class MEOAttachments {
             );
 
     //NUTRITION
-    public static final AttachmentType<Float> PLAYER_CARBOHYDRATE_ATTACHMENT =
+    public static final AttachmentType<Float> CARBOHYDRATE =
             AttachmentRegistry.create(
-                    MorsEstOptio.id("player_carbohydrate_attachment"),
+                    MorsEstOptio.id("carbohydrate"),
                     builder -> builder
                             .initializer(() -> 1.0F)
                             .persistent(Codec.FLOAT)
@@ -32,9 +32,9 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
-    public static final AttachmentType<Float> PLAYER_PROTEIN_ATTACHMENT =
+    public static final AttachmentType<Float> PROTEIN =
             AttachmentRegistry.create(
-                    MorsEstOptio.id("player_protein_attachment"),
+                    MorsEstOptio.id("protein"),
                     builder -> builder
                             .initializer(() -> 1.0F)
                             .persistent(Codec.FLOAT)
@@ -43,9 +43,9 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
-    public static final AttachmentType<Float> PLAYER_FAT_ATTACHMENT =
+    public static final AttachmentType<Float> FAT =
             AttachmentRegistry.create(
-                    MorsEstOptio.id("player_fat_attachment"),
+                    MorsEstOptio.id("fat"),
                     builder -> builder
                             .initializer(() -> 1.0F)
                             .persistent(Codec.FLOAT)
@@ -54,7 +54,7 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
-    //HYDRATION
+
     public static final AttachmentType<Float> HYDRATION =
             AttachmentRegistry.create(
                     MorsEstOptio.id("hydration"),
@@ -77,7 +77,17 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
-
+    public static final AttachmentType<Float> FATIGUE =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("fatigue"),
+                    builder -> builder
+                            .initializer(() -> 0.0F)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
     //INJURY
     public static final AttachmentType<Float> PLAYER_HEAD_INJURY =
             AttachmentRegistry.create(
@@ -124,9 +134,9 @@ public class MEOAttachments {
                             )
             );
 
-    public static final AttachmentType<Float> FATIGUE =
+    public static final AttachmentType<Float> WETNESS =
             AttachmentRegistry.create(
-                    MorsEstOptio.id("fatigue"),
+                    MorsEstOptio.id("wetness"),
                     builder -> builder
                             .initializer(() -> 0.0F)
                             .persistent(Codec.FLOAT)
@@ -134,6 +144,19 @@ public class MEOAttachments {
                                     ByteBufCodecs.FLOAT,
                                     AttachmentSyncPredicate.targetOnly()
                             )
+            );
+    public static final AttachmentType<Integer> WIND_DIRECTION =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("wind_direction"),
+                    builder -> builder
+                            .initializer(() -> 0)
+                            .persistent(Codec.INT)
+            );
+    public static final AttachmentType<Float> WIND_STRENGTH =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("wind_strength"),
+                    builder -> builder
+                            .initializer(() -> 0.05f)
             );
     public static void initialize(){}
 }

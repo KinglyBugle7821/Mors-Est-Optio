@@ -1,19 +1,19 @@
-package net.numericalk.meo.event;
+package net.numericalk.meo.entity.attachments;
 
 import net.minecraft.world.entity.player.Player;
 import net.numericalk.meo.entity.MEOAttachments;
 
 public class MEOCorrelations {
     public static float NSCorrelation(Player player){ // Nutrition - Stamina
-        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
+        float nutritionSum = player.getAttachedOrElse(MEOAttachments.CARBOHYDRATE, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.PROTEIN, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.FAT, 1.0F);
         return -0.005f * nutritionSum + 0.025f;
     }
 
     public static float NTCorrelation(Player player){ // Nutrition - Temperature
-        float nutritionSum = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F) +
-                player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
+        float nutritionSum = player.getAttachedOrElse(MEOAttachments.CARBOHYDRATE, 1.0F) +
+                player.getAttachedOrElse(MEOAttachments.FAT, 1.0F);
         return 0.07f * nutritionSum;
     }
 
@@ -24,13 +24,13 @@ public class MEOCorrelations {
 
     public static float HTCorrelation (Player player){ // Hydration - Temperature
         float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1.0f);
-        float playerTemperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 37F);
+        float playerTemperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37F);
         return (float) (Math.clamp((Math.log(-6 * hydration + 8) / Math.log(2)) - 3, -2, 0) *
                         Math.clamp((playerTemperature - 37) / 3f, 0f, 1f)
         );
     }
     public static float THCorrelation (Player player) { // Temperature - Hydration
-        float playerTemperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 37F);
+        float playerTemperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37F);
 
         return 0.000446667f * ((float) Math.pow(playerTemperature - 37, 2))
                 + 0.000993333f * (playerTemperature - 37)
@@ -43,9 +43,19 @@ public class MEOCorrelations {
     }
 
     public static float TNCorrelation(Player player) { //Temperature - Nutrition
-        float temperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 1.0f);
+        float temperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 1.0f);
         return (7f/90000f) * ((float) Math.pow(temperature - 37, 2))
                 - (1f/3000f) * (temperature - 37)
                 + 0.001f;
+    }
+
+    public static float WTCorrelation (Player player) { //Wetness - Temperature
+        float wetness = player.getAttachedOrElse(MEOAttachments.WETNESS, 0.0F);
+        return -(wetness/5);
+    }
+
+    public static float WiTCorrelation (Player player) { //Wind - Temperature
+        float windStrength = player.level().getAttachedOrElse(MEOAttachments.WIND_STRENGTH, 0.05F);
+        return -(windStrength/10);
     }
 }

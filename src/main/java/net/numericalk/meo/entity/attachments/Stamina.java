@@ -1,11 +1,11 @@
-package net.numericalk.meo.event;
+package net.numericalk.meo.entity.attachments;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.numericalk.meo.entity.MEOAttachments;
 
-public class MEOStaminaEvent {
+public class Stamina {
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 10 != 0) return;
 

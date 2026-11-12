@@ -13,8 +13,11 @@ import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
+import net.numericalk.meo.entity.attachments.*;
 import net.numericalk.meo.event.*;
 import net.numericalk.meo.items.MEOItems;
+import net.numericalk.meo.world.attachments.WindDirection;
+import net.numericalk.meo.world.attachments.WindStrength;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,17 +43,21 @@ public class MorsEstOptio implements ModInitializer {
 
 		ServerTickEvents.END_SERVER_TICK.register(minecraftServer -> {
 			for (ServerPlayer player : minecraftServer.getPlayerList().getPlayers()) {
-				MEOTemperatureEvent.serverTick(player);
-				MEONutritionEvent.serverTick(player);
-				MEOInjuryEvent.serverTick(player);
-				MEOHydrationEvent.serverTick(player);
-				MEOStaminaEvent.serverTick(player);
-				MEOFatigueEvent.serverTick(player);
+				Temperature.serverTick(player);
+				Nutrition.serverTick(player);
+				Injury.serverTick(player);
+				Hydration.serverTick(player);
+				Stamina.serverTick(player);
+				Fatigue.serverTick(player);
+				Wetness.serverTick(player);
+				WindDirection.serverTick(player);
+				WindStrength.serverTick(player);
+				MEOWindDriftingEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
 		MEOStoneBreakingEvent stoneBreakingEvent = new MEOStoneBreakingEvent();
-		ServerLivingEntityEvents.AFTER_DAMAGE.register(new MEOInjuryEvent().afterDamage);
+		ServerLivingEntityEvents.AFTER_DAMAGE.register(new Injury().afterDamage);
 	}
 
 	public static Identifier id(String path) {

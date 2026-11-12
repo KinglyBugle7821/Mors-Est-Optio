@@ -10,12 +10,12 @@ import net.minecraft.world.level.LightLayer;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
 import net.numericalk.meo.entity.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.event.MEOCorrelations;
+import net.numericalk.meo.entity.attachments.MEOCorrelations;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
         float playerTemperature = player.getAttachedOrCreate(
-                MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT
+                MEOAttachments.TEMPERATURE
         );
 
         Level level = player.level();
@@ -80,7 +80,7 @@ public class MEOTempMech {
                 * (exposureTemperature - playerTemperature)
                 * (1.0f - insulation);
 
-        float heatHomeostasis = 0.05f * (37.0f - playerTemperature);
+        float heatHomeostasis = 0.1f * (37.0f - playerTemperature);
 
         float heatMetabolism = MEOCorrelations.NTCorrelation(player);
 
@@ -102,6 +102,8 @@ public class MEOTempMech {
         );
 
         float drinkingCooling = MEOCorrelations.HTCorrelation(player);
+        float wetnessCooling = MEOCorrelations.WTCorrelation(player);
+        float windCooling = MEOCorrelations.WiTCorrelation(player);
 
         float temperatureChange =
                 heatExchange
@@ -110,12 +112,14 @@ public class MEOTempMech {
                         + heatExercise
                         + heatShivering
                         + heatSweating
-                        + drinkingCooling;
+                        + drinkingCooling
+                        + wetnessCooling
+                        + windCooling;
 
         playerTemperature += temperatureChange;
 
         player.setAttached(
-                MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT,
+                MEOAttachments.TEMPERATURE,
                 playerTemperature
         );
 

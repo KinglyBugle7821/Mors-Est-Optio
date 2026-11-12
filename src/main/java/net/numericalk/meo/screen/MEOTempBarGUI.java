@@ -23,7 +23,7 @@ public class MEOTempBarGUI {
             Player player = client.player;
             assert player != null;
 
-            float playerTemperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 37f);
+            float playerTemperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37f);
             int temperature = Math.round(7.8f * Math.max(Math.min(playerTemperature, 42), 32) - 288.6f);
 
             int barWidth = 81;

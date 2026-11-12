@@ -23,7 +23,7 @@ public class MEOEffectGUI {
             Player player = client.player;
             assert player != null;
 
-            float playerTemperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 37f);
+            float playerTemperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37f);
             float opacity = Math.max(Math.min(Math.max(playerTemperature-35, -1), 0), Math.min(playerTemperature, 40)-39);
             float absoluteOpacity = Math.abs(opacity);
 

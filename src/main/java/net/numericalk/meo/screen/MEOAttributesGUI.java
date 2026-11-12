@@ -3,7 +3,9 @@ package net.numericalk.meo.screen;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.network.ClientEnvironmentData;
 
 public class MEOAttributesGUI {
     public static boolean visible = false;
@@ -16,10 +18,10 @@ public class MEOAttributesGUI {
             assert player != null;
             if (!visible) return;
 
-            float playerTemperature = player.getAttachedOrElse(MEOAttachments.PLAYER_TEMPERATURE_ATTACHMENT, 37F);
-            float carbohydrates = player.getAttachedOrElse(MEOAttachments.PLAYER_CARBOHYDRATE_ATTACHMENT, 1.0F);
-            float proteins = player.getAttachedOrElse(MEOAttachments.PLAYER_PROTEIN_ATTACHMENT, 1.0F);
-            float fats = player.getAttachedOrElse(MEOAttachments.PLAYER_FAT_ATTACHMENT, 1.0F);
+            float playerTemperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37F);
+            float carbohydrates = player.getAttachedOrElse(MEOAttachments.CARBOHYDRATE, 1.0F);
+            float proteins = player.getAttachedOrElse(MEOAttachments.PROTEIN, 1.0F);
+            float fats = player.getAttachedOrElse(MEOAttachments.FAT, 1.0F);
             float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1.0F);
             float stamina = player.getAttachedOrElse(MEOAttachments.STAMINA, 1.0F);
             float headInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_HEAD_INJURY, 0F);
@@ -27,6 +29,9 @@ public class MEOAttributesGUI {
             float armsInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_ARMS_INJURY, 0F);
             float legsInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_LEGS_INJURY, 0F);
             float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0F);
+            float wetness = player.getAttachedOrElse(MEOAttachments.WETNESS, 0F);
+            int windDirection = ClientEnvironmentData.getWindDirection();
+            float windStrength = ClientEnvironmentData.getWindStrength();
 
             graphics.text(client.font, "Player Temperature: " + playerTemperature, 0, 0, 0xFFFFFFFF);
             graphics.text(client.font, "Carbohydrates: " + carbohydrates, 0, 10, 0xFFFFFFFF);
@@ -39,6 +44,9 @@ public class MEOAttributesGUI {
             graphics.text(client.font, "Arms Injury: " + armsInjury, 0, 80, 0xFFFFFFFF);
             graphics.text(client.font, "Legs Injury: " + legsInjury, 0, 90, 0xFFFFFFFF);
             graphics.text(client.font, "Fatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
+            graphics.text(client.font, "Wetness: " + wetness, 0, 110, 0xFFFFFFFF);
+            graphics.text(client.font, "Wind Direction: " + windDirection, 0, 120, 0xFFFFFFFF);
+            graphics.text(client.font, "Wind Strength: " + windStrength, 0, 130, 0xFFFFFFFF);
         };
     }
 }
