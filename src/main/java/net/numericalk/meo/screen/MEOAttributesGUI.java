@@ -3,8 +3,7 @@ package net.numericalk.meo.screen;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.network.ClientEnvironmentData;
 
 public class MEOAttributesGUI {
@@ -32,21 +31,26 @@ public class MEOAttributesGUI {
             float wetness = player.getAttachedOrElse(MEOAttachments.WETNESS, 0F);
             int windDirection = ClientEnvironmentData.getWindDirection();
             float windStrength = ClientEnvironmentData.getWindStrength();
+            String season = ClientEnvironmentData.getSeasonId() == 0 ? "Spring" :
+                            ClientEnvironmentData.getSeasonId() == 1 ? "Summer" :
+                            ClientEnvironmentData.getSeasonId() == 2 ? "Autumn" :
+                            ClientEnvironmentData.getSeasonId() == 3 ? "Winter" : "Invalid Season";
 
-            graphics.text(client.font, "Player Temperature: " + playerTemperature, 0, 0, 0xFFFFFFFF);
+            graphics.text(client.font, "Player PlayerTemperature: " + playerTemperature, 0, 0, 0xFFFFFFFF);
             graphics.text(client.font, "Carbohydrates: " + carbohydrates, 0, 10, 0xFFFFFFFF);
             graphics.text(client.font, "Proteins: " + proteins, 0, 20, 0xFFFFFFFF);
             graphics.text(client.font, "Fats: " + fats, 0, 30, 0xFFFFFFFF);
-            graphics.text(client.font, "Hydration: " + hydration, 0, 40, 0xFFFFFFFF);
-            graphics.text(client.font, "Stamina: " + stamina, 0, 50, 0xFFFFFFFF);
-            graphics.text(client.font, "Head Injury: " + headInjury, 0, 60, 0xFFFFFFFF);
-            graphics.text(client.font, "Body Injury: " + bodyInjury, 0, 70, 0xFFFFFFFF);
-            graphics.text(client.font, "Arms Injury: " + armsInjury, 0, 80, 0xFFFFFFFF);
-            graphics.text(client.font, "Legs Injury: " + legsInjury, 0, 90, 0xFFFFFFFF);
-            graphics.text(client.font, "Fatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
-            graphics.text(client.font, "Wetness: " + wetness, 0, 110, 0xFFFFFFFF);
+            graphics.text(client.font, "PlayerHydration: " + hydration, 0, 40, 0xFFFFFFFF);
+            graphics.text(client.font, "PlayerStamina: " + stamina, 0, 50, 0xFFFFFFFF);
+            graphics.text(client.font, "Head PlayerInjury: " + headInjury, 0, 60, 0xFFFFFFFF);
+            graphics.text(client.font, "Body PlayerInjury: " + bodyInjury, 0, 70, 0xFFFFFFFF);
+            graphics.text(client.font, "Arms PlayerInjury: " + armsInjury, 0, 80, 0xFFFFFFFF);
+            graphics.text(client.font, "Legs PlayerInjury: " + legsInjury, 0, 90, 0xFFFFFFFF);
+            graphics.text(client.font, "PlayerFatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
+            graphics.text(client.font, "PlayerWetness: " + wetness, 0, 110, 0xFFFFFFFF);
             graphics.text(client.font, "Wind Direction: " + windDirection, 0, 120, 0xFFFFFFFF);
             graphics.text(client.font, "Wind Strength: " + windStrength, 0, 130, 0xFFFFFFFF);
+            graphics.text(client.font, "Season: " + season, 0, 140, 0xFFFFFFFF);
         };
     }
 }

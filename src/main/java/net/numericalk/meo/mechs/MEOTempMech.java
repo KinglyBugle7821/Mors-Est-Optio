@@ -8,9 +8,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.entity.attachments.MEOCorrelations;
+import net.numericalk.meo.attachments.MEOCorrelations;
 
 public class MEOTempMech {
     public MEOTempMech(Player player){
@@ -20,27 +20,29 @@ public class MEOTempMech {
 
         Level level = player.level();
         BlockPos playerPos = player.blockPosition();
+        int playerY = playerPos.getY();
 
-                    //Environment Temp
-        //Biome Temp
-        float baseTemperature = level.getBiome(playerPos).value().getBaseTemperature();
-        float biomeTemperature;
-        if (baseTemperature <= 0.8) biomeTemperature = -15 + 35 * ((baseTemperature + 0.7f)/1.5f);
-        else biomeTemperature = 20 + 25 * ((baseTemperature - 0.8f)/1.2f);
-
-                    //Adjustments
-        //Altitude
-        float altitudeAdjustment = 0.1f * Math.max(-320, 62 - playerPos.getY());
-
-        //Daytime
+        // ENVIRONMENT TEMP
+        // Biome
+        float baseBiomeTemperature = level.getBiome(playerPos).value().getBaseTemperature();
+        float biomeTemperature = (float) (
+                (-1525.0 / 324.0) * Math.pow(baseBiomeTemperature, 3)
+                        + (5165.0 / 648.0) * Math.pow(baseBiomeTemperature, 2)
+                        + (5795.0 / 324.0) * baseBiomeTemperature
+        );
+        // Altitude
+        float altitudeAdjustment = (float) ((0.0001105497 * Math.pow(playerY, 2)) - (0.15850906 * playerY) + 9.40260859);
+        // Daytime
         int time = (int) (level.getOverworldClockTime() % 24000);
-        float daytimeAdjustment = (float) (5 * Math.cos(2 * Math.PI * (time - 6000) / 24000.0));
-
-        //Shaded
+        float dayTimeAdjustment = (float) (
+                (-11 * Math.pow(biomeTemperature, 2) + 197 * biomeTemperature + 2700) / 780.0 +
+                        ((25 * Math.pow(biomeTemperature, 2) - 443 * biomeTemperature + 13756) / 4004.0) *
+                                Math.cos(Math.PI * (time - 6000) / 12000.0)
+        );
+        // Shaded
         float skyLightLevel = level.getBrightness(LightLayer.SKY, playerPos);
         float shadedAdjustment = Math.max(Math.min(skyLightLevel, 15), 0)/3;
-
-        //Weather
+        // Weather
         float weatherAdjustment;
         if (level.isRaining() && !level.isThundering()) weatherAdjustment = -3;
         else if (level.isRaining() && level.isThundering()) weatherAdjustment = -5;
@@ -49,7 +51,7 @@ public class MEOTempMech {
         //LocalBlockThermalField
         float localBlockAdjustment = (float) LocalBlockThermalField.getTemperatureOffset(level, player);
 
-                    //Player Temperature
+                    //Player PlayerTemperature
         //Leather Armor Insulation
         boolean isWearingCap = player.getItemBySlot(EquipmentSlot.HEAD).is(MEOItemTagProvider.CAP);
         boolean isWearingTunic = player.getItemBySlot(EquipmentSlot.CHEST).is(MEOItemTagProvider.TUNIC);
@@ -57,16 +59,18 @@ public class MEOTempMech {
         boolean isWearingBoots = player.getItemBySlot(EquipmentSlot.FEET).is(MEOItemTagProvider.BOOTS);
         float insulation = 1 - (1 - (isWearingCap ? 0.05f : 0.0f)) * (1 - (isWearingTunic ? 0.2f : 0.0f)) * (1 - (isWearingPants ? 0.15f : 0.0f)) * (1 - (isWearingBoots ? 0.1f : 0.0f));
 
-        float waterTemp = biomeTemperature + daytimeAdjustment * 0.25f;
+        float waterTemp = biomeTemperature + dayTimeAdjustment * 0.1f;
+        float seasonAdjustment = MEOCorrelations.STCorrelation(player);
 
         //Total
         float environmentTemperature =
                 biomeTemperature
                         + altitudeAdjustment
-                        + daytimeAdjustment
+                        + dayTimeAdjustment
                         + weatherAdjustment
                         + localBlockAdjustment
-                        + shadedAdjustment;
+                        + shadedAdjustment
+                        + seasonAdjustment;
 
         float exposureTemperature = environmentTemperature;
 
@@ -86,7 +90,7 @@ public class MEOTempMech {
 
         float activityFactor =
                 player.isSprinting() && player.isJumping() ? 1.0f :
-                        player.isSprinting() ? 0.7f :
+                        player.isSprinting() ? 0.5f :
                                 player.isJumping() ? 0.2f : 0.0f;
 
         float heatExercise = 0.05f * activityFactor;

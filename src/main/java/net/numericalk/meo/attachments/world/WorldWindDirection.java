@@ -1,16 +1,14 @@
 
-package net.numericalk.meo.world.attachments;
+package net.numericalk.meo.attachments.world;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-import net.numericalk.meo.entity.MEOAttachments;
-import net.numericalk.meo.network.WindNetworking;
+import net.numericalk.meo.attachments.MEOAttachments;
+import net.numericalk.meo.network.MEONetworking;
 
-public class WindDirection {
+public class WorldWindDirection {
     public static void serverTick(Player player) {
         Level level = player.level();
 
@@ -22,7 +20,7 @@ public class WindDirection {
                 MEOAttachments.WIND_DIRECTION_TARGET, 0
         );
 
-        if (player.tickCount % 12000 == 0) {
+        if (level.getGameTime() % 12000 == 0) {
             direction = RandomSource.create().nextInt(360);
 
             level.setAttached(
@@ -39,7 +37,7 @@ public class WindDirection {
 
         if (player instanceof ServerPlayer serverPlayer
                 && player.tickCount % 5 == 0) {
-            WindNetworking.syncPlayer(serverPlayer);
+            MEONetworking.syncPlayer(serverPlayer);
         }
     }
 }

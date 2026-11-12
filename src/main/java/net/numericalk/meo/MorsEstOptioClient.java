@@ -6,7 +6,8 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.minecraft.client.KeyMapping;
-import net.numericalk.meo.network.WindNetworking;
+import net.numericalk.meo.network.MEONetworking;
+import net.numericalk.meo.network.payload.SeasonDataPayload;
 import net.numericalk.meo.screen.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,19 +36,23 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("injury"), MEOInjuryGUI.hudLayer());
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("open_attributes"), MEOAttributesGUI.hudLayer());
-		WindNetworking.initialize();
+		MEONetworking.initialize();
 
-		ClientPlayNetworking.registerGlobalReceiver(
-				WindDataPayload.TYPE,
+		ClientPlayNetworking.registerGlobalReceiver(WindDataPayload.TYPE,
 				(payload, context) -> {
-
 					context.client().execute(() ->
 							ClientEnvironmentData.updateWind(
 									payload.direction(),
 									payload.strength()
 							)
 					);
-
+				}
+		);
+		ClientPlayNetworking.registerGlobalReceiver(SeasonDataPayload.TYPE,
+				(payload, context) -> {
+					context.client().execute(() ->
+							ClientEnvironmentData.updateSeason(payload.seasonId())
+							);
 				}
 		);
 

@@ -9,15 +9,16 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.server.level.ServerPlayer;
+import net.numericalk.meo.attachments.player.*;
+import net.numericalk.meo.attachments.world.WorldSeasons;
 import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
-import net.numericalk.meo.entity.attachments.*;
 import net.numericalk.meo.event.*;
 import net.numericalk.meo.items.MEOItems;
-import net.numericalk.meo.world.attachments.WindDirection;
-import net.numericalk.meo.world.attachments.WindStrength;
+import net.numericalk.meo.attachments.world.WorldWindDirection;
+import net.numericalk.meo.attachments.world.WorldWindStrength;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,21 +44,23 @@ public class MorsEstOptio implements ModInitializer {
 
 		ServerTickEvents.END_SERVER_TICK.register(minecraftServer -> {
 			for (ServerPlayer player : minecraftServer.getPlayerList().getPlayers()) {
-				Temperature.serverTick(player);
-				Nutrition.serverTick(player);
-				Injury.serverTick(player);
-				Hydration.serverTick(player);
-				Stamina.serverTick(player);
-				Fatigue.serverTick(player);
-				Wetness.serverTick(player);
-				WindDirection.serverTick(player);
-				WindStrength.serverTick(player);
+				PlayerTemperature.serverTick(player);
+				PlayerNutrition.serverTick(player);
+				PlayerInjury.serverTick(player);
+				PlayerHydration.serverTick(player);
+				PlayerStamina.serverTick(player);
+				PlayerFatigue.serverTick(player);
+				PlayerWetness.serverTick(player);
+				WorldWindDirection.serverTick(player);
+				WorldWindStrength.serverTick(player);
+				WorldSeasons.serverTick(player);
+
 				MEOWindDriftingEvent.serverTick(player);
 			}
 		});
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
 		MEOStoneBreakingEvent stoneBreakingEvent = new MEOStoneBreakingEvent();
-		ServerLivingEntityEvents.AFTER_DAMAGE.register(new Injury().afterDamage);
+		ServerLivingEntityEvents.AFTER_DAMAGE.register(new PlayerInjury().afterDamage);
 	}
 
 	public static Identifier id(String path) {

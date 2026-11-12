@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.numericalk.meo.MorsEstOptio;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 
 public class MEONutritionGUI {
     private static final Identifier NUTRITION_BAR = Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "textures/gui/sprites/hud/nutrition_bar.png");

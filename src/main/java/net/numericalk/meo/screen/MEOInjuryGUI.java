@@ -3,7 +3,7 @@ package net.numericalk.meo.screen;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 
 public class MEOInjuryGUI {
     public static boolean visible = false;

@@ -12,8 +12,7 @@ public record WindDataPayload(
         float strength
 ) implements CustomPacketPayload {
 
-    public static final Type<WindDataPayload> TYPE =
-            new Type<>(MorsEstOptio.id("wind_data"));
+    public static final Type<WindDataPayload> TYPE = new Type<>(MorsEstOptio.id("wind_data"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, WindDataPayload> CODEC =
             StreamCodec.composite(

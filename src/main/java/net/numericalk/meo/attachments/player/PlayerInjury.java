@@ -1,4 +1,4 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.resources.ResourceKey;
@@ -8,10 +8,10 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.entity.MEOEffects;
 
-public class Injury {
+public class PlayerInjury {
     public ServerLivingEntityEvents.AfterDamage afterDamage = (livingEntity, damageSource, baseDamage, damageTaken, blocked) -> {
         if (livingEntity instanceof Player player){
             ResourceKey<DamageType> damageType = damageSource.typeHolder().unwrapKey().orElse(null);

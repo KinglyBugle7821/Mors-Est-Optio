@@ -1,11 +1,11 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 
-public class Fatigue {
+public class PlayerFatigue {
     public static void serverTick(ServerPlayer player) {
         float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0f);
 

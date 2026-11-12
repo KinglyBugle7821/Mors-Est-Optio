@@ -1,14 +1,15 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
+import net.numericalk.meo.attachments.MEOCorrelations;
 import net.numericalk.meo.entity.MEODamageTypes;
 
-public class Hydration {
+public class PlayerHydration {
     public static void serverTick(ServerPlayer player) {
         float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 0.5F);
 

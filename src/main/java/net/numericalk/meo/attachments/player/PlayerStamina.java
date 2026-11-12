@@ -1,11 +1,12 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
+import net.numericalk.meo.attachments.MEOCorrelations;
 
-public class Stamina {
+public class PlayerStamina {
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 10 != 0) return;
 

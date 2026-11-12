@@ -1,13 +1,11 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
 
-public class Wetness {
+public class PlayerWetness {
     public static void serverTick(ServerPlayer player) {
         if (player.tickCount % 20 == 0){
             Level level = player.level();

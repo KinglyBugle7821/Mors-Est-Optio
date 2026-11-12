@@ -1,13 +1,13 @@
-package net.numericalk.meo.world.attachments;
+package net.numericalk.meo.attachments.world;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.numericalk.meo.entity.MEOAttachments;
-import net.numericalk.meo.network.WindNetworking;
+import net.numericalk.meo.attachments.MEOAttachments;
+import net.numericalk.meo.network.MEONetworking;
 
-public class WindStrength {
+public class WorldWindStrength {
     public static void serverTick(Player player) {
         Level level = player.level();
 
@@ -15,7 +15,7 @@ public class WindStrength {
 
         float strength = level.getAttachedOrElse(MEOAttachments.WIND_STRENGTH_TARGET, 0.05f);
 
-        if (player.tickCount % 4000 == 0) {
+        if (level.getGameTime() % 4000 == 0) {
             int randomChance = RandomSource.create().nextInt(1, 100);
 
             if (randomChance < 50) strength *= nextFloat(0f, 0.2f);
@@ -34,7 +34,7 @@ public class WindStrength {
         level.setAttached(MEOAttachments.WIND_STRENGTH, windStrength);
 
         if (player instanceof ServerPlayer serverPlayer && player.tickCount % 5 == 0) {
-            WindNetworking.syncPlayer(serverPlayer);
+            MEONetworking.syncPlayer(serverPlayer);
         }
     }
 

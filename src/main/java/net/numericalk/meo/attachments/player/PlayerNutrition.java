@@ -1,4 +1,4 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -6,11 +6,11 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.numericalk.meo.entity.MEOAttachments;
+import net.numericalk.meo.attachments.MEOAttachments;
+import net.numericalk.meo.attachments.MEOCorrelations;
 import net.numericalk.meo.entity.MEODamageTypes;
-import net.numericalk.meo.mechs.MEONutritionMech;
 
-public class Nutrition {
+public class PlayerNutrition {
     public static void serverTick(ServerPlayer player) {
         float carbs = player.getAttachedOrElse(MEOAttachments.CARBOHYDRATE, 1.0F);
         float proteins = player.getAttachedOrElse(MEOAttachments.PROTEIN, 1.0F);
@@ -19,7 +19,13 @@ public class Nutrition {
         ServerLevel level = player.level();
 
         if (player.tickCount % 20 == 0) {
-            MEONutritionMech meoNutritionMech = new MEONutritionMech(player);
+            carbs -= MEOCorrelations.TNCorrelation(player) + MEOCorrelations.HuNCorrelation(player);
+            proteins -= MEOCorrelations.TNCorrelation(player) + MEOCorrelations.HuNCorrelation(player);
+            fats -= MEOCorrelations.TNCorrelation(player) + MEOCorrelations.HuNCorrelation(player);
+
+            player.setAttached(MEOAttachments.CARBOHYDRATE, Math.max(carbs, 0));
+            player.setAttached(MEOAttachments.PROTEIN, Math.max(proteins, 0));
+            player.setAttached(MEOAttachments.FAT, Math.max(fats, 0));
         }
         if (player.tickCount % 20 == 0 && (carbs == 0 || proteins == 0 || fats == 0)) {
             DamageSource damageSource = new DamageSource(

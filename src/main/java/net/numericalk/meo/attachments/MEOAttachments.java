@@ -1,4 +1,4 @@
-package net.numericalk.meo.entity;
+package net.numericalk.meo.attachments;
 
 import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
@@ -145,6 +145,8 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+
+    //WORLD
     public static final AttachmentType<Integer> WIND_DIRECTION =
             AttachmentRegistry.create(
                     MorsEstOptio.id("wind_direction"),
@@ -174,6 +176,15 @@ public class MEOAttachments {
                     builder -> builder
                             .initializer(() -> 0.05F)
                             .persistent(Codec.FLOAT)
+            );
+
+    //SEASONS
+    public static final AttachmentType<Integer> SEASON =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("season"),
+                    builder -> builder
+                            .initializer(() -> 0)
+                            .persistent(Codec.INT)
             );
     public static void initialize(){}
 }

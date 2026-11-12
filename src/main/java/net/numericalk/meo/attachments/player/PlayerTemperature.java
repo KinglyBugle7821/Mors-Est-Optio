@@ -1,4 +1,4 @@
-package net.numericalk.meo.entity.attachments;
+package net.numericalk.meo.attachments.player;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
@@ -9,7 +9,7 @@ import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.mechs.MEOTempMech;
 
-public class Temperature {
+public class PlayerTemperature {
     private static final Identifier FREEZING_ID =
             Identifier.fromNamespaceAndPath(MorsEstOptio.MOD_ID, "freezing");
 

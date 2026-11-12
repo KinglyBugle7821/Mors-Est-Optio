@@ -30,24 +30,24 @@ public final class LocalBlockThermalField {
     private static Map<Block, ThermalSource> createSources() {
         Map<Block, ThermalSource> sources = new HashMap<>();
 
-        register(sources, Blocks.TORCH, 4.0, 6);
-        register(sources, Blocks.WALL_TORCH, 4.0, 6);
+        register(sources, Blocks.TORCH, 5.0, 6);
+        register(sources, Blocks.WALL_TORCH, 5.0, 6);
 
-        register(sources, Blocks.SOUL_TORCH, 4.0, 6);
-        register(sources, Blocks.SOUL_WALL_TORCH, 4.0, 6);
+        register(sources, Blocks.SOUL_TORCH, 5.0, 6);
+        register(sources, Blocks.SOUL_WALL_TORCH, 5.0, 6);
 
-        register(sources, Blocks.LANTERN, 4.5, 4);
-        register(sources, Blocks.SOUL_LANTERN, 4.5, 4);
+        register(sources, Blocks.LANTERN, 5.5, 4);
+        register(sources, Blocks.SOUL_LANTERN, 5.5, 4);
 
-        register(sources, Blocks.FIRE, 6, 4);
-        register(sources, Blocks.SOUL_FIRE, 6, 4);
+        register(sources, Blocks.FIRE, 7, 4);
+        register(sources, Blocks.SOUL_FIRE, 7, 4);
 
-        registerLit(sources, Blocks.CAMPFIRE, 10.0, 7);
-        registerLit(sources, Blocks.SOUL_CAMPFIRE, 8.0, 7);
+        registerLit(sources, Blocks.CAMPFIRE, 12.0, 7);
+        registerLit(sources, Blocks.SOUL_CAMPFIRE, 14.0, 7);
 
-        registerLit(sources, Blocks.FURNACE, 6.0, 5);
-        registerLit(sources, Blocks.BLAST_FURNACE, 6.0, 5);
-        registerLit(sources, Blocks.SMOKER, 6.0, 5);
+        registerLit(sources, Blocks.FURNACE, 7.0, 5);
+        registerLit(sources, Blocks.BLAST_FURNACE, 7.0, 5);
+        registerLit(sources, Blocks.SMOKER, 7.0, 5);
 
         register(sources, Blocks.LAVA, 15.0, 7);
         register(sources, Blocks.MAGMA_BLOCK, 4.0, 3);
