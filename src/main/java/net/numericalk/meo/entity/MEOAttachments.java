@@ -152,11 +152,28 @@ public class MEOAttachments {
                             .initializer(() -> 0)
                             .persistent(Codec.INT)
             );
+
     public static final AttachmentType<Float> WIND_STRENGTH =
             AttachmentRegistry.create(
                     MorsEstOptio.id("wind_strength"),
                     builder -> builder
-                            .initializer(() -> 0.05f)
+                            .initializer(() -> 0.05F)
+                            .persistent(Codec.FLOAT)
+            );
+    public static final AttachmentType<Integer> WIND_DIRECTION_TARGET =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("wind_direction_target"),
+                    builder -> builder
+                            .initializer(() -> 0)
+                            .persistent(Codec.INT)
+            );
+
+    public static final AttachmentType<Float> WIND_STRENGTH_TARGET =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("wind_strength_target"),
+                    builder -> builder
+                            .initializer(() -> 0.05F)
+                            .persistent(Codec.FLOAT)
             );
     public static void initialize(){}
 }
