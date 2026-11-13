@@ -102,8 +102,7 @@ public final class LocalBlockThermalField {
                     double dy = (y + 0.5) - playerY;
                     double dz = (z + 0.5) - playerZ;
 
-                    double distanceSquared =
-                            dx * dx + dy * dy + dz * dz;
+                    double distanceSquared = dx * dx + dy * dy + dz * dz;
 
                     if (distanceSquared > maxDistanceSquared) {
                         continue;

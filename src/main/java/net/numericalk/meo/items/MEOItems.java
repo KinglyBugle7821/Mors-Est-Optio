@@ -2,13 +2,17 @@ package net.numericalk.meo.items;
 
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlocks;
+import net.numericalk.meo.components.MEOComponents;
+import net.numericalk.meo.items.custom.WaterPouchItem;
 
 import java.util.function.Function;
 
@@ -17,6 +21,21 @@ public class MEOItems {
             MEOItemIds.FLINT_FLAKE,
             Item::new,
             new Item.Properties().axe(MEOToolMaterials.FLINT_TOOL_MATERIAL, 0.0F, -3F)
+    );
+
+    public static final Item WATER_POUCH = register(
+            MEOItemIds.WATER_POUCH,
+            WaterPouchItem::new,
+            new Item.Properties()
+                    .stacksTo(1)
+                    .component(MEOComponents.WATER_AMOUNT, 100.0f)
+                    .component(
+                            DataComponents.CONSUMABLE,
+                            Consumable.builder()
+                                    .consumeSeconds(2.0f)
+                                    .animation(ItemUseAnimation.DRINK)
+                                    .build()
+                    )
     );
 
     public static final Item GRANITE_CHUNK = register(MEOItemIds.GRANITE_CHUNK, Item::new, new Item.Properties());

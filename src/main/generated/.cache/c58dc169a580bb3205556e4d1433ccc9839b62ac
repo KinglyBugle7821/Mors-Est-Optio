@@ -78,6 +78,7 @@ ae6a57a3f81e149cc321736d716e955b9c0be607 assets/mors-est-optio/items/steel_sword
 7b183aff5a9bc01f0e247fcfdc00bfc85ef6b603 assets/mors-est-optio/items/tuff_chunk.json
 7e2a97d2e1096892c732b373c986c2ee6d07b3b8 assets/mors-est-optio/items/twine.json
 a7cf5651e96bb1a0a95128b383c88c2b24e94538 assets/mors-est-optio/items/warped_bark.json
+9d3b53ea754c9b98659d13d838cf22f36335c564 assets/mors-est-optio/items/water_pouch.json
 51c4e67f933aed602ee16b0d70d91c6eedbc4f94 assets/mors-est-optio/items/wood_chip.json
 0357fff0c1971c67f1e05c4b356411ffbc9acce0 assets/mors-est-optio/models/block/breaking_acacia_log_stage_1.json
 e646b505974012beefedcd88ac275fd6abc0b4c4 assets/mors-est-optio/models/block/breaking_acacia_log_stage_2.json
@@ -169,4 +170,5 @@ ffc3e90139f448311e0a897beaa69dd026c5b8f6 assets/mors-est-optio/models/item/steel
 eef1ec33186b6d746922395de5887d0242911097 assets/mors-est-optio/models/item/tuff_chunk.json
 91002fb6a9cb291ee1284a071078e857a3a8dfb4 assets/mors-est-optio/models/item/twine.json
 7a655e8b794c49d28482bd5ea4dced43116075ba assets/mors-est-optio/models/item/warped_bark.json
+0a44ef98052deecc4b9ed1a57ac0eef79f51dc11 assets/mors-est-optio/models/item/water_pouch.json
 1db8d49bbb9c90266425cc60e75d1507cb35dfb0 assets/mors-est-optio/models/item/wood_chip.json
