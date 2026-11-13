@@ -1,6 +1,9 @@
 package net.numericalk.meo.mechs;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.DimensionTypes;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -30,23 +33,29 @@ public class MEOTempMech {
                         + (5165.0 / 648.0) * Math.pow(baseBiomeTemperature, 2)
                         + (5795.0 / 324.0) * baseBiomeTemperature
         );
+
+        float skyLightLevel = level.getBrightness(LightLayer.SKY, playerPos);
+        boolean isInOverworld = level.dimension().identifier().getPath().equals("overworld");
+        float shadedAdjustment = 0;
+        float weatherAdjustment = 0;
+        float dayTimeAdjustment = 0;
+        if (isInOverworld){
+            // Daytime
+            int time = (int) (level.getOverworldClockTime() % 24000);
+            dayTimeAdjustment = (float) (
+                    (-11 * Math.pow(biomeTemperature, 2) + 197 * biomeTemperature + 2700) / 780.0 +
+                            ((25 * Math.pow(biomeTemperature, 2) - 443 * biomeTemperature + 13756) / 4004.0) *
+                                    Math.cos(Math.PI * (time - 6000) / 12000.0)
+            );
+            // Shaded
+            shadedAdjustment = Math.max(Math.min(skyLightLevel, 15), 0)/3;
+            // Weather
+            if (level.isRaining() && !level.isThundering()) weatherAdjustment = -3;
+            else if (level.isRaining() && level.isThundering()) weatherAdjustment = -5;
+            else weatherAdjustment = 0;
+        }
         // Altitude
         float altitudeAdjustment = (float) ((0.0001105497 * Math.pow(playerY, 2)) - (0.15850906 * playerY) + 9.40260859);
-        // Daytime
-        int time = (int) (level.getOverworldClockTime() % 24000);
-        float dayTimeAdjustment = (float) (
-                (-11 * Math.pow(biomeTemperature, 2) + 197 * biomeTemperature + 2700) / 780.0 +
-                        ((25 * Math.pow(biomeTemperature, 2) - 443 * biomeTemperature + 13756) / 4004.0) *
-                                Math.cos(Math.PI * (time - 6000) / 12000.0)
-        );
-        // Shaded
-        float skyLightLevel = level.getBrightness(LightLayer.SKY, playerPos);
-        float shadedAdjustment = Math.max(Math.min(skyLightLevel, 15), 0)/3;
-        // Weather
-        float weatherAdjustment;
-        if (level.isRaining() && !level.isThundering()) weatherAdjustment = -3;
-        else if (level.isRaining() && level.isThundering()) weatherAdjustment = -5;
-        else weatherAdjustment = 0;
 
         //LocalBlockThermalField
         float localBlockAdjustment = (float) LocalBlockThermalField.getTemperatureOffset(level, player);
@@ -108,6 +117,7 @@ public class MEOTempMech {
         float drinkingCooling = MEOCorrelations.HTCorrelation(player);
         float wetnessCooling = MEOCorrelations.WTCorrelation(player);
         float windCooling = MEOCorrelations.WiTCorrelation(player);
+        float exposureWarming = MEOCorrelations.ETCorrelation(player);
 
         float temperatureChange =
                 heatExchange
@@ -118,7 +128,8 @@ public class MEOTempMech {
                         + heatSweating
                         + drinkingCooling
                         + wetnessCooling
-                        + windCooling;
+                        + windCooling
+                        + exposureWarming;
 
         playerTemperature += temperatureChange;
 

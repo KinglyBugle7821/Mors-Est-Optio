@@ -29,6 +29,8 @@ public class MEOAttributesGUI {
             float legsInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_LEGS_INJURY, 0F);
             float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0F);
             float wetness = player.getAttachedOrElse(MEOAttachments.WETNESS, 0F);
+            float exposure = player.getAttachedOrElse(MEOAttachments.EXPOSURE, 1F);
+
             int windDirection = ClientEnvironmentData.getWindDirection();
             float windStrength = ClientEnvironmentData.getWindStrength();
             String season = ClientEnvironmentData.getSeasonId() == 0 ? "Spring" :
@@ -36,7 +38,7 @@ public class MEOAttributesGUI {
                             ClientEnvironmentData.getSeasonId() == 2 ? "Autumn" :
                             ClientEnvironmentData.getSeasonId() == 3 ? "Winter" : "Invalid Season";
 
-            graphics.text(client.font, "Player PlayerTemperature: " + playerTemperature, 0, 0, 0xFFFFFFFF);
+            graphics.text(client.font, "PlayerTemperature: " + playerTemperature, 0, 0, 0xFFFFFFFF);
             graphics.text(client.font, "Carbohydrates: " + carbohydrates, 0, 10, 0xFFFFFFFF);
             graphics.text(client.font, "Proteins: " + proteins, 0, 20, 0xFFFFFFFF);
             graphics.text(client.font, "Fats: " + fats, 0, 30, 0xFFFFFFFF);
@@ -46,11 +48,13 @@ public class MEOAttributesGUI {
             graphics.text(client.font, "Body PlayerInjury: " + bodyInjury, 0, 70, 0xFFFFFFFF);
             graphics.text(client.font, "Arms PlayerInjury: " + armsInjury, 0, 80, 0xFFFFFFFF);
             graphics.text(client.font, "Legs PlayerInjury: " + legsInjury, 0, 90, 0xFFFFFFFF);
-            graphics.text(client.font, "PlayerFatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
-            graphics.text(client.font, "PlayerWetness: " + wetness, 0, 110, 0xFFFFFFFF);
-            graphics.text(client.font, "Wind Direction: " + windDirection, 0, 120, 0xFFFFFFFF);
-            graphics.text(client.font, "Wind Strength: " + windStrength, 0, 130, 0xFFFFFFFF);
-            graphics.text(client.font, "Season: " + season, 0, 140, 0xFFFFFFFF);
+            graphics.text(client.font, "Player Fatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
+            graphics.text(client.font, "Player Wetness: " + wetness, 0, 110, 0xFFFFFFFF);
+            graphics.text(client.font, "Player Exposure: " + exposure, 0, 120, 0xFFFFFFFF);
+
+            graphics.text(client.font, "Wind Direction: " + windDirection, 0, 130, 0xFFFFFFFF);
+            graphics.text(client.font, "Wind Strength: " + windStrength, 0, 140, 0xFFFFFFFF);
+            graphics.text(client.font, "Season: " + season, 0, 150, 0xFFFFFFFF);
         };
     }
 }

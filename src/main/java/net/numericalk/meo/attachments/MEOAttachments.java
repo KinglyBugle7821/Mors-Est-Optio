@@ -19,6 +19,17 @@ public class MEOAttachments {
                                     AttachmentSyncPredicate.targetOnly()
                             )
             );
+    public static final AttachmentType<Float> EXPOSURE =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("exposure"),
+                    builder -> builder
+                            .initializer(() -> 1f)
+                            .persistent(Codec.FLOAT)
+                            .syncWith(
+                                    ByteBufCodecs.FLOAT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
 
     //NUTRITION
     public static final AttachmentType<Float> CARBOHYDRATE =

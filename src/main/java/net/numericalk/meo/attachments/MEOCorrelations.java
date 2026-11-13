@@ -63,4 +63,11 @@ public class MEOCorrelations {
         float windStrength = player.level().getAttachedOrElse(MEOAttachments.WIND_STRENGTH, 0.05F);
         return -(windStrength/15);
     }
+
+    public static float ETCorrelation (Player player) { //Exposure - Temperature
+        float temperature = player.getAttachedOrElse(MEOAttachments.TEMPERATURE, 37F);
+        float exposure = player.getAttachedOrElse(MEOAttachments.EXPOSURE, 1f);
+        float modifier = Math.clamp((37f - temperature)/3, -1, 1);
+        return modifier * (-0.25f * exposure + 0.25f);
+    }
 }

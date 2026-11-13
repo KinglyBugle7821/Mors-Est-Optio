@@ -51,9 +51,12 @@ public class MorsEstOptio implements ModInitializer {
 				PlayerStamina.serverTick(player);
 				PlayerFatigue.serverTick(player);
 				PlayerWetness.serverTick(player);
+				PlayerExposure.serverTick(player);
+
 				WorldWindDirection.serverTick(player);
 				WorldWindStrength.serverTick(player);
 				WorldSeasons.serverTick(player);
+
 
 				MEOWindDriftingEvent.serverTick(player);
 			}
