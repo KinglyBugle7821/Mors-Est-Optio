@@ -25,6 +25,7 @@ import net.numericalk.meo.event.*;
 import net.numericalk.meo.items.MEOItems;
 import net.numericalk.meo.attachments.world.WorldWindDirection;
 import net.numericalk.meo.attachments.world.WorldWindStrength;
+import net.numericalk.meo.misc.WaterQuality;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,9 +48,18 @@ public class MorsEstOptio implements ModInitializer {
 
 		ItemTooltipCallback.EVENT.register((stack, context, type, tooltip) -> {
 			Float waterAmount = stack.get(MEOComponents.WATER_AMOUNT);
+			WaterQuality waterQuality = stack.get(MEOComponents.WATER_QUALITY);
 
-			if (waterAmount != null) {
-				tooltip.add(Component.translatable("item.mors-est-optio.water_pouch.info", waterAmount).withStyle(ChatFormatting.AQUA));
+			String waterQualityText =
+					waterQuality == WaterQuality.CLEAN ? "Clean" :
+					waterQuality == WaterQuality.MURKY ? "Murky" :
+					waterQuality == WaterQuality.DIRTY ? "Dirty" :
+					waterQuality == WaterQuality.TOXIC ? "Toxic" :
+					waterQuality == WaterQuality.UNKNOWN ? "-" : "Unknown";
+
+			if (waterAmount != null && waterQuality != null) {
+				tooltip.add(Component.translatable("item.mors-est-optio.water_pouch.amount_info", Math.ceil(waterAmount)).withStyle(ChatFormatting.GRAY));
+				tooltip.add(Component.translatable("item.mors-est-optio.water_pouch.quality_info", waterQualityText).withStyle(ChatFormatting.GRAY));
 			}
 		});
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);

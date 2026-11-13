@@ -13,6 +13,7 @@ import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.components.MEOComponents;
 import net.numericalk.meo.items.custom.WaterPouchItem;
+import net.numericalk.meo.misc.WaterQuality;
 
 import java.util.function.Function;
 
@@ -28,14 +29,14 @@ public class MEOItems {
             WaterPouchItem::new,
             new Item.Properties()
                     .stacksTo(1)
-                    .component(MEOComponents.WATER_AMOUNT, 100.0f)
+                    .component(MEOComponents.WATER_AMOUNT, 0f)
                     .component(
                             DataComponents.CONSUMABLE,
                             Consumable.builder()
                                     .consumeSeconds(2.0f)
                                     .animation(ItemUseAnimation.DRINK)
                                     .build()
-                    )
+                    ).component(MEOComponents.WATER_QUALITY, WaterQuality.UNKNOWN)
     );
 
     public static final Item GRANITE_CHUNK = register(MEOItemIds.GRANITE_CHUNK, Item::new, new Item.Properties());
@@ -265,6 +266,8 @@ public class MEOItems {
             .icon(() -> new ItemStack(MEOItems.FLINT_FLAKE))
             .title(Component.translatable("creativeTab.meoCreativeTab"))
             .displayItems((params, output) -> {
+                output.accept(MEOItems.WATER_POUCH);
+
                 output.accept(MEOBlocks.GRASS_SHEAF);
                 output.accept(MEOItems.DRIED_GRASS_SHEAF);
 

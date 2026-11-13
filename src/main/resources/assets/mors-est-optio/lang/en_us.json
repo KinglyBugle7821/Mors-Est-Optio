@@ -1,6 +1,7 @@
 {
   "item.mors-est-optio.water_pouch": "Water Pouch",
-  "item.mors-est-optio.water_pouch.info": "%1$s mL of Water Left",
+  "item.mors-est-optio.water_pouch.amount_info": "%1$s mL of Water Left",
+  "item.mors-est-optio.water_pouch.quality_info": "Water Quality: %1$s",
 
   "item.mors-est-optio.flint_hatchet": "Flint Hatchet",
   "item.mors-est-optio.flint_pick": "Flint Pick",

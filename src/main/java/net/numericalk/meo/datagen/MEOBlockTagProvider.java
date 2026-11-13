@@ -20,6 +20,10 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
     public static final TagKey<Block> DEEPSLATE_ORES = TagKey.create(Registries.BLOCK, MorsEstOptio.id("deepslate_ores"));
     public static final TagKey<Block> NETHER_ORES = TagKey.create(Registries.BLOCK, MorsEstOptio.id("nether_ores"));
 
+    public static final TagKey<Block> DIRTY_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("dirty_blocks"));
+    public static final TagKey<Block> STONE_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("stone_blocks"));
+    public static final TagKey<Block> TOXIC_BLOCKS = TagKey.create(Registries.BLOCK, MorsEstOptio.id("toxic_blocks"));
+
 
     public MEOBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
@@ -27,6 +31,60 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        builder(TOXIC_BLOCKS)
+                .add(BlockItemIds.SULFUR)
+                .add(BlockItemIds.CINNABAR)
+                .add(BlockItemIds.NETHERRACK)
+                .add(BlockItemIds.BLACKSTONE)
+                .add(BlockItemIds.BASALT);
+        builder(STONE_BLOCKS)
+                .add(BlockItemIds.STONE)
+                .add(BlockItemIds.COBBLESTONE)
+                .add(BlockItemIds.DEEPSLATE)
+                .add(BlockItemIds.COBBLED_DEEPSLATE)
+                .add(BlockItemIds.GRANITE)
+                .add(BlockItemIds.ANDESITE)
+                .add(BlockItemIds.DIORITE)
+                .add(BlockItemIds.DRIPSTONE_BLOCK)
+                .add(BlockItemIds.POINTED_DRIPSTONE)
+                .add(BlockItemIds.OBSIDIAN)
+                .add(BlockItemIds.CRYING_OBSIDIAN)
+                .add(BlockItemIds.TUFF)
+                .add(BlockItemIds.CALCITE)
+                .add(BlockItemIds.SANDSTONE)
+                .add(BlockItemIds.RED_SANDSTONE)
+                .add(BlockItemIds.COAL_ORE)
+                .add(BlockItemIds.COPPER_ORE)
+                .add(BlockItemIds.DIAMOND_ORE)
+                .add(BlockItemIds.EMERALD_ORE)
+                .add(BlockItemIds.GOLD_ORE)
+                .add(BlockItemIds.IRON_ORE)
+                .add(BlockItemIds.LAPIS_ORE)
+                .add(BlockItemIds.REDSTONE_ORE)
+                .add(BlockItemIds.DEEPSLATE_COAL_ORE)
+                .add(BlockItemIds.DEEPSLATE_COPPER_ORE)
+                .add(BlockItemIds.DEEPSLATE_DIAMOND_ORE)
+                .add(BlockItemIds.DEEPSLATE_EMERALD_ORE)
+                .add(BlockItemIds.DEEPSLATE_GOLD_ORE)
+                .add(BlockItemIds.DEEPSLATE_IRON_ORE)
+                .add(BlockItemIds.DEEPSLATE_LAPIS_ORE)
+                .add(BlockItemIds.DEEPSLATE_REDSTONE_ORE);
+        builder(DIRTY_BLOCKS)
+                .add(BlockItemIds.DIRT)
+                .add(BlockItemIds.COARSE_DIRT)
+                .add(BlockItemIds.DIRT_PATH)
+                .add(BlockItemIds.GRASS_BLOCK)
+                .add(BlockItemIds.MYCELIUM)
+                .add(BlockItemIds.PODZOL)
+                .add(BlockItemIds.ROOTED_DIRT)
+                .add(BlockItemIds.GRAVEL)
+                .add(BlockItemIds.CLAY)
+                .add(BlockItemIds.MUD)
+                .add(BlockItemIds.SAND)
+                .add(BlockItemIds.RED_SAND)
+                .add(BlockItemIds.SOUL_SAND)
+                .add(BlockItemIds.SOUL_SOIL);
+
         builder(STONE_ORES)
                 .add(BlockItemIds.COAL_ORE)
                 .add(BlockItemIds.COPPER_ORE)
