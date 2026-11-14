@@ -7,5 +7,3 @@ For setup instructions, please see the [Fabric Documentation page](https://docs.
 ## License
 
 This template is available under the MIT license.
-
-ini tambahan dari alden :D
