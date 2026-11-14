@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.attachments.MEOCorrelations;
+import net.numericalk.meo.entity.MEOEffects;
 
 public class PlayerStamina {
     public static void serverTick(ServerPlayer player) {
@@ -18,7 +19,10 @@ public class PlayerStamina {
             float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0f);
             player.setAttached(MEOAttachments.FATIGUE, Math.min(fatigue + 0.002f, 1));
         }
-        else stamina += 0.05f;
+        else {
+            if (player.hasEffect(MEOEffects.FEVER)) stamina += 0.025f;
+            else stamina += 0.05f;
+        }
 
         stamina = Math.max(stamina, 0F);
 

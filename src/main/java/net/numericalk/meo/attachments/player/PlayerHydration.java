@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.attachments.MEOCorrelations;
 import net.numericalk.meo.entity.MEODamageTypes;
+import net.numericalk.meo.entity.MEOEffects;
 
 public class PlayerHydration {
     public static void serverTick(ServerPlayer player) {
@@ -15,6 +16,7 @@ public class PlayerHydration {
 
         if (player.tickCount % 20 == 0){
             float hydrationDecreaser = MEOCorrelations.THCorrelation(player);
+            if (player.hasEffect(MEOEffects.FEVER)) hydrationDecreaser += 0.02f;
             hydration -= hydrationDecreaser;
 
             player.setAttached(MEOAttachments.HYDRATION, Math.clamp(hydration, 0f, 1f));

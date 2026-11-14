@@ -10,4 +10,5 @@ public class MEODamageTypes {
     public static final ResourceKey<DamageType> BLEEDING_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, MorsEstOptio.id("bleeding"));
     public static final ResourceKey<DamageType> MALNUTRITION_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, MorsEstOptio.id("malnutrition"));
     public static final ResourceKey<DamageType> DEHYDRATION_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, MorsEstOptio.id("dehydration"));
+    public static final ResourceKey<DamageType> INFECTION_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, MorsEstOptio.id("infection"));
 }

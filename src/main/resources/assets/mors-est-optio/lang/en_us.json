@@ -99,6 +99,7 @@
   "death.attack.bleeding": "%1$s bleed to death",
   "death.attack.malnutrition": "%1$s lacked nutrition",
   "death.attack.dehydration": "%1$s lacked water",
+  "death.attack.infection": "%1$s died of infection",
 
 
 

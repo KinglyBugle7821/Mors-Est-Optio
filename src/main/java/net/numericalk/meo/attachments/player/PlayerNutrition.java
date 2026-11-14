@@ -40,7 +40,7 @@ public class PlayerNutrition {
         MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 3 * 20, 0, false, false, false);
         MobEffectInstance hunger = new MobEffectInstance(MobEffects.HUNGER, 3 * 20, 1, false, false, false);
 
-        if (carbs == 0.25 || proteins == 0.25 || fats == 0.25){
+        if (carbs <= 0.25 || proteins <= 0.25 || fats <= 0.25){
             player.addEffect(hunger);
         }
 

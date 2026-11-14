@@ -145,6 +145,29 @@ public class MEOAttachments {
                             )
             );
 
+    public static final AttachmentType<Integer> INFECTION_TICK =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("infection_tick"),
+                    builder -> builder
+                            .initializer(() -> 6000)
+                            .persistent(Codec.INT)
+                            .syncWith(
+                                    ByteBufCodecs.INT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+    public static final AttachmentType<Integer> FEVER_TICK =
+            AttachmentRegistry.create(
+                    MorsEstOptio.id("fever_tick"),
+                    builder -> builder
+                            .initializer(() -> 8400)
+                            .persistent(Codec.INT)
+                            .syncWith(
+                                    ByteBufCodecs.INT,
+                                    AttachmentSyncPredicate.targetOnly()
+                            )
+            );
+
     public static final AttachmentType<Float> WETNESS =
             AttachmentRegistry.create(
                     MorsEstOptio.id("wetness"),

@@ -58,7 +58,12 @@ public class PlayerInjury {
         }
     };
 
+//    private static int infectionTick = 20 * 60 * 5;
+//    private static int feverTick = 20 * 60 * 7;
     public static void serverTick(ServerPlayer player) {
+        int infectionTick = player.getAttachedOrElse(MEOAttachments.INFECTION_TICK, 6000);
+        int feverTick = player.getAttachedOrElse(MEOAttachments.FEVER_TICK, 8400);
+
         float headInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_HEAD_INJURY, 0.0F);
         float bodyInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_BODY_INJURY, 0.0F);
         float armsInjury = player.getAttachedOrElse(MEOAttachments.PLAYER_ARMS_INJURY, 0.0F);
@@ -97,6 +102,23 @@ public class PlayerInjury {
             if (armsInjury > 0) player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, armsInjury - 0.01f);
             if (legsInjury > 0) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, legsInjury - 0.01f);
         }
+        if (headInjury >= 0.2f || bodyInjury >= 0.2f || armsInjury >= 0.2f || legsInjury >= 0.2f){
+            player.setAttached(MEOAttachments.INFECTION_TICK, infectionTick - 1);
+            player.setAttached(MEOAttachments.FEVER_TICK, feverTick - 1);
+            System.out.println("Infection Tick: " + infectionTick);
+            System.out.println("Fever Tick: " + feverTick);
+            if (infectionTick == 0) {
+                player.addEffect(new MobEffectInstance(MEOEffects.INFECTION, 20 * 60 * 5, 0, false, false, false));
+                player.setAttached(MEOAttachments.INFECTION_TICK, 6000);
+            }
+            if (feverTick == 0){
+                player.addEffect(new MobEffectInstance(MEOEffects.FEVER, 20 * 60 * 7, 0, false, false, false));
+                player.setAttached(MEOAttachments.FEVER_TICK, 8400);
+            }
+        } else {
+            player.setAttached(MEOAttachments.INFECTION_TICK, 6000);
+            player.setAttached(MEOAttachments.FEVER_TICK, 8400);
+        }
 
         if (headInjury > 0.9F){
             player.addEffect(blindness);
@@ -119,6 +141,7 @@ public class PlayerInjury {
         if (injuryReduced < injury) player.setAttached(injuryAttachment, injury - injuryReduced);
         else player.setAttached(injuryAttachment, 0f);
     }
+
     private void setInjury(ResourceKey<DamageType> damageType,
                            float headModifier, float bodyModifier,
                            float armsModifier, float legsModifier,

@@ -49,7 +49,7 @@ public class MEOItems {
                             DataComponents.CONSUMABLE,
                             Consumable.builder()
                                     .consumeSeconds(2.0f)
-                                    .animation(ItemUseAnimation.DRINK)
+                                    .animation(ItemUseAnimation.BRUSH)
                                     .build()
                     )
     );

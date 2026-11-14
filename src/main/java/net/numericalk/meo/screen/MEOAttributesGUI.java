@@ -30,6 +30,8 @@ public class MEOAttributesGUI {
             float fatigue = player.getAttachedOrElse(MEOAttachments.FATIGUE, 0F);
             float wetness = player.getAttachedOrElse(MEOAttachments.WETNESS, 0F);
             float exposure = player.getAttachedOrElse(MEOAttachments.EXPOSURE, 1F);
+            float infectionTick = player.getAttachedOrElse(MEOAttachments.INFECTION_TICK, 6000);
+            float feverTick = player.getAttachedOrElse(MEOAttachments.FEVER_TICK, 8400);
 
             int windDirection = ClientEnvironmentData.getWindDirection();
             float windStrength = ClientEnvironmentData.getWindStrength();
@@ -51,10 +53,12 @@ public class MEOAttributesGUI {
             graphics.text(client.font, "Player Fatigue: " + fatigue, 0, 100, 0xFFFFFFFF);
             graphics.text(client.font, "Player Wetness: " + wetness, 0, 110, 0xFFFFFFFF);
             graphics.text(client.font, "Player Exposure: " + exposure, 0, 120, 0xFFFFFFFF);
+            graphics.text(client.font, "Infection Tick: " + infectionTick, 0, 130, 0xFFFFFFFF);
+            graphics.text(client.font, "Fever Tick: " + feverTick, 0, 140, 0xFFFFFFFF);
 
-            graphics.text(client.font, "Wind Direction: " + windDirection, 0, 130, 0xFFFFFFFF);
-            graphics.text(client.font, "Wind Strength: " + windStrength, 0, 140, 0xFFFFFFFF);
-            graphics.text(client.font, "Season: " + season, 0, 150, 0xFFFFFFFF);
+            graphics.text(client.font, "Wind Direction: " + windDirection, 0, 150, 0xFFFFFFFF);
+            graphics.text(client.font, "Wind Strength: " + windStrength, 0, 160, 0xFFFFFFFF);
+            graphics.text(client.font, "Season: " + season, 0, 170, 0xFFFFFFFF);
         };
     }
 }

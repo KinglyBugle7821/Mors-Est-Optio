@@ -174,7 +174,7 @@ public class WaterPouchItem extends Item {
             }
         }
 
-        return super.finishUsingItem(stack, level, entity);
+        return stack;
     }
     private boolean isWaterDirty(Level level, BlockPos center) {
         for (BlockPos pos : BlockPos.betweenClosed(

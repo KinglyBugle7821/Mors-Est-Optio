@@ -113,6 +113,7 @@ public class MEOTempMech {
                 (playerTemperature - 37.5f) / (40.0f - 37.5f),
                 0.0f, 1.0f
         );
+        float heatFever = player.hasEffect(MEOEffects.FEVER) ? 0.03f : 0f;
 
         float drinkingCooling = MEOCorrelations.HTCorrelation(player);
         float wetnessCooling = MEOCorrelations.WTCorrelation(player);
@@ -129,7 +130,8 @@ public class MEOTempMech {
                         + drinkingCooling
                         + wetnessCooling
                         + windCooling
-                        + exposureWarming;
+                        + exposureWarming
+                        + heatFever;
 
         playerTemperature += temperatureChange;
 

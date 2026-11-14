@@ -4,6 +4,7 @@
     "mors-est-optio:overheating",
     "mors-est-optio:bleeding",
     "mors-est-optio:malnutrition",
-    "mors-est-optio:dehydration"
+    "mors-est-optio:dehydration",
+    "mors-est-optio:infection"
   ]
 }
