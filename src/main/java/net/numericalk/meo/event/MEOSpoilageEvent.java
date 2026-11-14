@@ -40,7 +40,7 @@ public class MEOSpoilageEvent {
 
             if (stack.isEmpty()) continue;
 
-            if (level.getGameTime() % (20 * 60 * 5) == 0) {
+            if (level.getGameTime() % (20 * 60 * 10) == 0) {
                 reduceSpoilTime(stack);
             }
         }
@@ -67,8 +67,6 @@ public class MEOSpoilageEvent {
             if (player.level().getGameTime() % (20 * 60 * 5) == 0){
                 reduceSpoilTime(stack);
             }
-
-
         }
 
     }
