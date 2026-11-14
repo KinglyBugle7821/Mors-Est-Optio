@@ -12,8 +12,9 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.Level;
 import net.numericalk.meo.attachments.player.*;
 import net.numericalk.meo.attachments.world.WorldSeasons;
 import net.numericalk.meo.blocks.MEOBlockEntities;
@@ -46,22 +47,8 @@ public class MorsEstOptio implements ModInitializer {
 		MEOBlockEntities.initialize();
 		MEOComponents.initialize();
 
-		ItemTooltipCallback.EVENT.register((stack, context, type, tooltip) -> {
-			Float waterAmount = stack.get(MEOComponents.WATER_AMOUNT);
-			WaterQuality waterQuality = stack.get(MEOComponents.WATER_QUALITY);
+		MEOSpoilageEvent.initialize();
 
-			String waterQualityText =
-					waterQuality == WaterQuality.CLEAN ? "Clean" :
-					waterQuality == WaterQuality.MURKY ? "Murky" :
-					waterQuality == WaterQuality.DIRTY ? "Dirty" :
-					waterQuality == WaterQuality.TOXIC ? "Toxic" :
-					waterQuality == WaterQuality.UNKNOWN ? "-" : "Unknown";
-
-			if (waterAmount != null && waterQuality != null) {
-				tooltip.add(Component.translatable("item.mors-est-optio.water_pouch.amount_info", Math.ceil(waterAmount)).withStyle(ChatFormatting.GRAY));
-				tooltip.add(Component.translatable("item.mors-est-optio.water_pouch.quality_info", waterQualityText).withStyle(ChatFormatting.GRAY));
-			}
-		});
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);
 
 		LOGGER.info("Get Ready For A Whole New Experience");
@@ -81,13 +68,20 @@ public class MorsEstOptio implements ModInitializer {
 				WorldWindStrength.serverTick(player);
 				WorldSeasons.serverTick(player);
 
-
 				MEOWindDriftingEvent.serverTick(player);
+				MEOSpoilageEvent.serverTick(player);
+			}
+			for (ServerLevel level : minecraftServer.getAllLevels()) {
+				if (level.getGameTime() % 1200 == 0) {
+					MEOSpoilageEvent.tickLevel(level);
+				}
 			}
 		});
 
+		MEOTooltipEvent tooltipEvent = new MEOTooltipEvent();
 		MEOWoodBreakingEvent woodBreakingEvent = new MEOWoodBreakingEvent();
 		MEOStoneBreakingEvent stoneBreakingEvent = new MEOStoneBreakingEvent();
+
 		ServerLivingEntityEvents.AFTER_DAMAGE.register(new PlayerInjury().afterDamage);
 	}
 

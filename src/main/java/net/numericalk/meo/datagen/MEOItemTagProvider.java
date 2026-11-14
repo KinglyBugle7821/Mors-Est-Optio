@@ -1,9 +1,11 @@
 package net.numericalk.meo.datagen;
 
+import com.jcraft.jorbis.Block;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -15,10 +17,7 @@ import net.numericalk.meo.items.MEOItemIds;
 import java.util.concurrent.CompletableFuture;
 
 public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-    public static final TagKey<Item> CARBOHYDRATE_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("carbohydrate_rich_food"));
-    public static final TagKey<Item> PROTEIN_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("protein_rich_food"));
-    public static final TagKey<Item> VM_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("vm_rich_food"));
-    public static final TagKey<Item> FAT_RICH_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("fat_rich_food"));
+//    public static final TagKey<Item> FOODS_THAT_SPOILS = TagKey.create(Registries.ITEM, MorsEstOptio.id("foods_that_spoils"));
 
     public static final TagKey<Item> REPAIRS_FLINT_TOOL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_flint_tool"));
     public static final TagKey<Item> STEEL_MATERIAL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_steel_tool"));
@@ -44,6 +43,42 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+//        builder(FOODS_THAT_SPOILS)
+//                .add(BlockItemIds.CAKE.item())
+//                .add(ItemIds.SUSPICIOUS_STEW)
+//                .add(ItemIds.RABBIT_STEW)
+//                .add(ItemIds.COOKED_PORKCHOP)
+//                .add(ItemIds.PUMPKIN_PIE)
+//                .add(ItemIds.COOKED_BEEF)
+//                .add(ItemIds.BEETROOT_SOUP)
+//                .add(ItemIds.COOKED_CHICKEN)
+//                .add(ItemIds.COOKED_MUTTON)
+//                .add(ItemIds.COOKED_SALMON)
+//                .add(ItemIds.MUSHROOM_STEW)
+//                .add(ItemIds.BAKED_POTATO)
+//                .add(ItemIds.BREAD)
+//                .add(ItemIds.COOKED_COD)
+//                .add(ItemIds.COOKED_RABBIT)
+//                .add(ItemIds.APPLE)
+//                .add(ItemIds.CHORUS_FRUIT)
+//                .add(BlockItemIds.CARROT_CROP.item())
+//                .add(ItemIds.BEEF)
+//                .add(ItemIds.PORKCHOP)
+//                .add(ItemIds.RABBIT)
+//                .add(ItemIds.COOKIE)
+//                .add(BlockItemIds.GLOW_BERRY_CROP.item())
+//                .add(ItemIds.MELON_SLICE)
+//                .add(ItemIds.CHICKEN)
+//                .add(ItemIds.COD)
+//                .add(ItemIds.MUTTON)
+//                .add(ItemIds.SALMON)
+//                .add(BlockItemIds.SWEET_BERRY_CROP.item())
+//                .add(ItemIds.BEETROOT)
+//                .add(ItemIds.DRIED_KELP)
+//                .add(BlockItemIds.POTATO_CROP.item())
+//                .add(ItemIds.PUFFERFISH)
+//                .add(ItemIds.TROPICAL_FISH);
+
         builder(STEEL_MATERIAL)
                 .add(MEOItemIds.STEEL_INGOT);
 

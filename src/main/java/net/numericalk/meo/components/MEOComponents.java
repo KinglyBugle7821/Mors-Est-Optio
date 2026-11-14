@@ -17,6 +17,17 @@ public class MEOComponents {
             DataComponentType.<Float>builder().persistent(Codec.floatRange(0.0f, 100.0f)).networkSynchronized(ByteBufCodecs.FLOAT).build()
     );
 
+    public static final DataComponentType<Float> SPOIL_TIME= Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            MorsEstOptio.id("spoil_time"),
+            DataComponentType.<Float>builder().persistent(Codec.floatRange(0.0f, Float.MAX_VALUE)).networkSynchronized(ByteBufCodecs.FLOAT).build()
+    );
+    public static final DataComponentType<Boolean> IS_SPOILED= Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            MorsEstOptio.id("is_spoiled"),
+            DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).build()
+    );
+
     public static final DataComponentType<WaterQuality> WATER_QUALITY =
             Registry.register(
                     BuiltInRegistries.DATA_COMPONENT_TYPE,
