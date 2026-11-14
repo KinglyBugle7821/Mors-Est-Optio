@@ -12,6 +12,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.components.MEOComponents;
+import net.numericalk.meo.items.custom.BandageItem;
 import net.numericalk.meo.items.custom.WaterPouchItem;
 import net.numericalk.meo.misc.WaterQuality;
 
@@ -37,6 +38,20 @@ public class MEOItems {
                                     .animation(ItemUseAnimation.DRINK)
                                     .build()
                     ).component(MEOComponents.WATER_QUALITY, WaterQuality.UNKNOWN)
+    );
+
+    public static final Item BANDAGE = register(
+            MEOItemIds.BANDAGE,
+            BandageItem::new,
+            new Item.Properties()
+                    .stacksTo(16)
+                    .component(
+                            DataComponents.CONSUMABLE,
+                            Consumable.builder()
+                                    .consumeSeconds(2.0f)
+                                    .animation(ItemUseAnimation.DRINK)
+                                    .build()
+                    )
     );
 
     public static final Item GRANITE_CHUNK = register(MEOItemIds.GRANITE_CHUNK, Item::new, new Item.Properties());

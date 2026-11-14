@@ -89,6 +89,7 @@ public class MEOModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(MEOItems.WATER_POUCH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOItems.BANDAGE, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(MEOItems.FLINT_FLAKE, ModelTemplates.FLAT_HANDHELD_ITEM);
 

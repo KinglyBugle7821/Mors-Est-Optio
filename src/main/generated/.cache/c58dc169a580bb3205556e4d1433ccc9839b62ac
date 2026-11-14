@@ -15,6 +15,7 @@ db57327436e0c6492e9fa8bb8426d2c1a13dd005 assets/mors-est-optio/blockstates/break
 aa8e4d8949e93708e3bd9ec0c88cedb330c3bb3b assets/mors-est-optio/blockstates/loose_dirt.json
 2dcd0f8f83012aaeee222a2a3850077ad8b29120 assets/mors-est-optio/items/acacia_bark.json
 faf4474a6d5085e514187caaa89f1349ed6c5a74 assets/mors-est-optio/items/andesite_chunk.json
+0ec7ff3055e4feacf2c962a60944a520cf28f244 assets/mors-est-optio/items/bandage.json
 eb98f01352482df2b8c4a6fe19c6ecd830e43a8d assets/mors-est-optio/items/basalt_chunk.json
 5bab442c833f927812774a5439b6f1b9d1004393 assets/mors-est-optio/items/birch_bark.json
 749698d017eaac57de1f9130cdea32ca42513fc0 assets/mors-est-optio/items/blackstone_chunk.json
@@ -120,6 +121,7 @@ b893fec37dff776bdb42ac636c5d77a70fd3479d assets/mors-est-optio/models/block/brea
 24f9699c0c70f2478794dbeddc2d3551f94c9902 assets/mors-est-optio/models/block/loose_dirt.json
 3f2656101af383b9f44dc061aa707ffb9487a86e assets/mors-est-optio/models/item/acacia_bark.json
 84f8ba043c0b6b3eea53f9f12481b1e09cd247bf assets/mors-est-optio/models/item/andesite_chunk.json
+eae5b5a198c2ea9959c466720edf8ad12512d49e assets/mors-est-optio/models/item/bandage.json
 b5c3822452d6bf332e31efb6991776431c13a6b6 assets/mors-est-optio/models/item/basalt_chunk.json
 130b72a46082cf1ad36c668196cea9185fd06f48 assets/mors-est-optio/models/item/birch_bark.json
 ec4cb030851980346d9370bc3c2f5e9b52ca0082 assets/mors-est-optio/models/item/blackstone_chunk.json

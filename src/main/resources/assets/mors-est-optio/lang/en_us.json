@@ -1,4 +1,6 @@
 {
+  "item.mors-est-optio.bandage": "Bandage",
+
   "item.mors-est-optio.water_pouch": "Water Pouch",
   "item.mors-est-optio.water_pouch.amount_info": "%1$s mL of Water Left",
   "item.mors-est-optio.water_pouch.quality_info": "Water Quality: %1$s",

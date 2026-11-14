@@ -1,5 +1,6 @@
 package net.numericalk.meo.attachments.player;
 
+import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
@@ -78,6 +79,24 @@ public class PlayerInjury {
         if (armsInjury > 1) player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, 1F);
         if (legsInjury > 1) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, 1F);
 
+        if (player.isSleepingLongEnough()){
+            reduceInjury(MEOAttachments.PLAYER_HEAD_INJURY, headInjury, player);
+            reduceInjury(MEOAttachments.PLAYER_BODY_INJURY, bodyInjury, player);
+            reduceInjury(MEOAttachments.PLAYER_ARMS_INJURY, armsInjury, player);
+            reduceInjury(MEOAttachments.PLAYER_LEGS_INJURY, legsInjury, player);
+        }
+
+        player.setAttached(MEOAttachments.PLAYER_HEAD_INJURY, (Math.round(100 * headInjury))/100f);
+        player.setAttached(MEOAttachments.PLAYER_BODY_INJURY, (Math.round(100 * bodyInjury))/100f);
+        player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, (Math.round(100 * armsInjury))/100f);
+        player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, (Math.round(100 * legsInjury))/100f);
+
+        if (player.tickCount % 1200 == 0){
+            if (headInjury > 0) player.setAttached(MEOAttachments.PLAYER_HEAD_INJURY, headInjury - 0.01f);
+            if (bodyInjury > 0) player.setAttached(MEOAttachments.PLAYER_BODY_INJURY, bodyInjury - 0.01f);
+            if (armsInjury > 0) player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY, armsInjury - 0.01f);
+            if (legsInjury > 0) player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY, legsInjury - 0.01f);
+        }
 
         if (headInjury > 0.9F){
             player.addEffect(blindness);
@@ -95,7 +114,11 @@ public class PlayerInjury {
             player.addEffect(bleeding);
         }
     }
-
+    private static void reduceInjury(AttachmentType<Float> injuryAttachment, float injury, Player player) {
+        float injuryReduced = 0.1f;
+        if (injuryReduced < injury) player.setAttached(injuryAttachment, injury - injuryReduced);
+        else player.setAttached(injuryAttachment, 0f);
+    }
     private void setInjury(ResourceKey<DamageType> damageType,
                            float headModifier, float bodyModifier,
                            float armsModifier, float legsModifier,
@@ -104,22 +127,21 @@ public class PlayerInjury {
         if (!playerDamageType.equals(damageType)) return;
 
         float injuryMultiplier = damageTaken / 20F;
-
         player.setAttached(MEOAttachments.PLAYER_HEAD_INJURY,
-                player.getAttachedOrElse(MEOAttachments.PLAYER_HEAD_INJURY, 0F)
-                        + injuryMultiplier * headModifier / 5F
+                (player.getAttachedOrElse(MEOAttachments.PLAYER_HEAD_INJURY, 0F)
+                        + injuryMultiplier * headModifier / 5F)
         );
         player.setAttached(MEOAttachments.PLAYER_BODY_INJURY,
-                player.getAttachedOrElse(MEOAttachments.PLAYER_BODY_INJURY, 0F)
-                        + injuryMultiplier * bodyModifier / 5F
+                (player.getAttachedOrElse(MEOAttachments.PLAYER_BODY_INJURY, 0F)
+                        + injuryMultiplier * bodyModifier / 5F)
         );
         player.setAttached(MEOAttachments.PLAYER_ARMS_INJURY,
-                player.getAttachedOrElse(MEOAttachments.PLAYER_ARMS_INJURY, 0F)
-                        + injuryMultiplier * armsModifier / 5F
+                (player.getAttachedOrElse(MEOAttachments.PLAYER_ARMS_INJURY, 0F)
+                        + injuryMultiplier * armsModifier / 5F)
         );
         player.setAttached(MEOAttachments.PLAYER_LEGS_INJURY,
-                player.getAttachedOrElse(MEOAttachments.PLAYER_LEGS_INJURY, 0F)
-                        + injuryMultiplier * legsModifier / 5F
+                (player.getAttachedOrElse(MEOAttachments.PLAYER_LEGS_INJURY, 0F)
+                        + injuryMultiplier * legsModifier / 5F)
         );
     }
 }

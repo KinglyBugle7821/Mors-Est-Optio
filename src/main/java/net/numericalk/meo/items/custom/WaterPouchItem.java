@@ -125,6 +125,7 @@ public class WaterPouchItem extends Item {
                     );
                 }
                 stack.set(MEOComponents.WATER_AMOUNT, newWaterAmount);
+                stack.set(MEOComponents.WATER_QUALITY, WaterQuality.CLEAN);
 
                 level.playSound(
                         null,

@@ -35,19 +35,24 @@ public class PlayerNutrition {
             player.hurtServer(level, damageSource, 1f);
         }
         MobEffectInstance miningFatigue = new MobEffectInstance(MobEffects.MINING_FATIGUE, 3 * 20, 0, false, false, false);
-        MobEffectInstance nausea = new MobEffectInstance(MobEffects.NAUSEA, 10 * 20, 1, false, false, false);
-        MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, 3 * 20, 1, false, false, false);
-        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 3 * 20, 1, false, false, false);
+        MobEffectInstance nausea = new MobEffectInstance(MobEffects.NAUSEA, 10 * 20, 0, false, false, false);
+        MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, 3 * 20, 0, false, false, false);
+        MobEffectInstance slowness = new MobEffectInstance(MobEffects.SLOWNESS, 3 * 20, 0, false, false, false);
+        MobEffectInstance hunger = new MobEffectInstance(MobEffects.HUNGER, 3 * 20, 1, false, false, false);
 
-        if (carbs < 0.05F){
+        if (carbs == 0.25 || proteins == 0.25 || fats == 0.25){
+            player.addEffect(hunger);
+        }
+
+        if (carbs == 0F){
             player.addEffect(miningFatigue);
             player.addEffect(slowness);
         }
-        if (proteins < 0.05F){
+        if (proteins == 0F){
             player.addEffect(weakness);
             player.addEffect(nausea);
         }
-        if (fats < 0.05F){
+        if (fats == 0F){
             player.addEffect(weakness);
         }
 
