@@ -9,6 +9,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -138,7 +140,41 @@ public class WaterPouchItem extends Item {
         return InteractionResult.PASS;
     }
 
+    @Override
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
+        if (!level.isClientSide() && entity instanceof ServerPlayer player) {
+            if (!stack.has(MEOComponents.WATER_AMOUNT)) return stack;
 
+            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1f);
+            float waterAmount = stack.getOrDefault(MEOComponents.WATER_AMOUNT, 0.0f);
+
+            float hydrationGain = Math.min(1.0f - hydration, waterAmount / 100.0f);
+
+            hydration += hydrationGain;
+            waterAmount -= hydrationGain * 100.0f;
+
+            hydration = Math.clamp(hydration, 0.0f, 1.0f);
+            waterAmount = Math.clamp(waterAmount, 0.0f, 100.0f);
+
+            player.setAttached(MEOAttachments.HYDRATION, hydration);
+            stack.set(MEOComponents.WATER_AMOUNT, (float) Math.ceil(waterAmount));
+
+            MobEffectInstance nausea = new MobEffectInstance(MobEffects.NAUSEA, 10 * 20, 0, false, false, false);
+            MobEffectInstance poison = new MobEffectInstance(MobEffects.POISON, 10 * 20, 0, false, false, false);
+
+            WaterQuality quality = stack.get(MEOComponents.WATER_QUALITY);
+            assert quality != null;
+
+            if (quality != WaterQuality.CLEAN) {
+                player.addEffect(nausea);
+            }
+            if (quality.equals(WaterQuality.TOXIC)) {
+                player.addEffect(poison);
+            }
+        }
+
+        return super.finishUsingItem(stack, level, entity);
+    }
     private boolean isWaterDirty(Level level, BlockPos center) {
         for (BlockPos pos : BlockPos.betweenClosed(
                 center.offset(-1, -1, -1),
@@ -177,27 +213,5 @@ public class WaterPouchItem extends Item {
             }
         }
         return false;
-    }
-    @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-        if (!level.isClientSide() && entity instanceof ServerPlayer player) {
-            if (!stack.has(MEOComponents.WATER_AMOUNT)) return stack;
-
-            float hydration = player.getAttachedOrElse(MEOAttachments.HYDRATION, 1f);
-            float waterAmount = stack.getOrDefault(MEOComponents.WATER_AMOUNT, 0.0f);
-
-            float hydrationGain = Math.min(1.0f - hydration, waterAmount / 100.0f);
-
-            hydration += hydrationGain;
-            waterAmount -= hydrationGain * 100.0f;
-
-            hydration = Math.clamp(hydration, 0.0f, 1.0f);
-            waterAmount = Math.clamp(waterAmount, 0.0f, 100.0f);
-
-            player.setAttached(MEOAttachments.HYDRATION, hydration);
-            stack.set(MEOComponents.WATER_AMOUNT, (float) Math.ceil(waterAmount));
-        }
-
-        return stack;
     }
 }

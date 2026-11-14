@@ -36,7 +36,7 @@ public class PlayerHydration {
                 player.hurtServer(player.level(), damageSource, 1f);
             }
         }
-        MobEffectInstance nausea = new MobEffectInstance(MobEffects.NAUSEA, 3 * 20, 1, false, false, false);
+        MobEffectInstance nausea = new MobEffectInstance(MobEffects.NAUSEA, 3 * 20, 0, false, false, false);
 
         if (hydration < 0.2f) player.addEffect(nausea);
         if (hydration < 0) player.setAttached(MEOAttachments.HYDRATION, 0f);
