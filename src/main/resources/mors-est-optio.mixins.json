@@ -3,10 +3,11 @@
   "package": "net.numericalk.meo.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "SlowBlockBreakingMixin",
-    "WaterDrinkingMixin",
     "EatingMixin",
-    "SleepingMixin"
+    "MEOSpoilageMixin",
+    "SleepingMixin",
+    "SlowBlockBreakingMixin",
+    "WaterDrinkingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

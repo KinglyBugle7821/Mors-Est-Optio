@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerChunkEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -65,7 +67,10 @@ public class MEOSpoilageEvent {
             if (player.level().getGameTime() % (20 * 60 * 5) == 0){
                 reduceSpoilTime(stack);
             }
+
+
         }
+
     }
     private static void initializeSpoilTime(ItemStack stack) {
         setSpoilTime(Items.RABBIT_STEW, 1 * 4f, stack);
