@@ -12,10 +12,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -39,8 +37,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.be.CampfireBlockEntity;
 import net.numericalk.meo.datagen.MEOItemTagProvider;
-import net.numericalk.meo.entity.MEODamageTypes;
-import net.numericalk.meo.items.MEOItemIds;
 import org.jspecify.annotations.Nullable;
 
 public class CampfireBlock extends BaseEntityBlock {
@@ -162,7 +158,7 @@ public class CampfireBlock extends BaseEntityBlock {
         } else return false;
     }
     private boolean canAddFireTime(ItemStack stack, BlockState state, CampfireBlockEntity be) {
-        return (state.getValue(LIT) && stack.is(MEOItemTagProvider.CAMPFIRE_FUEL)) &&
+        return (state.getValue(LIT) && stack.is(MEOItemTagProvider.CAMPFIRE_FUELS)) &&
                 !(be.getFireTime() > CampfireBlockEntity.MAX_FIRE_TIME);
     }
 

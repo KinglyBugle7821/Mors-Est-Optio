@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "b": "#mors-est-optio:log_barks"
+  },
+  "pattern": [
+    "bb"
+  ],
+  "result": {
+    "id": "mors-est-optio:campfire_base"
+  }
+}

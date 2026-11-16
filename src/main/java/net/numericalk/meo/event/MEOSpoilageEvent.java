@@ -2,14 +2,10 @@ package net.numericalk.meo.event;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerChunkEvents;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -62,7 +58,7 @@ public class MEOSpoilageEvent {
         for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
             ItemStack stack = player.getInventory().getItem(i);
 
-            if (stack.is(MEOItemTagProvider.FOODS_THAT_SPOILS)){
+            if (stack.is(MEOItemTagProvider.FOODS_THAT_SPOIL)){
                 initializeSpoilTime(stack);
 
                 if (player.level().getGameTime() % (20 * 60 * 5) == 0){

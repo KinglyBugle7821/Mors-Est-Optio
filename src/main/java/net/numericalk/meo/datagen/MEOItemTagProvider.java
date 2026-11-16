@@ -1,6 +1,5 @@
 package net.numericalk.meo.datagen;
 
-import com.jcraft.jorbis.Block;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
@@ -10,7 +9,6 @@ import net.minecraft.references.ItemIds;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlockItemIds;
 import net.numericalk.meo.items.MEOItemIds;
@@ -18,9 +16,10 @@ import net.numericalk.meo.items.MEOItemIds;
 import java.util.concurrent.CompletableFuture;
 
 public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-    public static final TagKey<Item> FOODS_THAT_SPOILS = TagKey.create(Registries.ITEM, MorsEstOptio.id("foods_that_spoils"));
+    public static final TagKey<Item> FOODS_THAT_SPOIL = TagKey.create(Registries.ITEM, MorsEstOptio.id("foods_that_spoil"));
 
-    public static final TagKey<Item> CAMPFIRE_FUEL = TagKey.create(Registries.ITEM, MorsEstOptio.id("campfire_fuel"));
+    public static final TagKey<Item> CAMPFIRE_FUELS = TagKey.create(Registries.ITEM, MorsEstOptio.id("campfire_fuels"));
+    public static final TagKey<Item> LOG_BARKS = TagKey.create(Registries.ITEM, MorsEstOptio.id("log_barks"));
 
     public static final TagKey<Item> RAW_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("raw_food"));
 
@@ -48,7 +47,7 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        builder(CAMPFIRE_FUEL)
+        builder(LOG_BARKS)
                 .add(MEOItemIds.OAK_BARK)
                 .add(MEOItemIds.SPRUCE_BARK)
                 .add(MEOItemIds.BIRCH_BARK)
@@ -59,7 +58,9 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(MEOItemIds.CHERRY_BARK)
                 .add(MEOItemIds.PALE_OAK_BARK)
                 .add(MEOItemIds.CRIMSON_BARK)
-                .add(MEOItemIds.WARPED_BARK)
+                .add(MEOItemIds.WARPED_BARK);
+        builder(CAMPFIRE_FUELS)
+                .addTag(LOG_BARKS)
                 .add(MEOItemIds.WOOD_CHIP);
         builder(RAW_FOOD)
                 .add(ItemIds.BEEF)
@@ -72,7 +73,7 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(BlockItemIds.KELP.item())
                 .add(BlockItemIds.POTATO_CROP.item());
 
-        builder(FOODS_THAT_SPOILS)
+        builder(FOODS_THAT_SPOIL)
                 .add(BlockItemIds.CAKE.item())
                 .add(ItemIds.SUSPICIOUS_STEW)
                 .add(ItemIds.RABBIT_STEW)

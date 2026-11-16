@@ -27,6 +27,11 @@ public class MEORecipeProvider extends FabricRecipeProvider {
             public void buildRecipes() {
                 HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
+                shaped(RecipeCategory.MISC, MEOBlocks.CAMPFIRE_BASE, 1)
+                        .pattern("bb")
+                        .define('b', MEOItemTagProvider.LOG_BARKS)
+                        .unlockedBy(getHasName(MEOItems.OAK_BARK), has(MEOItems.OAK_BARK))
+                        .save(output);
                 shapeless(RecipeCategory.MISC, MEOItems.TWINE)
                         .requires(MEOItems.DRIED_GRASS_SHEAF, 2)
                         .unlockedBy(getHasName(MEOItems.DRIED_GRASS_SHEAF), has(MEOItems.DRIED_GRASS_SHEAF))

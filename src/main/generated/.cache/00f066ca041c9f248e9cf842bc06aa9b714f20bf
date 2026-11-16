@@ -11,14 +11,15 @@ e177335b68aa6fac9270482ec0dd2146192c1453 data/minecraft/tags/item/shovels.json
 02caa01439b6683b8ab733209832e2c20eb1787d data/minecraft/tags/item/spears.json
 4abca63ae9c75f659855689dc73868314a465ad6 data/minecraft/tags/item/swords.json
 ddcfeb03849cc33c36357875a58eeb08335f7c7f data/mors-est-optio/tags/item/boots.json
-05558e45fef04855f7380bbf7263a61894d11e7c data/mors-est-optio/tags/item/campfire_fuel.json
+0df00baeb9792193c6216c32383be6147c62f679 data/mors-est-optio/tags/item/campfire_fuels.json
 e58f201917ec180b9568e369479a34a3f2677f50 data/mors-est-optio/tags/item/cap.json
 91c9a2c4d5fa7b0aceb11f1f412308f687c9ca5c data/mors-est-optio/tags/item/copper_level_pickaxe.json
 ab6095507e570f815d309151c34210fb404fe4aa data/mors-est-optio/tags/item/diamond_level_axe.json
 603c34fe83a464e76924adb43e1cc2727b0527cc data/mors-est-optio/tags/item/diamond_level_pickaxe.json
-a83542c047b9e78c0f9dc53fef3a88ce231325f7 data/mors-est-optio/tags/item/foods_that_spoils.json
+a83542c047b9e78c0f9dc53fef3a88ce231325f7 data/mors-est-optio/tags/item/foods_that_spoil.json
 ab2da1a92f65e3431c440aba7b1caee3eb04646d data/mors-est-optio/tags/item/iron_level_axe.json
 261f9d864664fad7411fbff760626143f458750e data/mors-est-optio/tags/item/iron_level_pickaxe.json
+c33e33014e327bb03625b68dd9c5cf41b5bb3f80 data/mors-est-optio/tags/item/log_barks.json
 f34fd81a621e13bb0798c1c7abbc03776289b67c data/mors-est-optio/tags/item/pants.json
 66d1e0cbc5df66ef4746d26174c80654dd8c756c data/mors-est-optio/tags/item/raw_food.json
 4333e5b0d3c082c5e91baec1955d1a9d418dc318 data/mors-est-optio/tags/item/repairs_flint_tool.json
