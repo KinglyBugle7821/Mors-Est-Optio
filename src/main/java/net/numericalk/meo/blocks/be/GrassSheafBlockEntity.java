@@ -21,7 +21,7 @@ import net.numericalk.meo.blocks.custom.GrassSheafBlock;
 import org.jspecify.annotations.Nullable;
 
 public class GrassSheafBlockEntity extends BlockEntity {
-    private static final int DRYING_TIME = 20 *60 * 3; // 5 mins
+    private static final int DRYING_TIME = 20 * 60 * 3;
     private int dryingTime = DRYING_TIME;
 
     public GrassSheafBlockEntity(BlockPos worldPosition, BlockState blockState) {
@@ -55,7 +55,7 @@ public class GrassSheafBlockEntity extends BlockEntity {
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
 
-        dryingTime = input.getIntOr("drying_time", 20 * 60 * 3);
+        dryingTime = input.getIntOr("drying_time", DRYING_TIME);
     }
 
     @Override

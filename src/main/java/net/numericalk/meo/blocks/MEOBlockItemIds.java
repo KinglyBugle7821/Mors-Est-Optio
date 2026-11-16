@@ -7,6 +7,9 @@ import net.numericalk.meo.MorsEstOptio;
 public class MEOBlockItemIds {
     public static final BlockItemId LOOSE_DIRT = create("loose_dirt");
 
+    public static final BlockItemId CAMPFIRE = create("campfire");
+    public static final BlockItemId CAMPFIRE_BASE = create("campfire_base");
+
     public static final BlockItemId BREAKING_STONE = create("breaking_stone");
     public static final BlockItemId BREAKING_DEEPSLATE = create("breaking_deepslate");
 

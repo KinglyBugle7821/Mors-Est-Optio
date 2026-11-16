@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lit=false,can_grill=false": {
+      "model": "mors-est-optio:block/campfire_unlit_0"
+    },
+    "lit=true,can_grill=false": {
+      "model": "mors-est-optio:block/campfire_lit_0"
+    },
+    "lit=false,can_grill=true": {
+      "model": "mors-est-optio:block/campfire_unlit_1"
+    },
+    "lit=true,can_grill=true": {
+      "model": "mors-est-optio:block/campfire_lit_1"
+    }
+  }
+}

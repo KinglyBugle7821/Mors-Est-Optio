@@ -283,6 +283,8 @@ public class MEOItems {
             .displayItems((params, output) -> {
                 output.accept(MEOItems.WATER_POUCH);
 
+                output.accept(MEOBlocks.CAMPFIRE_BASE);
+                output.accept(MEOItems.BANDAGE);
                 output.accept(MEOBlocks.GRASS_SHEAF);
                 output.accept(MEOItems.DRIED_GRASS_SHEAF);
 

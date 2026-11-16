@@ -62,10 +62,12 @@ public class MEOSpoilageEvent {
         for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
             ItemStack stack = player.getInventory().getItem(i);
 
-            initializeSpoilTime(stack);
+            if (stack.is(MEOItemTagProvider.FOODS_THAT_SPOILS)){
+                initializeSpoilTime(stack);
 
-            if (player.level().getGameTime() % (20 * 60 * 5) == 0){
-                reduceSpoilTime(stack);
+                if (player.level().getGameTime() % (20 * 60 * 5) == 0){
+                    reduceSpoilTime(stack);
+                }
             }
         }
 

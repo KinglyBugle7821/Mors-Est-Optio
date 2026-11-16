@@ -7,7 +7,7 @@ import net.numericalk.meo.datagen.MEOItemTagProvider;
 public class MEOToolMaterials {
     public static final ToolMaterial FLINT_TOOL_MATERIAL = new ToolMaterial(
             BlockTags.INCORRECT_FOR_WOODEN_TOOL,
-            32,
+            10,
             1.0F,
             0.0F,
             15,
@@ -15,7 +15,7 @@ public class MEOToolMaterials {
     );
     public static final ToolMaterial REINFORCED_FLINT_TOOL_MATERIAL = new ToolMaterial(
             BlockTags.INCORRECT_FOR_WOODEN_TOOL,
-            64,
+            48,
             2.0F,
             0.0F,
             15,

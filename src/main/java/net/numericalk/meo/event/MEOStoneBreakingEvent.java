@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -107,15 +108,17 @@ public class MEOStoneBreakingEvent {
                             .setValue(BreakingStoneBlock.BREAKING_STAGE,
                             2), Block.UPDATE_ALL);
             default -> {
-                switch (degradationAmount){
-                    case COPPER_DEGRADATION_AMOUNT -> spawnItem(MEOItems.PEBBLE, 1, level, pos);
-                    case IRON_DEGRADATION_AMOUNT -> {
-                        if (state.is(breakingStone) && state.getValue(BreakingStoneBlock.BREAKING_STAGE) == 1) {
-                            spawnItem(MEOItems.PEBBLE, 2, level, pos);
+                if (player.getMainHandItem().is(ItemTags.PICKAXES)) {
+                    switch (degradationAmount) {
+                        case COPPER_DEGRADATION_AMOUNT -> spawnItem(MEOItems.PEBBLE, 1, level, pos);
+                        case IRON_DEGRADATION_AMOUNT -> {
+                            if (state.is(breakingStone) && state.getValue(BreakingStoneBlock.BREAKING_STAGE) == 1) {
+                                spawnItem(MEOItems.PEBBLE, 2, level, pos);
+                            }
                         }
                     }
+                    spawnItem(MEOItems.ROCK, 1, level, pos);
                 }
-                spawnItem(MEOItems.ROCK, 1, level, pos);
                 return true;
             }
         }
@@ -145,6 +148,7 @@ public class MEOStoneBreakingEvent {
                 else if (state.is(breakingStone) && state.getValue(BreakingStoneBlock.BREAKING_STAGE) == 2) spawnItem(MEOItems.ROCK, 1, level, pos);
             }
         }
+        MEOSpecializedBreakingEvent.flintFlakeFormation(level, player, state, pos);
         return false;
     }
     public void spawnItem(Item item, int amount, Level level, BlockPos pos){

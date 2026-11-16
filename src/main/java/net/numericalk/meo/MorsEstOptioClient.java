@@ -6,6 +6,11 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.world.item.ItemStack;
+import net.numericalk.meo.blocks.MEOBlockEntities;
+import net.numericalk.meo.blocks.be.renderers.CampfireBlockEntityRenderer;
 import net.numericalk.meo.network.MEONetworking;
 import net.numericalk.meo.network.payload.SeasonDataPayload;
 import net.numericalk.meo.screen.*;
@@ -36,6 +41,9 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("injury"), MEOInjuryGUI.hudLayer());
 
 		HudElementRegistry.addFirst(MorsEstOptio.id("open_attributes"), MEOAttributesGUI.hudLayer());
+
+		BlockEntityRenderers.register(MEOBlockEntities.CAMPFIRE_BLOCK_ENTITY, CampfireBlockEntityRenderer::new);
+
 		MEONetworking.initialize();
 
 		ClientPlayNetworking.registerGlobalReceiver(WindDataPayload.TYPE,

@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:grilling",
+  "input": "minecraft:rabbit",
+  "result": {
+    "id": "minecraft:cooked_rabbit"
+  }
+}

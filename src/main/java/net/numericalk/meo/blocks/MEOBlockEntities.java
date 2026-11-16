@@ -8,11 +8,15 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.numericalk.meo.MorsEstOptio;
+import net.numericalk.meo.blocks.be.CampfireBlockEntity;
 import net.numericalk.meo.blocks.be.GrassSheafBlockEntity;
 
 public class MEOBlockEntities {
     public static final BlockEntityType<GrassSheafBlockEntity> GRASS_SHEAF_BLOCK_ENTITY =
             register("grass_sheaf", GrassSheafBlockEntity::new, MEOBlocks.GRASS_SHEAF);
+    public static final BlockEntityType<CampfireBlockEntity> CAMPFIRE_BLOCK_ENTITY =
+            register("campfire", CampfireBlockEntity::new, MEOBlocks.CAMPFIRE);
+
 
     private static <T extends BlockEntity> BlockEntityType<T> register(
             String name,

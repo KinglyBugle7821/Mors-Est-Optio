@@ -39,8 +39,10 @@ public class MEOBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(BlockItemIds.BASALT);
         builder(STONE_BLOCKS)
                 .add(BlockItemIds.STONE)
+                .add(MEOBlockItemIds.BREAKING_STONE)
                 .add(BlockItemIds.COBBLESTONE)
                 .add(BlockItemIds.DEEPSLATE)
+                .add(MEOBlockItemIds.BREAKING_DEEPSLATE)
                 .add(BlockItemIds.COBBLED_DEEPSLATE)
                 .add(BlockItemIds.GRANITE)
                 .add(BlockItemIds.ANDESITE)

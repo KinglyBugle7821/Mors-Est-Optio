@@ -10,6 +10,7 @@ import net.minecraft.references.ItemIds;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.MEOBlockItemIds;
 import net.numericalk.meo.items.MEOItemIds;
@@ -17,7 +18,11 @@ import net.numericalk.meo.items.MEOItemIds;
 import java.util.concurrent.CompletableFuture;
 
 public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-//    public static final TagKey<Item> FOODS_THAT_SPOILS = TagKey.create(Registries.ITEM, MorsEstOptio.id("foods_that_spoils"));
+    public static final TagKey<Item> FOODS_THAT_SPOILS = TagKey.create(Registries.ITEM, MorsEstOptio.id("foods_that_spoils"));
+
+    public static final TagKey<Item> CAMPFIRE_FUEL = TagKey.create(Registries.ITEM, MorsEstOptio.id("campfire_fuel"));
+
+    public static final TagKey<Item> RAW_FOOD = TagKey.create(Registries.ITEM, MorsEstOptio.id("raw_food"));
 
     public static final TagKey<Item> REPAIRS_FLINT_TOOL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_flint_tool"));
     public static final TagKey<Item> STEEL_MATERIAL = TagKey.create(Registries.ITEM, MorsEstOptio.id("repairs_steel_tool"));
@@ -43,41 +48,65 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-//        builder(FOODS_THAT_SPOILS)
-//                .add(BlockItemIds.CAKE.item())
-//                .add(ItemIds.SUSPICIOUS_STEW)
-//                .add(ItemIds.RABBIT_STEW)
-//                .add(ItemIds.COOKED_PORKCHOP)
-//                .add(ItemIds.PUMPKIN_PIE)
-//                .add(ItemIds.COOKED_BEEF)
-//                .add(ItemIds.BEETROOT_SOUP)
-//                .add(ItemIds.COOKED_CHICKEN)
-//                .add(ItemIds.COOKED_MUTTON)
-//                .add(ItemIds.COOKED_SALMON)
-//                .add(ItemIds.MUSHROOM_STEW)
-//                .add(ItemIds.BAKED_POTATO)
-//                .add(ItemIds.BREAD)
-//                .add(ItemIds.COOKED_COD)
-//                .add(ItemIds.COOKED_RABBIT)
-//                .add(ItemIds.APPLE)
-//                .add(ItemIds.CHORUS_FRUIT)
-//                .add(BlockItemIds.CARROT_CROP.item())
-//                .add(ItemIds.BEEF)
-//                .add(ItemIds.PORKCHOP)
-//                .add(ItemIds.RABBIT)
-//                .add(ItemIds.COOKIE)
-//                .add(BlockItemIds.GLOW_BERRY_CROP.item())
-//                .add(ItemIds.MELON_SLICE)
-//                .add(ItemIds.CHICKEN)
-//                .add(ItemIds.COD)
-//                .add(ItemIds.MUTTON)
-//                .add(ItemIds.SALMON)
-//                .add(BlockItemIds.SWEET_BERRY_CROP.item())
-//                .add(ItemIds.BEETROOT)
-//                .add(ItemIds.DRIED_KELP)
-//                .add(BlockItemIds.POTATO_CROP.item())
-//                .add(ItemIds.PUFFERFISH)
-//                .add(ItemIds.TROPICAL_FISH);
+        builder(CAMPFIRE_FUEL)
+                .add(MEOItemIds.OAK_BARK)
+                .add(MEOItemIds.SPRUCE_BARK)
+                .add(MEOItemIds.BIRCH_BARK)
+                .add(MEOItemIds.JUNGLE_BARK)
+                .add(MEOItemIds.ACACIA_BARK)
+                .add(MEOItemIds.DARK_OAK_BARK)
+                .add(MEOItemIds.MANGROVE_BARK)
+                .add(MEOItemIds.CHERRY_BARK)
+                .add(MEOItemIds.PALE_OAK_BARK)
+                .add(MEOItemIds.CRIMSON_BARK)
+                .add(MEOItemIds.WARPED_BARK)
+                .add(MEOItemIds.WOOD_CHIP);
+        builder(RAW_FOOD)
+                .add(ItemIds.BEEF)
+                .add(ItemIds.PORKCHOP)
+                .add(ItemIds.RABBIT)
+                .add(ItemIds.CHICKEN)
+                .add(ItemIds.COD)
+                .add(ItemIds.MUTTON)
+                .add(ItemIds.SALMON)
+                .add(BlockItemIds.KELP.item())
+                .add(BlockItemIds.POTATO_CROP.item());
+
+        builder(FOODS_THAT_SPOILS)
+                .add(BlockItemIds.CAKE.item())
+                .add(ItemIds.SUSPICIOUS_STEW)
+                .add(ItemIds.RABBIT_STEW)
+                .add(ItemIds.COOKED_PORKCHOP)
+                .add(ItemIds.PUMPKIN_PIE)
+                .add(ItemIds.COOKED_BEEF)
+                .add(ItemIds.BEETROOT_SOUP)
+                .add(ItemIds.COOKED_CHICKEN)
+                .add(ItemIds.COOKED_MUTTON)
+                .add(ItemIds.COOKED_SALMON)
+                .add(ItemIds.MUSHROOM_STEW)
+                .add(ItemIds.BAKED_POTATO)
+                .add(ItemIds.BREAD)
+                .add(ItemIds.COOKED_COD)
+                .add(ItemIds.COOKED_RABBIT)
+                .add(ItemIds.APPLE)
+                .add(ItemIds.CHORUS_FRUIT)
+                .add(BlockItemIds.CARROT_CROP.item())
+                .add(ItemIds.BEEF)
+                .add(ItemIds.PORKCHOP)
+                .add(ItemIds.RABBIT)
+                .add(ItemIds.COOKIE)
+                .add(BlockItemIds.GLOW_BERRY_CROP.item())
+                .add(ItemIds.MELON_SLICE)
+                .add(ItemIds.CHICKEN)
+                .add(ItemIds.COD)
+                .add(ItemIds.MUTTON)
+                .add(ItemIds.SALMON)
+                .add(BlockItemIds.SWEET_BERRY_CROP.item())
+                .add(ItemIds.BEETROOT)
+                .add(ItemIds.DRIED_KELP)
+                .add(BlockItemIds.POTATO_CROP.item())
+                .add(ItemIds.PUFFERFISH)
+                .add(ItemIds.TROPICAL_FISH);
 
         builder(STEEL_MATERIAL)
                 .add(MEOItemIds.STEEL_INGOT);
@@ -97,6 +126,7 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(MEOItemIds.FLINT_PICK)
                 .add(MEOItemIds.STEEL_PICKAXE);
         builder(ItemTags.AXES)
+                .add(MEOItemIds.FLINT_FLAKE)
                 .add(MEOItemIds.FLINT_HATCHET)
                 .add(MEOItemIds.STEEL_AXE);
         builder(ItemTags.SPEARS)
@@ -149,8 +179,6 @@ public class MEOItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         builder(TUNIC).add(ItemIds.LEATHER_CHESTPLATE);
         builder(PANTS).add(ItemIds.LEATHER_LEGGINGS);
         builder(BOOTS).add(ItemIds.LEATHER_BOOTS);
-
-        builder(ItemTags.AXES).add(MEOItemIds.FLINT_FLAKE);
 
         builder(REPAIRS_FLINT_TOOL).add(ItemIds.FLINT);
     }

@@ -105,8 +105,6 @@ public class PlayerInjury {
         if (headInjury >= 0.2f || bodyInjury >= 0.2f || armsInjury >= 0.2f || legsInjury >= 0.2f){
             player.setAttached(MEOAttachments.INFECTION_TICK, infectionTick - 1);
             player.setAttached(MEOAttachments.FEVER_TICK, feverTick - 1);
-            System.out.println("Infection Tick: " + infectionTick);
-            System.out.println("Fever Tick: " + feverTick);
             if (infectionTick == 0) {
                 player.addEffect(new MobEffectInstance(MEOEffects.INFECTION, 20 * 60 * 5, 0, false, false, false));
                 player.setAttached(MEOAttachments.INFECTION_TICK, 6000);

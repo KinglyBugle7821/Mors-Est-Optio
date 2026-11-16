@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "building_stage=0": {
+      "model": "mors-est-optio:block/campfire_base_0"
+    },
+    "building_stage=1": {
+      "model": "mors-est-optio:block/campfire_base_1"
+    },
+    "building_stage=2": {
+      "model": "mors-est-optio:block/campfire_base_2"
+    },
+    "building_stage=3": {
+      "model": "mors-est-optio:block/campfire_base_3"
+    }
+  }
+}

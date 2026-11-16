@@ -11,10 +11,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
-import net.numericalk.meo.blocks.custom.BreakingLogBlock;
-import net.numericalk.meo.blocks.custom.BreakingStoneBlock;
-import net.numericalk.meo.blocks.custom.GrassSheafBlock;
-import net.numericalk.meo.blocks.custom.MEOLooseBlock;
+import net.numericalk.meo.blocks.custom.*;
 
 import java.util.function.Function;
 
@@ -26,6 +23,24 @@ public class MEOBlocks {
                     .mapColor(MapColor.DIRT)
                     .strength(1.5f, 0.5f)
                     .sound(SoundType.GRAVEL)
+    );
+
+    public static final Block CAMPFIRE_BASE = registerBlockItem(
+            MEOBlockItemIds.CAMPFIRE_BASE,
+            CampfireBaseBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+    );
+    public static final Block CAMPFIRE = registerBlockItem(
+            MEOBlockItemIds.CAMPFIRE,
+            CampfireBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .lightLevel(CampfireBlock::getLightEmission)
     );
 
     public static final Block GRASS_SHEAF = registerBlockItem(

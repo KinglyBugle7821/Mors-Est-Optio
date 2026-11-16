@@ -48,7 +48,7 @@ public class GrassSheafBlock extends BaseEntityBlock {
     }
 
     protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
-        return state.is(BlockTags.SUPPORTS_VEGETATION);
+        return !state.is(BlockTags.AIR);
     }
     @Override
     protected BlockState updateShape(
@@ -84,6 +84,7 @@ public class GrassSheafBlock extends BaseEntityBlock {
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return this.getBlockSupportShape(state, level, pos);
     }
+
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {

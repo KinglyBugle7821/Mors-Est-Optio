@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:grilling",
+  "input": "minecraft:kelp",
+  "result": {
+    "id": "minecraft:dried_kelp"
+  }
+}

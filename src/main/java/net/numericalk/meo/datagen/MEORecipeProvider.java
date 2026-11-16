@@ -27,10 +27,6 @@ public class MEORecipeProvider extends FabricRecipeProvider {
             public void buildRecipes() {
                 HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
-                shapeless(RecipeCategory.MISC, MEOItems.FLINT_FLAKE)
-                        .requires(Items.FLINT)
-                        .unlockedBy(getHasName(Items.FLINT), has(Items.FLINT))
-                        .save(output);
                 shapeless(RecipeCategory.MISC, MEOItems.TWINE)
                         .requires(MEOItems.DRIED_GRASS_SHEAF, 2)
                         .unlockedBy(getHasName(MEOItems.DRIED_GRASS_SHEAF), has(MEOItems.DRIED_GRASS_SHEAF))

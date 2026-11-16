@@ -1,8 +1,10 @@
 {
   "values": [
     "minecraft:stone",
+    "mors-est-optio:breaking_stone",
     "minecraft:cobblestone",
     "minecraft:deepslate",
+    "mors-est-optio:breaking_deepslate",
     "minecraft:cobbled_deepslate",
     "minecraft:granite",
     "minecraft:andesite",

@@ -1,20 +1,15 @@
 package net.numericalk.meo;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.item.v1.ItemComponentTooltipProviderRegistry;
-import net.minecraft.ChatFormatting;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.level.Level;
 import net.numericalk.meo.attachments.player.*;
 import net.numericalk.meo.attachments.world.WorldSeasons;
 import net.numericalk.meo.blocks.MEOBlockEntities;
@@ -26,7 +21,7 @@ import net.numericalk.meo.event.*;
 import net.numericalk.meo.items.MEOItems;
 import net.numericalk.meo.attachments.world.WorldWindDirection;
 import net.numericalk.meo.attachments.world.WorldWindStrength;
-import net.numericalk.meo.misc.WaterQuality;
+import net.numericalk.meo.recipes.MEORecipes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,10 +41,12 @@ public class MorsEstOptio implements ModInitializer {
 		MEOBlocks.initialize();
 		MEOBlockEntities.initialize();
 		MEOComponents.initialize();
+		MEORecipes.initialize();
 
 		MEOSpoilageEvent.initialize();
 
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MEO_CREATIVE_TAB_KEY, MEO_CREATIVE_TAB);
+		RecipeSynchronization.synchronizeRecipeSerializer(MEORecipes.GRILLING_RECIPE_SERIALIZER);
 
 		LOGGER.info("Get Ready For A Whole New Experience");
 
@@ -83,6 +80,7 @@ public class MorsEstOptio implements ModInitializer {
 		MEOStoneBreakingEvent stoneBreakingEvent = new MEOStoneBreakingEvent();
 
 		ServerLivingEntityEvents.AFTER_DAMAGE.register(new PlayerInjury().afterDamage);
+
 	}
 
 	public static Identifier id(String path) {

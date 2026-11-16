@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:grilling",
+  "input": "minecraft:salmon",
+  "result": {
+    "id": "minecraft:cooked_salmon"
+  }
+}

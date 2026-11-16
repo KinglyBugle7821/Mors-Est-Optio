@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:grilling",
+  "input": "minecraft:cod",
+  "result": {
+    "id": "minecraft:cooked_cod"
+  }
+}

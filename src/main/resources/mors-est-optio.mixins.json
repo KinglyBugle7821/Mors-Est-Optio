@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "EatingMixin",
+    "FlintStoneMiningMixin",
     "MEOSpoilageMixin",
     "SleepingMixin",
     "SlowBlockBreakingMixin",
