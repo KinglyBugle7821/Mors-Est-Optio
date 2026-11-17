@@ -9,6 +9,8 @@ public enum FoodNutrition {
     PUMPKIN_PIE(0.65F, 0.05F, 0.30F),
     COOKIE(0.65F, 0.05F, 0.30F),
 
+    RABBIT_STEW(0.7F, 0.7F, 0.6F),
+
     BEEF(0.0F, 0.65F, 0.35F),
     COOKED_BEEF(0.0F, 0.60F, 0.40F),
     CHICKEN(0.0F, 0.75F, 0.25F),

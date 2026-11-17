@@ -8,7 +8,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.ItemStack;
@@ -61,19 +60,22 @@ public class CampfireBlockEntity extends BlockEntity implements ImplementedConta
         super.loadAdditional(input);
         this.items.replaceAll(ignored -> ItemStack.EMPTY);
         ContainerHelper.loadAllItems(input, this.items);
-        isCooking[0] = input.getBooleanOr("isCooking0", false);
-        isCooking[1] = input.getBooleanOr("isCooking1", false);
-        isCooking[2] = input.getBooleanOr("isCooking2", false);
+        fireTime = input.getIntOr("fireTime", 0);
+        for (int i = 0; i < CONTAINER_SIZE; i++){
+            isCooking[i] = input.getBooleanOr("isCooking" + i, false);
+            grillingTimes[i] = input.getIntOr("grillingTime" + i, 0);
+        }
     }
 
     @Override
     protected void saveAdditional(ValueOutput output) {
         ContainerHelper.saveAllItems(output, this.items);
-        output.putBoolean("isCooking0", isCooking[0]);
-        output.putBoolean("isCooking1", isCooking[1]);
-        output.putBoolean("isCooking2", isCooking[2]);
+        output.putInt("fireTime", fireTime);
+        for (int i = 0; i < CONTAINER_SIZE; i++){
+            output.putBoolean("isCooking" + i, isCooking[i]);
+            output.putInt("grillingTime" + i, grillingTimes[i]);
+        }
         super.saveAdditional(output);
-
     }
     private static final int GRILLING_TIME = 20 * 60 * 3;
     private final int[] grillingTimes = new int[CONTAINER_SIZE];
@@ -88,16 +90,21 @@ public class CampfireBlockEntity extends BlockEntity implements ImplementedConta
     public static void serverTick(Level level, BlockPos pos, BlockState state, CampfireBlockEntity be) {
         if (level.isClientSide()) return;
 
-        if (!state.getValue(CampfireBlock.LIT) && be.fireTime > 0){
-            level.setBlock(pos, state.setValue(CampfireBlock.LIT, true), Block.UPDATE_ALL);
-        } else if (!state.getValue(CampfireBlock.LIT) && be.fireTime <= 0){
+        if (level.isRainingAt(pos) || level.isRainingAt(pos.above())) {
+            if (state.getValue(CampfireBlock.LIT))
+                level.setBlock(pos, state.setValue(CampfireBlock.LIT, false), Block.UPDATE_ALL);
             be.fireTime = 0;
-        } else if (state.getValue(CampfireBlock.LIT) && be.fireTime > 0){
-            be.fireTime--;
-        } else if (state.getValue(CampfireBlock.LIT) && be.fireTime <= 0){
-            level.setBlock(pos, state.setValue(CampfireBlock.LIT, false), Block.UPDATE_ALL);
+        } else {
+            if (be.fireTime > 0) {
+                if (!state.getValue(CampfireBlock.LIT))
+                    level.setBlock(pos, state.setValue(CampfireBlock.LIT, true), Block.UPDATE_ALL);
+                else be.fireTime--;
+            } else {
+                be.fireTime = 0;
+                if (state.getValue(CampfireBlock.LIT))
+                    level.setBlock(pos, state.setValue(CampfireBlock.LIT, false), Block.UPDATE_ALL);
+            }
         }
-
         boolean cookingStateChanged = false;
         for (int i = 0; i < be.getContainerSize(); i++) {
             ItemStack stack = be.getItem(i);

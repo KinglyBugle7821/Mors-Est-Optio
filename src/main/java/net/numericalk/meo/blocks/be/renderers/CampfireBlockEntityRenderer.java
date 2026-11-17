@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 import net.numericalk.meo.blocks.be.CampfireBlockEntity;
@@ -55,7 +56,7 @@ public class CampfireBlockEntityRenderer implements BlockEntityRenderer<Campfire
                     poseStack,
                     submitNodeCollector,
                     state.lightCoords,
-                    0,
+                    OverlayTexture.NO_OVERLAY,
                     0
             );
             poseStack.popPose();

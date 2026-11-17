@@ -31,6 +31,7 @@ public class EatingMixin {
         setNutrition(Items.PUMPKIN_PIE, FoodNutrition.PUMPKIN_PIE, player, stack);
         setNutrition(Items.COOKIE, FoodNutrition.COOKIE, player, stack);
 
+        setNutrition(Items.RABBIT_STEW, FoodNutrition.RABBIT_STEW, player, stack);
         setNutrition(Items.BEEF, FoodNutrition.BEEF, player, stack);
         setNutrition(Items.COOKED_BEEF, FoodNutrition.COOKED_BEEF, player, stack);
         setNutrition(Items.CHICKEN, FoodNutrition.CHICKEN, player, stack);

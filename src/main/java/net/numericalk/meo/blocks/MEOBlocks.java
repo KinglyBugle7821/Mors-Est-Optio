@@ -52,6 +52,16 @@ public class MEOBlocks {
                     .sound(SoundType.GRASS).ignitedByLava()
     );
 
+    public static final Block DRYING_TRAY = registerBlockItem(
+            MEOBlockItemIds.DRYING_TRAY,
+            DryingTrayBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .ignitedByLava()
+    );
+
     public static final Block BREAKING_STONE = registerBlockItem(
             MEOBlockItemIds.BREAKING_STONE,
             BreakingStoneBlock::new, BlockBehaviour.Properties.of()

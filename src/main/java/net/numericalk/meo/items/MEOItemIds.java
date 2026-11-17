@@ -14,6 +14,8 @@ public class MEOItemIds {
 
     public static final ResourceKey<Item> TWINE = create("twine");
 
+    public static final ResourceKey<Item> DRIED_LEATHER = create("dried_leather");
+
     public static final ResourceKey<Item> GRANITE_CHUNK = create("granite_chunk");
     public static final ResourceKey<Item> ANDESITE_CHUNK = create("andesite_chunk");
     public static final ResourceKey<Item> DIORITE_CHUNK = create("diorite_chunk");

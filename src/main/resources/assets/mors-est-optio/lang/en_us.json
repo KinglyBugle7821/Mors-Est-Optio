@@ -1,6 +1,8 @@
 {
   "item.mors-est-optio.bandage": "Bandage",
 
+  "item.mors-est-optio.dried_leather": "Dried Leather",
+
   "item.mors-est-optio.water_pouch": "Water Pouch",
   "item.mors-est-optio.water_pouch.amount_info": "%1$s mL of Water Left",
   "item.mors-est-optio.water_pouch.quality_info": "Water Quality: %1$s",
@@ -78,6 +80,8 @@
   "item.mors-est-optio.pale_oak_bark": "Pale Oak Bark",
   "item.mors-est-optio.warped_bark": "Warped Bark",
   "item.mors-est-optio.crimson_bark": "Crimson Bark",
+
+  "block.mors-est-optio.drying_tray": "Drying Tray",
 
   "block.mors-est-optio.campfire_base": "Campfire Base",
   "block.mors-est-optio.campfire": "Campfire",

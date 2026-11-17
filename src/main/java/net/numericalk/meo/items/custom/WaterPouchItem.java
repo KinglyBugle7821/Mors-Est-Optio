@@ -172,6 +172,7 @@ public class WaterPouchItem extends Item {
             if (quality.equals(WaterQuality.TOXIC)) {
                 player.addEffect(poison);
             }
+            stack.hurtAndBreak(1, player, player.getUsedItemHand());
         }
 
         return stack;

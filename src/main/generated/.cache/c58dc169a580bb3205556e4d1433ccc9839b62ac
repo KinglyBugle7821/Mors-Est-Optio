@@ -41,6 +41,7 @@ f7637e491dd9c883e38bf155c01e38685f2d1470 assets/mors-est-optio/items/dark_oak_ba
 46829e59b7fc2c37ee68170a0e5d14e6665f6500 assets/mors-est-optio/items/diorite_chunk.json
 ee3bcd65c1081e902d9dc5469faac87e50ecde09 assets/mors-est-optio/items/dirt_clump.json
 3f6857995ecf26e89108cd76bc7faea352e8c600 assets/mors-est-optio/items/dried_grass_sheaf.json
+947a71e802b188b3f25387031c7ceffd97769820 assets/mors-est-optio/items/dried_leather.json
 951934a2be7e71e177f03d3f3a36f5a8cdd9721f assets/mors-est-optio/items/dripstone_chunk.json
 3f9b67f322930303a3e9cb8d46f03ca3a36f4f35 assets/mors-est-optio/items/end_stone_chunk.json
 43b588d85555e25de982e98e31a92202aa727868 assets/mors-est-optio/items/flint_flake.json
@@ -134,6 +135,7 @@ e0c6d1fd0651cd5015647a952efd70ee8ee3f36b assets/mors-est-optio/models/item/crims
 767ba353fded657405c6f3f64454f95b625f7339 assets/mors-est-optio/models/item/diorite_chunk.json
 df41b2f786e319dc8cca27cbc8c334d46b35e94e assets/mors-est-optio/models/item/dirt_clump.json
 7f854d91a0b71c9c6acc3953cd58b28448c4bdec assets/mors-est-optio/models/item/dried_grass_sheaf.json
+cd2ddad0665d971c5314f17b47633635b748604c assets/mors-est-optio/models/item/dried_leather.json
 ad85ab29f524ae9d2329b06112fa42db10eef79c assets/mors-est-optio/models/item/dripstone_chunk.json
 37536c72c3c668ce174429e4f59e464c57553b3b assets/mors-est-optio/models/item/end_stone_chunk.json
 e276bfd74cae556170c02f15113653d6bbc77b33 assets/mors-est-optio/models/item/flint_flake.json

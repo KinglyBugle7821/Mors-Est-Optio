@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.world.item.ItemStack;
 import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.be.renderers.CampfireBlockEntityRenderer;
+import net.numericalk.meo.blocks.be.renderers.DryingTrayBlockEntityRenderer;
 import net.numericalk.meo.network.MEONetworking;
 import net.numericalk.meo.network.payload.SeasonDataPayload;
 import net.numericalk.meo.screen.*;
@@ -43,6 +44,7 @@ public class MorsEstOptioClient implements ClientModInitializer {
 		HudElementRegistry.addFirst(MorsEstOptio.id("open_attributes"), MEOAttributesGUI.hudLayer());
 
 		BlockEntityRenderers.register(MEOBlockEntities.CAMPFIRE_BLOCK_ENTITY, CampfireBlockEntityRenderer::new);
+		BlockEntityRenderers.register(MEOBlockEntities.DRYING_TRAY_BLOCK_ENTITY, DryingTrayBlockEntityRenderer::new);
 
 		MEONetworking.initialize();
 

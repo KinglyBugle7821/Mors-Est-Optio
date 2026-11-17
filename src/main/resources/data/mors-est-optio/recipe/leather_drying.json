@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:drying",
+  "input": "minecraft:leather",
+  "result": {
+    "id": "mors-est-optio:dried_leather"
+  }
+}

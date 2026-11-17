@@ -119,7 +119,7 @@ public class CampfireBlock extends BaseEntityBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        return pickUpItem(level, pos, player);
+        return player.getItemInHand(player.getUsedItemHand()).isEmpty() ? pickUpItem(level, pos, player) : InteractionResult.PASS;
     }
 
     private InteractionResult pickUpItem(Level level, BlockPos pos, Player player) {

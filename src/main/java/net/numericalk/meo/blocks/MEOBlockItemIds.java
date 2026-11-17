@@ -15,6 +15,8 @@ public class MEOBlockItemIds {
 
     public static final BlockItemId GRASS_SHEAF = create("grass_sheaf");
 
+    public static final BlockItemId DRYING_TRAY = create("drying_tray");
+
     public static final BlockItemId BREAKING_OAK_LOG = create("breaking_oak_log");
     public static final BlockItemId BREAKING_SPRUCE_LOG = create("breaking_spruce_log");
     public static final BlockItemId BREAKING_BIRCH_LOG = create("breaking_birch_log");

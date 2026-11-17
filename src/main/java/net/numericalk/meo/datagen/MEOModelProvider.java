@@ -105,6 +105,8 @@ public class MEOModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(MEOItems.TWINE, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.DRIED_LEATHER, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(MEOItems.CLAY_CLUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.DIRT_CLUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.GRAVEL_CLUMP, ModelTemplates.FLAT_ITEM);
