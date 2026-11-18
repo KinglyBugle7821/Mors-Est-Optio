@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mors-est-optio:block/flint_nodule"
+    },
+    "facing=south": {
+      "model": "mors-est-optio:block/flint_nodule",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "mors-est-optio:block/flint_nodule",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "mors-est-optio:block/flint_nodule",
+      "y": 270
+    }
+  }
+}

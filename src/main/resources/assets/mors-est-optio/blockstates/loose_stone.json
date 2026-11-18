@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mors-est-optio:block/loose_stone"
+    },
+    "facing=south": {
+      "model": "mors-est-optio:block/loose_stone",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "mors-est-optio:block/loose_stone",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "mors-est-optio:block/loose_stone",
+      "y": 270
+    }
+  }
+}

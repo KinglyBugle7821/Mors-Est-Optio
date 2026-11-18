@@ -79,4 +79,7 @@ c8f1a2a961a166c4c4d091674b860079bde8e014 data/minecraft/loot_table/blocks/stripp
 187a7cc3ac461e491d9bde38320b1bc49167b13f data/minecraft/loot_table/blocks/tuff.json
 be61c2ff1e43fe0c90924fd5405540cf75e2bd23 data/minecraft/loot_table/blocks/warped_hyphae.json
 5c561308239426940af8a836131cc5d1c25c8627 data/minecraft/loot_table/blocks/warped_stem.json
+ce9bcb38732e7d9755d000f3e2a5f4cad1c9d379 data/mors-est-optio/loot_table/blocks/fallen_branch.json
+be3a194c0579e7983e9127ec15a5774afeb69fb6 data/mors-est-optio/loot_table/blocks/flint_nodule.json
 7be487eb619383807af72778fee9c1637d7d1cb7 data/mors-est-optio/loot_table/blocks/grass_sheaf.json
+cc2819f68f7ffd997bfc4be57b197fe1e2231e03 data/mors-est-optio/loot_table/blocks/loose_stone.json

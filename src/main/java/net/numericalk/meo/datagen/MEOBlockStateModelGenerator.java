@@ -5,20 +5,23 @@ import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.numericalk.meo.MorsEstOptio;
 import net.numericalk.meo.blocks.custom.BreakingLogBlock;
 import net.numericalk.meo.blocks.custom.BreakingStoneBlock;
 
 import java.util.Optional;
+import java.util.function.Function;
+
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class MEOBlockStateModelGenerator {
     public static final ModelTemplate BREAKING_LOG_STAGE_1 = block("breaking_log_stage_1", "_stage_1", TextureSlot.TOP, TextureSlot.SIDE);
@@ -46,7 +49,6 @@ public class MEOBlockStateModelGenerator {
         return new ModelTemplate(Optional.of(MorsEstOptio.id("block/" + parent)), Optional.of(variant), requiredTextureKeys);
     }
 
-
     public static TextureMapping blockAndTopForEnds(Block block) {
         return new TextureMapping()
                 .put(TextureSlot.TOP, new Material(ModelLocationUtils.getModelLocation(block, "_top")))
@@ -65,9 +67,9 @@ public class MEOBlockStateModelGenerator {
     }
 
     private static BlockModelDefinitionGenerator createBreakingLogBlockStates(Block breakingLogBlock, Identifier breakingLogStage1Id, Identifier breakingLogStage2Id, Identifier breakingLogStage3Id) {
-        MultiVariant breakingLogStage1Model = BlockModelGenerators.plainVariant(breakingLogStage1Id);
-        MultiVariant breakingLogStage2Model = BlockModelGenerators.plainVariant(breakingLogStage2Id);
-        MultiVariant breakingLogStage3Model = BlockModelGenerators.plainVariant(breakingLogStage3Id);
+        MultiVariant breakingLogStage1Model = plainVariant(breakingLogStage1Id);
+        MultiVariant breakingLogStage2Model = plainVariant(breakingLogStage2Id);
+        MultiVariant breakingLogStage3Model = plainVariant(breakingLogStage3Id);
         return MultiVariantGenerator.dispatch(breakingLogBlock)
                 .with(PropertyDispatch.initial(BreakingLogBlock.AXIS, BreakingLogBlock.BREAKING_STAGE)
                         .select(Direction.Axis.X, 1, breakingLogStage1Model.with(BlockModelGenerators.X_ROT_90).with(BlockModelGenerators.Y_ROT_90))
@@ -85,8 +87,8 @@ public class MEOBlockStateModelGenerator {
                 );
     }
     private static BlockModelDefinitionGenerator createBreakingStoneBlockStates(Block breakingStoneBlock, Identifier stage1Id, Identifier stage2Id) {
-        MultiVariant stage1Model = BlockModelGenerators.plainVariant(stage1Id);
-        MultiVariant stage2Model = BlockModelGenerators.plainVariant(stage2Id);
+        MultiVariant stage1Model = plainVariant(stage1Id);
+        MultiVariant stage2Model = plainVariant(stage2Id);
 
         return MultiVariantGenerator.dispatch(breakingStoneBlock)
                 .with(PropertyDispatch.initial(BreakingStoneBlock.BREAKING_STAGE)

@@ -1,4 +1,6 @@
 {
+
+
   "item.mors-est-optio.bandage": "Bandage",
 
   "item.mors-est-optio.dried_leather": "Dried Leather",
@@ -25,6 +27,14 @@
 
   "block.mors-est-optio.grass_sheaf": "Grass Sheaf",
   "item.mors-est-optio.dried_grass_sheaf": "Dried Grass Sheaf",
+
+  "block.mors-est-optio.reed": "Reed",
+  "block.mors-est-optio.tall_reed": "Tall Reed",
+
+  "item.mors-est-optio.clay_lump": "Clay Lump",
+  "block.mors-est-optio.loose_stone": "Loose Stone",
+  "block.mors-est-optio.flint_nodule": "Flint Nodule",
+  "block.mors-est-optio.fallen_branch": "Fallen Branch",
 
   "item.mors-est-optio.twine": "Twine",
 

@@ -4,8 +4,11 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.world.level.block.Blocks;
+import net.numericalk.meo.blocks.MEOBlockItemIds;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.items.MEOItems;
 
@@ -18,6 +21,9 @@ public class MEOModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(MEOBlocks.LOOSE_DIRT);
+
+        blockModelGenerators.createDoublePlant(MEOBlocks.TALL_REED, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerators.createCrossBlock(MEOBlocks.REED, BlockModelGenerators.PlantType.NOT_TINTED);
 
         MEOBlockStateModelGenerator.registerBreakingStone(
                 blockModelGenerators,
@@ -105,8 +111,12 @@ public class MEOModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(MEOItems.TWINE, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOBlocks.REED.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(MEOBlocks.TALL_REED.asItem(), ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(MEOItems.DRIED_LEATHER, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.CLAY_LUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.CLAY_CLUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.DIRT_CLUMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOItems.GRAVEL_CLUMP, ModelTemplates.FLAT_ITEM);

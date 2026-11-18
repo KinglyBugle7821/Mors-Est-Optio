@@ -30,30 +30,16 @@ public class PlayerExposure {
                 z
         );
 
-        boolean roofCovered = isBlocked(
-                player, level, roofStart,
-                new Vec3(0, 1, 0), roofDistance
-        );
-
-        boolean northCovered = isBlocked(
-                player, level, wallStart,
-                new Vec3(0, 0, -1), wallDistance
-        );
-
-        boolean southCovered = isBlocked(
-                player, level, wallStart,
-                new Vec3(0, 0, 1), wallDistance
-        );
-
-        boolean eastCovered = isBlocked(
-                player, level, wallStart,
-                new Vec3(1, 0, 0), wallDistance
-        );
-
-        boolean westCovered = isBlocked(
-                player, level, wallStart,
-                new Vec3(-1, 0, 0), wallDistance
-        );
+        boolean roofCovered = isBlocked(player, level, roofStart,
+                new Vec3(0, 1, 0), roofDistance);
+        boolean northCovered = isBlocked(player, level, wallStart,
+                new Vec3(0, 0, -1), wallDistance);
+        boolean southCovered = isBlocked(player, level, wallStart,
+                new Vec3(0, 0, 1), wallDistance);
+        boolean eastCovered = isBlocked(player, level, wallStart,
+                new Vec3(1, 0, 0), wallDistance);
+        boolean westCovered = isBlocked(player, level, wallStart,
+                new Vec3(-1, 0, 0), wallDistance);
 
         float protection = 0f;
 

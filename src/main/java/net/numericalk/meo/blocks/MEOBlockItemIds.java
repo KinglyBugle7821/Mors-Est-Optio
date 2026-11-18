@@ -1,11 +1,22 @@
 package net.numericalk.meo.blocks;
 
 import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.Identifier;
 import net.numericalk.meo.MorsEstOptio;
 
 public class MEOBlockItemIds {
     public static final BlockItemId LOOSE_DIRT = create("loose_dirt");
+
+    public static final BlockItemId LOOSE_STONE = create("loose_stone");
+    public static final BlockItemId FLINT_NODULE = create("flint_nodule");
+    public static final BlockItemId FALLEN_BRANCH = create("fallen_branch");
+    public static final BlockItemId REED_BUNDLE = create("reed_bundle");
+    public static final BlockItemId WILD_POTATO = create("wild_potato");
+    public static final BlockItemId WILD_CARROT = create("wild_carrot");
+
+    public static final BlockItemId REED = create("reed");
+    public static final BlockItemId TALL_REED = create("tall_reed");
 
     public static final BlockItemId CAMPFIRE = create("campfire");
     public static final BlockItemId CAMPFIRE_BASE = create("campfire_base");

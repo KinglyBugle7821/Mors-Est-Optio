@@ -6,6 +6,8 @@ import net.minecraft.world.item.Item;
 import net.numericalk.meo.MorsEstOptio;
 
 public class MEOItemIds {
+    public static final ResourceKey<Item> CLAY_LUMP = create("clay_lump");
+
     public static final ResourceKey<Item> WATER_POUCH = create("water_pouch");
 
     public static final ResourceKey<Item> BANDAGE = create("bandage");

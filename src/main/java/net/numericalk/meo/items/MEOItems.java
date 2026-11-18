@@ -55,6 +55,8 @@ public class MEOItems {
                     )
     );
 
+    public static final Item CLAY_LUMP = register(MEOItemIds.CLAY_LUMP, Item::new, new Item.Properties());
+
     public static final Item DRIED_LEATHER = register(MEOItemIds.DRIED_LEATHER, Item::new, new Item.Properties());
 
     public static final Item GRANITE_CHUNK = register(MEOItemIds.GRANITE_CHUNK, Item::new, new Item.Properties());
@@ -146,6 +148,14 @@ public class MEOItems {
             .icon(() -> new ItemStack(MEOItems.FLINT_FLAKE))
             .title(Component.translatable("creativeTab.meoCreativeTab"))
             .displayItems((params, output) -> {
+                output.accept(MEOBlocks.REED);
+                output.accept(MEOBlocks.TALL_REED);
+
+                output.accept(MEOBlocks.LOOSE_STONE);
+                output.accept(MEOBlocks.FLINT_NODULE);
+                output.accept(MEOBlocks.FALLEN_BRANCH);
+                output.accept(MEOItems.CLAY_LUMP);
+
                 output.accept(MEOItems.WATER_POUCH);
 
                 output.accept(MEOItems.DRIED_LEATHER);

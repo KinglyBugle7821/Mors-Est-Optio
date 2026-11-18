@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mors-est-optio:block/fallen_branch"
+    },
+    "facing=south": {
+      "model": "mors-est-optio:block/fallen_branch",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "mors-est-optio:block/fallen_branch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "mors-est-optio:block/fallen_branch",
+      "y": 270
+    }
+  }
+}

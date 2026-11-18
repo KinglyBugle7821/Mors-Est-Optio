@@ -41,6 +41,10 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
     @Override
     public void generate() {
 
+        dropSelf(MEOBlocks.LOOSE_STONE);
+        dropSelf(MEOBlocks.FLINT_NODULE);
+        dropSelf(MEOBlocks.FALLEN_BRANCH);
+
         add(Blocks.DIRT, createClumpDrop(Blocks.DIRT, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
         add(Blocks.COARSE_DIRT, createClumpDrop(Blocks.COARSE_DIRT, Blocks.COARSE_DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
         add(Blocks.DIRT_PATH, createClumpDrop(Blocks.DIRT_PATH, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));

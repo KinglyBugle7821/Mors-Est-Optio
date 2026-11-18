@@ -1,5 +1,6 @@
 package net.numericalk.meo.blocks;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.references.BlockItemId;
@@ -11,11 +12,64 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.numericalk.meo.blocks.custom.*;
 
 import java.util.function.Function;
 
 public class MEOBlocks {
+    public static final Block REED = registerBlockItem(
+            MEOBlockItemIds.REED,
+            ReedBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WATER)
+                    .replaceable()
+                    .noCollision()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)
+    );
+    public static final Block TALL_REED = registerBlockItem(
+            MEOBlockItemIds.TALL_REED,
+            TallReedBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WATER)
+                    .replaceable()
+                    .noCollision()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)
+    );
+
+    public static final Block LOOSE_STONE = registerBlockItem(
+            MEOBlockItemIds.LOOSE_STONE,
+            FallenFeatureBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollision()
+    );
+    public static final Block FLINT_NODULE = registerBlockItem(
+            MEOBlockItemIds.FLINT_NODULE,
+            FallenFeatureBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollision()
+    );
+    public static final Block FALLEN_BRANCH = registerBlockItem(
+            MEOBlockItemIds.FALLEN_BRANCH,
+            FallenFeatureBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .noCollision()
+    );
+
     public static final Block LOOSE_DIRT = registerBlockItem(
             MEOBlockItemIds.LOOSE_DIRT,
             MEOLooseBlock::new,
