@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mors-est-optio:block/tall_reed_bottom"
+    },
+    "half=upper": {
+      "model": "mors-est-optio:block/tall_reed_top"
+    }
+  }
+}

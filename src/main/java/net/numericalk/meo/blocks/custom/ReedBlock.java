@@ -46,8 +46,23 @@ public class ReedBlock extends VegetationBlock implements BonemealableBlock, Liq
 
     @Override
     public @Nullable BlockState getStateForPlacement(final BlockPlaceContext context) {
-        FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
-        return fluidState.is(FluidTags.WATER) && fluidState.isFull() ? super.getStateForPlacement(context) : null;
+        BlockState state = super.getStateForPlacement(context);
+        if (state != null) {
+            FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
+            if (fluidState.is(FluidTags.WATER) && fluidState.isFull()) {
+                return state;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockState stateAbove = level.getBlockState(pos.above());
+
+        return super.canSurvive(state, level, pos) &&
+                !stateAbove.is(Blocks.WATER);
     }
 
     @Override

@@ -1,0 +1,7 @@
+{
+  "type": "mors-est-optio:drying",
+  "input": "mors-est-optio:grass_sheaf",
+  "result": {
+    "id": "mors-est-optio:dried_grass_sheaf"
+  }
+}

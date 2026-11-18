@@ -15,6 +15,8 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
@@ -40,6 +42,9 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
 
     @Override
     public void generate() {
+
+        dropSelf(MEOBlocks.REED);
+        add(MEOBlocks.TALL_REED, block -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
 
         dropSelf(MEOBlocks.LOOSE_STONE);
         dropSelf(MEOBlocks.FLINT_NODULE);

@@ -1,6 +1,8 @@
 package net.numericalk.meo;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -10,12 +12,17 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.numericalk.meo.attachments.player.*;
 import net.numericalk.meo.attachments.world.WorldSeasons;
 import net.numericalk.meo.blocks.MEOBlockEntities;
 import net.numericalk.meo.blocks.MEOBlocks;
 import net.numericalk.meo.attachments.MEOAttachments;
 import net.numericalk.meo.components.MEOComponents;
+import net.numericalk.meo.datagen.world.MEOBiomeModifications;
+import net.numericalk.meo.datagen.world.MEOFeature;
+import net.numericalk.meo.datagen.world.MEOPlacedFeatures;
 import net.numericalk.meo.entity.MEOEffects;
 import net.numericalk.meo.event.*;
 import net.numericalk.meo.items.MEOItems;
@@ -35,6 +42,7 @@ public class MorsEstOptio implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		MEOFeature.initialize();
 		MEOAttachments.initialize();
 		MEOEffects.initialize();
 		MEOItems.initialize();
@@ -81,6 +89,7 @@ public class MorsEstOptio implements ModInitializer {
 
 		ServerLivingEntityEvents.AFTER_DAMAGE.register(new PlayerInjury().afterDamage);
 
+		MEOBiomeModifications biomeModifications = new MEOBiomeModifications();
 	}
 
 	public static Identifier id(String path) {

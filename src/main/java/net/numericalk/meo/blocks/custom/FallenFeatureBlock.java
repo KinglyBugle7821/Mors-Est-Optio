@@ -34,9 +34,6 @@ public class FallenFeatureBlock extends HorizontalDirectionalBlock {
         builder.add(FACING);
     }
 
-    protected boolean mayPlaceOn(final BlockState state, final BlockGetter level, final BlockPos pos) {
-        return !state.is(BlockTags.AIR);
-    }
     @Override
     protected BlockState updateShape(
             final BlockState state,
@@ -68,8 +65,8 @@ public class FallenFeatureBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected boolean canSurvive(final BlockState state, final LevelReader level, final BlockPos pos) {
-        BlockPos below = pos.below();
-        return this.mayPlaceOn(level.getBlockState(below), level, below);
+        BlockPos belowPos = pos.below();
+        return level.getBlockState(belowPos).isFaceSturdy(level, belowPos, Direction.UP);
     }
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
