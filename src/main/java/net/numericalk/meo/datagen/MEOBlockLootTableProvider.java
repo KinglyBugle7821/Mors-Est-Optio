@@ -10,13 +10,16 @@ import net.minecraft.core.component.predicates.EnchantmentsPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
@@ -42,13 +45,12 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
 
     @Override
     public void generate() {
-
-        dropSelf(MEOBlocks.REED);
-        add(MEOBlocks.TALL_REED, block -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-
         dropSelf(MEOBlocks.LOOSE_STONE);
         dropSelf(MEOBlocks.FLINT_NODULE);
         dropSelf(MEOBlocks.FALLEN_BRANCH);
+
+        add(MEOBlocks.REED, createFibrousBlockDrop(MEOBlocks.REED, MEOItems.REED_BUNDLE));
+        add(MEOBlocks.TALL_REED, createFibrousBlockDrop(MEOBlocks.TALL_REED, MEOItems.REED_BUNDLE));
 
         add(Blocks.DIRT, createClumpDrop(Blocks.DIRT, Blocks.DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
         add(Blocks.COARSE_DIRT, createClumpDrop(Blocks.COARSE_DIRT, Blocks.COARSE_DIRT.asItem(), MEOItems.DIRT_CLUMP, 1f, 4f, ItemTags.SHOVELS));
@@ -176,6 +178,49 @@ public class MEOBlockLootTableProvider extends FabricBlockLootSubProvider {
                                         )
                         )
         );
+    }
+    private LootTable.Builder createFibrousBlockDrop(Block fibrousBlock, Item drop){
+        HolderGetter<Enchantment> enchantmentLookup =
+                registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        DataComponentMatchers silkTouchMatcher = DataComponentMatchers.Builder.components()
+                .partial(
+                        DataComponentPredicates.ENCHANTMENTS,
+                        EnchantmentsPredicate.enchantments(
+                                List.of(
+                                        new EnchantmentPredicate(
+                                                enchantmentLookup.getOrThrow(Enchantments.SILK_TOUCH),
+                                                MinMaxBounds.Ints.atLeast(1)
+                                        )
+                                )
+                        )
+                )
+                .build();
+
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .add(AlternativesEntry.alternatives(
+
+                                LootItem.lootTableItem(fibrousBlock)
+                                        .when(MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item()
+                                                        .withComponents(silkTouchMatcher)
+                                        )),
+
+                                LootItem.lootTableItem(fibrousBlock)
+                                        .when(MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item()
+                                                        .of(itemLookup, Items.SHEARS)
+                                        )),
+
+                                LootItem.lootTableItem(drop)
+                                        .when(MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item()
+                                                        .of(itemLookup, MEOItems.FLINT_FLAKE)
+                                        ))
+                        ))
+                );
     }
     private LootTable.Builder createClumpDrop(Block silkTouchBlock, Item toolBlock, Item dropItem, float min, float max, TagKey<Item> toolTag) {
         HolderGetter<Enchantment> enchantmentLookup =

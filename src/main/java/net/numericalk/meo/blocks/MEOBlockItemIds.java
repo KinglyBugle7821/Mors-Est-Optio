@@ -11,7 +11,6 @@ public class MEOBlockItemIds {
     public static final BlockItemId LOOSE_STONE = create("loose_stone");
     public static final BlockItemId FLINT_NODULE = create("flint_nodule");
     public static final BlockItemId FALLEN_BRANCH = create("fallen_branch");
-    public static final BlockItemId REED_BUNDLE = create("reed_bundle");
     public static final BlockItemId WILD_POTATO = create("wild_potato");
     public static final BlockItemId WILD_CARROT = create("wild_carrot");
 

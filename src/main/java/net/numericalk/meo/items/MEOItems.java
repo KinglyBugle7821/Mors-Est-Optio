@@ -56,6 +56,7 @@ public class MEOItems {
     );
 
     public static final Item CLAY_LUMP = register(MEOItemIds.CLAY_LUMP, Item::new, new Item.Properties());
+    public static final Item REED_BUNDLE = register(MEOItemIds.REED_BUNDLE, Item::new, new Item.Properties());
 
     public static final Item DRIED_LEATHER = register(MEOItemIds.DRIED_LEATHER, Item::new, new Item.Properties());
 
@@ -155,6 +156,7 @@ public class MEOItems {
                 output.accept(MEOBlocks.FLINT_NODULE);
                 output.accept(MEOBlocks.FALLEN_BRANCH);
                 output.accept(MEOItems.CLAY_LUMP);
+                output.accept(MEOItems.REED_BUNDLE);
 
                 output.accept(MEOItems.WATER_POUCH);
 

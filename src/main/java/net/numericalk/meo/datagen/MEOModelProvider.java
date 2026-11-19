@@ -111,6 +111,7 @@ public class MEOModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(MEOItems.TWINE, ModelTemplates.FLAT_ITEM);
 
+        itemModelGenerators.generateFlatItem(MEOItems.REED_BUNDLE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOBlocks.REED.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(MEOBlocks.TALL_REED.asItem(), ModelTemplates.FLAT_ITEM);
 

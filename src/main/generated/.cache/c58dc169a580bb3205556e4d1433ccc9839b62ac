@@ -64,6 +64,7 @@ e4dba7bddeef0638afb27a8c49abced2844867df assets/mors-est-optio/items/oak_bark.js
 6651d4997f6503e72884aaa8d788fed383935fc2 assets/mors-est-optio/items/red_sand_clump.json
 d3a7da1abc05bc1ff6dd89a7d53a53343c254516 assets/mors-est-optio/items/red_sandstone_chunk.json
 33d1c04d65d5509886d67803f994c547d54398e0 assets/mors-est-optio/items/reed.json
+2b4c3cf1749ecfd717e8a51688bc49a728d2b0cb assets/mors-est-optio/items/reed_bundle.json
 efd074c9971db44162ea8ff828c22b784457c95b assets/mors-est-optio/items/rock.json
 847af2be254d29f5bb22e1ceedc353d50ff54ff9 assets/mors-est-optio/items/sand_clump.json
 6ea0cb2a7cbaaabe124fe96cc9c5c1b8adb1ac4e assets/mors-est-optio/items/sandstone_chunk.json
@@ -163,6 +164,7 @@ ea44ed41abc67560749586b1a78ead2ecb6ac61f assets/mors-est-optio/models/item/nethe
 ccd6c1c4fc67b34d63c4280ab98c1f473441b414 assets/mors-est-optio/models/item/red_sand_clump.json
 1ae8f837e48f8831014dbd98e593a6a3b739c7f2 assets/mors-est-optio/models/item/red_sandstone_chunk.json
 0ad416c12752906018606564f9afde0c3937b726 assets/mors-est-optio/models/item/reed.json
+3fe0846a360005184df324244f00283c65826179 assets/mors-est-optio/models/item/reed_bundle.json
 e44ffc6890dcecb1627946f89d1d951b1addb3ee assets/mors-est-optio/models/item/rock.json
 ac7a13d012838383d7f0690e81cca75a737ed692 assets/mors-est-optio/models/item/sand_clump.json
 fa5beaeb7f910a2ff604e040fe55e96f02a35feb assets/mors-est-optio/models/item/sandstone_chunk.json

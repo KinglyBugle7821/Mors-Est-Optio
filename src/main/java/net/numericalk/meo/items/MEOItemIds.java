@@ -7,6 +7,7 @@ import net.numericalk.meo.MorsEstOptio;
 
 public class MEOItemIds {
     public static final ResourceKey<Item> CLAY_LUMP = create("clay_lump");
+    public static final ResourceKey<Item> REED_BUNDLE = create("reed_bundle");
 
     public static final ResourceKey<Item> WATER_POUCH = create("water_pouch");
 
